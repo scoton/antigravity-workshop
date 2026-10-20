@@ -14,7 +14,7 @@
         <span class="eyebrow">Singularity Brazil • AI Bootcamp 2026</span>
         <h1>Google Antigravity — Mission Hub</h1>
         <p class="subtitle">
-          Da assistência individual à orquestração agêntica: escolha uma das 3 trilhas práticas abaixo e siga as 4 missões para planejar, construir, auditar no navegador e escalar em paralelo.
+          Experimente a orquestração assíncrona em 3 Atos: dispare a construção do <strong>Flappy Executive Hero</strong> do zero no Ato 1, alterne no <em>Agent Manager</em> para um Simulador Executivo no Ato 2, e volte no Ato 3 para transformar sua selfie em um Super-Herói Caricatura!
         </p>
       </div>
       <div class="timer-box" aria-label="Cronômetro do Workshop">
@@ -30,10 +30,38 @@
       </div>
     </header>
 
+    <!-- Trilha Principal de Abertura (Destaque) -->
+    <section aria-labelledby="main-track-heading" style="margin-bottom: 2.5rem;">
+      <div class="section-header">
+        <h2 id="main-track-heading">1. Trilha Principal de Abertura (Spec-Driven & Construção Assíncrona)</h2>
+        <span>Comece por aqui nos primeiros 5 minutos!</span>
+      </div>
+
+      <article class="track-card" id="card-track-4" style="border-color: var(--accent-amber); background: linear-gradient(180deg, hsla(38, 92%, 55%, 0.06) 0%, var(--bg-surface) 100%);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem;">
+          <div style="flex: 1; min-width: 300px;">
+            <div class="track-meta" style="justify-content: flex-start; gap: 1rem;">
+              <span class="track-tag tag-amber">TRILHA PRINCIPAL • DO ZERO AO JOGO (ATOS 1 E 3)</span>
+              <span class="track-recommended">★ Ponto de Partida Oficial</span>
+            </div>
+            <h3 style="font-size: 1.45rem;">🦸‍♂️ Flappy Executive Hero: Escapando da Burocracia</h3>
+            <p style="margin-bottom: 0.85rem;">
+              A pasta <code>tracks/04-flappy-hero/</code> começa quase vazia de propósito! No <strong>Ato 1</strong>, você pede ao Antigravity para criar a especificação completa (<code>SPEC_JOGO.md</code>) e construir o jogo inteiro em background enquanto você avança para o <strong>Ato 2</strong>. No <strong>Ato 3</strong>, você tira uma selfie e o Antigravity transforma você em uma <strong>Caricatura de Super-Herói</strong> desviando de <em>"Reuniões que podiam ser e-mail"</em> e <em>"Planilhas V14_FINAL.xlsx"</em>!
+            </p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.65rem; min-width: 260px;">
+            <a id="btn-open-selfie-studio" href="tracks/04-flappy-hero/selfie-studio.html" class="btn btn-primary">📸 Abrir Selfie Studio (Webcam) →</a>
+            <a id="btn-open-flappy-game" href="tracks/04-flappy-hero/index.html" class="btn">🎮 Abrir Jogo Gerado (Após Ato 1) →</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3 Trilhas Paralelas (Starter Kits) -->
     <section aria-labelledby="tracks-heading">
       <div class="section-header">
-        <h2 id="tracks-heading">1. Escolha a Sua Trilha (Starter Kits Funcionais)</h2>
-        <span>Todas as 3 trilhas funcionam sem instalar dependências</span>
+        <h2 id="tracks-heading">2. Simuladores para o Ato 2 (Enquanto o Flappy Hero é Construído)</h2>
+        <span>Escolha 1 abaixo para evoluir em uma 2ª conversa no Agent Manager (Cmd/Ctrl + E)</span>
       </div>
 
       <div class="tracks-grid">
@@ -41,8 +69,8 @@
         <article class="track-card" id="card-track-1">
           <div>
             <div class="track-meta">
-              <span class="track-tag tag-amber">TRILHA 01 • ESTRATÉGIA</span>
-              <span class="track-recommended">★ Recomendada para a Sessão</span>
+              <span class="track-tag tag-amber">OPÇÃO A • ESTRATÉGIA</span>
+              <span class="track-recommended">Starter Kit Pronto</span>
             </div>
             <h3>Crisis Commander</h3>
             <p>
@@ -55,7 +83,7 @@
             </ul>
           </div>
           <div class="track-actions">
-            <a id="btn-launch-track-1" href="tracks/01-crisis-commander/index.html" class="btn btn-primary" style="flex: 1;">Abrir Crisis Commander →</a>
+            <a id="btn-launch-track-1" href="tracks/01-crisis-commander/index.html" class="btn" style="flex: 1;">Abrir Crisis Commander →</a>
           </div>
         </article>
 
@@ -63,7 +91,7 @@
         <article class="track-card" id="card-track-2">
           <div>
             <div class="track-meta">
-              <span class="track-tag tag-cyan">TRILHA 02 • ARCADE CANVAS</span>
+              <span class="track-tag tag-cyan">OPÇÃO B • ARCADE CANVAS</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">60 FPS • HTML5 Canvas</span>
             </div>
             <h3>Antigravity Orbital Defense</h3>
@@ -85,7 +113,7 @@
         <article class="track-card" id="card-track-3">
           <div>
             <div class="track-meta">
-              <span class="track-tag tag-emerald">TRILHA 03 • SIMULADOR C-LEVEL</span>
+              <span class="track-tag tag-emerald">OPÇÃO C • SIMULADOR C-LEVEL</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">War Room Executiva</span>
             </div>
             <h3>Boardroom War Room</h3>
@@ -105,86 +133,100 @@
       </div>
     </section>
 
-    <!-- Guia Rápido de Missões e Prompts -->
+    <!-- Guia Rápido de Atos e Prompts -->
     <section class="missions-section" aria-labelledby="missions-heading">
       <div class="section-header">
-        <h2 id="missions-heading">2. Roteiro Self-Paced (4 Missões Práticas no Antigravity)</h2>
-        <span>Copie os prompts abaixo direto para o painel do Agente no Antigravity</span>
+        <h2 id="missions-heading">3. Roteiro Passo a Passo (Copie os Prompts em 1 Clique)</h2>
+        <span>Siga os 3 Atos abaixo no Google Antigravity</span>
       </div>
 
       <div class="missions-tabs" role="tablist">
-        <button id="tab-m1" class="mission-tab active" onclick="switchMission('m1')">Missão 1: Planning & Artifacts (8 min)</button>
-        <button id="tab-m2" class="mission-tab" onclick="switchMission('m2')">Missão 2: Browser Sub-Agent (9 min)</button>
-        <button id="tab-m3" class="mission-tab" onclick="switchMission('m3')">Missão 3: Agent Manager Paralelo (8 min)</button>
-        <button id="tab-m4" class="mission-tab" onclick="switchMission('m4')">Missão 4: Rules & Workflows (5 min)</button>
+        <button id="tab-m1" class="mission-tab active" onclick="switchMission('m1')">Ato 1: Spec & Build do Flappy Hero (7 min)</button>
+        <button id="tab-m2" class="mission-tab" onclick="switchMission('m2')">Ato 2: Alternar no Agent Manager (14 min)</button>
+        <button id="tab-m3" class="mission-tab" onclick="switchMission('m3')">Ato 3: Selfie → Super-Herói Caricatura (10 min)</button>
+        <button id="tab-m4" class="mission-tab" onclick="switchMission('m4')">Bônus: Rules & Workflows (/modo-caos)</button>
       </div>
 
-      <!-- Missão 1 -->
+      <!-- Ato 1 -->
       <div id="content-m1" class="mission-content active">
         <div class="mission-header-bar">
-          <h3>Missão 1: Do Prompt ao Contrato Executivo (Planning Mode)</h3>
-          <span class="mission-duration">⏱️ 8 Minutos</span>
+          <h3>Ato 1: Gerar Especificação (SPEC_JOGO.md) e Disparar Construção em Background</h3>
+          <span class="mission-duration">⏱️ 7 Minutos</span>
         </div>
         <div class="executive-insight">
-          <strong>Paradigma Executivo:</strong> Antes de permitir que um agente altere qualquer sistema, exija um <em>Implementation Plan</em>. Quando o plano aparecer no Antigravity, <strong>passe o mouse sobre um parágrafo, adicione um comentário de revisão humana</strong> e só então aprove a execução.
+          <strong>Paradigma Executivo (Spec-Driven Development):</strong> Primeiro peça ao Antigravity para criar a especificação completa do jogo (Passo 1.1). Depois que ele gerar o arquivo <code>SPEC_JOGO.md</code>, dispare o Passo 1.2 para ele programar e testar o jogo completo e <strong>mude imediatamente para o Ato 2 enquanto ele trabalha!</strong>
         </div>
         <div class="prompt-selector-bar">
-          <span>Selecione o prompt para a sua trilha:</span>
-          <button id="btn-prompt-t1" class="btn btn-sm" onclick="setM1Prompt(1)">Trilha 1 (Crisis Commander)</button>
-          <button id="btn-prompt-t2" class="btn btn-sm" onclick="setM1Prompt(2)">Trilha 2 (Orbital Defense)</button>
-          <button id="btn-prompt-t3" class="btn btn-sm" onclick="setM1Prompt(3)">Trilha 3 (Boardroom War Room)</button>
+          <span>Escolha o passo do Ato 1:</span>
+          <button class="btn btn-sm" onclick="setAto1Step(1)">Passo 1.1: Gerar SPEC_JOGO.md</button>
+          <button class="btn btn-sm" onclick="setAto1Step(2)">Passo 1.2: Disparar Construção Completa do Jogo</button>
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m1" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m1-text', this)">Copiar Prompt</button>
-          <div id="prompt-m1-text">Analise o jogo em @tracks/01-crisis-commander/ e crie um Implementation Plan para duas melhorias estratégicas:
-1. Personalize os cenários de crise para o setor de [SEU SETOR, ex: Finanças / Varejo / Saúde / Agro], criando 4 novos dilemas hiper-realistas para 2026-2027.
-2. Adicione um botão "Consultor IA do Board" (com limite de 2 usos por partida) que analisa o dilema atual e destaca visualmente a decisão que melhor protege a empresa contra falência, explicando o trade-off.
-Não altere o código ainda; apresente primeiro o Implementation Plan para minha revisão.</div>
+          <div id="prompt-m1-text">Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".
+
+A especificação deve detalhar:
+1. Mecânica e Física: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos e controle por Barra de Espaço / Clique.
+2. Obstáculos Bem-Humorados: Os "canos" devem ser barreiras corporativas com rótulos visíveis e divertidos, como "Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional".
+3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o herói calcular o pulo ideal sozinho para desviar das barreiras (ótimo para demonstração e testes automatizados).
+4. Sistema de Avatar Super-Herói: O personagem deve ser desenhado com uma capa de super-herói esvoaçante animada no Canvas e rastro de partículas, suportando carregar a imagem `hero-caricatura.png` / `minha-selfie.png` ou trocar de foto direto na tela (#btn-upload-hero).
+5. Efeitos Sonoros Sintetizados (Web Audio API) e placar com medalhas executivas.
+
+Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.</div>
         </div>
       </div>
 
-      <!-- Missão 2 -->
+      <!-- Ato 2 -->
       <div id="content-m2" class="mission-content">
         <div class="mission-header-bar">
-          <h3>Missão 2: O Agente que Testa o Próprio Trabalho (Browser Sub-Agent)</h3>
-          <span class="mission-duration">⏱️ 9 Minutos</span>
+          <h3>Ato 2: Multitarefa no Agent Manager (Enquanto o Flappy Hero é Construído)</h3>
+          <span class="mission-duration">⏱️ 14 Minutos</span>
         </div>
         <div class="executive-insight">
-          <strong>Paradigma Executivo:</strong> Autonomia sem verificação gera risco operacional. O <em>Browser Sub-Agent</em> abre o navegador, clica nos botões da sua aplicação, valida se não há erros e entrega um <em>Walkthrough Artifact</em> com screenshots e gravação da tela.
+          <strong>Paradigma Executivo:</strong> Não espere o Agente 1 terminar! Pressione <code>Cmd + E</code> (Mac) ou <code>Ctrl + E</code> (Windows/Linux) para abrir o <strong>Agent Manager</strong>, inicie uma <strong>2ª conversa em paralelo</strong> e evolua um dos 3 Simuladores Executivos abaixo revisando e comentando no <em>Implementation Plan</em>!
+        </div>
+        <div class="prompt-selector-bar">
+          <span>Selecione o Simulador Paralelo:</span>
+          <button id="btn-prompt-t1" class="btn btn-sm" onclick="setM2Prompt(1)">Opção A: Crisis Commander</button>
+          <button id="btn-prompt-t2" class="btn btn-sm" onclick="setM2Prompt(2)">Opção B: Orbital Defense</button>
+          <button id="btn-prompt-t3" class="btn btn-sm" onclick="setM2Prompt(3)">Opção C: Boardroom War Room</button>
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m2" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m2-text', this)">Copiar Prompt</button>
-          <div id="prompt-m2-text">Agora valide o seu trabalho na prática usando o Browser Sub-Agent:
-1. Abra a trilha que acabamos de atualizar no navegador.
-2. Interaja com a interface: inicie uma partida/simulação, teste os novos botões e recursos criados na Missão 1 e avance por pelo menos 3 interações completas.
-3. Verifique se não há nenhum erro no console ou problema visual.
-4. Gere um Walkthrough Artifact contendo o resumo executivo do que foi validado e os screenshots das telas em funcionamento.</div>
+          <div id="prompt-m2-text">Analise o jogo em @tracks/01-crisis-commander/ e crie um Implementation Plan para duas melhorias estratégicas:
+1. Personalize os cenários de crise para o setor de [SEU SETOR, ex: Finanças / Varejo / Saúde / Agro], criando 4 novos dilemas hiper-realistas para 2026-2027.
+2. Adicione um botão "Consultor IA do Board" (com limite de 2 usos por partida) que analisa o dilema atual e destaca visualmente a decisão que melhor protege a empresa contra falência, explicando o trade-off.
+Apresente primeiro o Implementation Plan para minha revisão e, após aprovado, valide no Browser Sub-Agent.</div>
         </div>
       </div>
 
-      <!-- Missão 3 -->
+      <!-- Ato 3 -->
       <div id="content-m3" class="mission-content">
         <div class="mission-header-bar">
-          <h3>Missão 3: Escala e Adaptação em Paralelo (Agent Manager)</h3>
-          <span class="mission-duration">⏱️ 8 Minutos</span>
+          <h3>Ato 3: O Retorno ao Flappy Hero & Sua Caricatura de Super-Herói!</h3>
+          <span class="mission-duration">⏱️ 10 Minutos</span>
         </div>
         <div class="executive-insight">
-          <strong>Paradigma Executivo:</strong> Pressione <code>Cmd + E</code> (Mac) ou <code>Ctrl + E</code> (Windows/Linux) para abrir o <strong>Agent Manager</strong>. Dispare uma nova frente de trabalho para ver como liderar múltiplos agentes simultâneos.
+          <strong>O Grande Final:</strong> Volte para a 1ª conversa no <strong>Agent Manager</strong> e veja o seu jogo <em>Flappy Executive Hero</em> pronto! Agora abra o <a href="tracks/04-flappy-hero/selfie-studio.html" style="color: var(--accent-amber);">Selfie Studio</a>, salve sua selfie como <code>tracks/04-flappy-hero/minha-selfie.png</code> e envie o prompt abaixo (ou digite <code>/gerar-super-heroi</code>).
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m3" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m3-text', this)">Copiar Prompt</button>
-          <div id="prompt-m3-text">Na minha trilha atual, adicione um botão "Exportar Dossiê Executivo (.md)" que gera e baixa instantaneamente um relatório executivo da partida/simulação contendo: todas as decisões tomadas, o estado final dos indicadores e um diagnóstico automático do meu estilo de liderança sob incerteza (ex: Conservador, Resiliente, Arrojado ou Antifrágil). Valide o botão no navegador ao concluir.</div>
+          <div id="prompt-m3-text">Execute o workflow @.agent/workflows/gerar-super-heroi.md:
+1. Analise a minha foto em @tracks/04-flappy-hero/minha-selfie.png (observando meus traços marcantes como cabelo, óculos, barba, sorriso e expressão).
+2. Gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em `tracks/04-flappy-hero/hero-caricatura.png`).
+3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão/escudo, capa vermelha e dourada esvoaçante animada no Canvas e botão na tela para alternar entre a Caricatura IA e a minha Selfie original!).
+4. Abra o jogo no Browser Sub-Agent, faça um voo de teste com o meu Super-Herói desviando das burocracias e gere o Walkthrough com o print final!</div>
         </div>
       </div>
 
-      <!-- Missão 4 -->
+      <!-- Bônus -->
       <div id="content-m4" class="mission-content">
         <div class="mission-header-bar">
-          <h3>Missão 4: Governança e Cultura em Código (Rules & Workflows)</h3>
-          <span class="mission-duration">⏱️ 5 Minutos</span>
+          <h3>Bônus: Governança e Cultura em Código (Rules & Workflows)</h3>
+          <span class="mission-duration">⏱️ Extra</span>
         </div>
         <div class="executive-insight">
-          <strong>Paradigma Executivo:</strong> Este repositório já possui regras em <code>.agent/rules/</code> e workflows em <code>.agent/workflows/</code>. Digite <code>/modo-caos</code>, <code>/adaptar-setor</code> ou <code>/auditoria-executiva</code> no chat do Agente para acionar playbooks corporativos padronizados!
+          <strong>Paradigma Executivo:</strong> Digite <code>/gerar-super-heroi</code>, <code>/modo-caos</code>, <code>/adaptar-setor</code> ou <code>/auditoria-executiva</code> no chat do Agente para acionar os playbooks corporativos da pasta <code>.agent/workflows/</code>!
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m4" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m4-text', this)">Copiar Prompt</button>
@@ -195,19 +237,28 @@ Não altere o código ainda; apresente primeiro o Implementation Plan para minha
 
     <footer class="footer-note">
       <div>AI Bootcamp 2026 — Singularity Brazil • Material Hands-On Self-Paced</div>
-      <div>Consulte o arquivo <code>README.md</code> para instruções completas.</div>
+      <div>Repositório oficial: <code>github.com/scoton/antigravity-workshop</code></div>
     </footer>
   </div>
 
   <script>
-    const PROMPTS_M1 = {
-      1: `Analise o jogo em @tracks/01-crisis-commander/ e crie um Implementation Plan para duas melhorias estratégicas:\n1. Personalize os cenários de crise para o setor de [SEU SETOR, ex: Finanças / Varejo / Saúde / Agro], criando 4 novos dilemas hiper-realistas para 2026-2027.\n2. Adicione um botão "Consultor IA do Board" (com limite de 2 usos por partida) que analisa o dilema atual e destaca visualmente a decisão que melhor protege a empresa contra falência, explicando o trade-off.\nNão altere o código ainda; apresente primeiro o Implementation Plan para minha revisão.`,
-      2: `Analise o jogo em @tracks/02-orbital-defense/ e crie um Implementation Plan para duas melhorias:\n1. Crie um sistema de "Drones Autônomos de Defesa": a cada 150 pontos, o jogador pode lançar um drone orbital que orbita a estação e intercepta ameaças automaticamente.\n2. Adicione um evento de "Alerta de Boss Setorial" a cada 3 ondas, com barra de vida própria e escudo regenerativo.\nNão altere o código ainda; apresente primeiro o Implementation Plan para minha revisão.`,
-      3: `Analise o simulador em @tracks/03-boardroom-simulator/ e crie um Implementation Plan para duas melhorias:\n1. Adicione 3 novos cenários pré-configurados específicos para o setor de [SEU SETOR, ex: Finanças / Varejo / Saúde / Agro].\n2. Crie um recurso de "Simulação de 3 Cenários (Otimista, Base e Estresse Severo)": ao rodar a simulação, mostre lado a lado as 3 projeções e indique qual conselheiro veta ou aprova cada cenário.\nNão altere o código ainda; apresente primeiro o Implementation Plan para minha revisão.`
+    const ATO1_STEPS = {
+      1: `Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".\n\nA especificação deve detalhar:\n1. Mecânica e Física: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos e controle por Barra de Espaço / Clique.\n2. Obstáculos Bem-Humorados: Os "canos" devem ser barreiras corporativas com rótulos visíveis e divertidos, como "Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional".\n3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o herói calcular o pulo ideal sozinho para desviar das barreiras (ótimo para demonstração e testes automatizados).\n4. Sistema de Avatar Super-Herói: O personagem deve ser desenhado com uma capa de super-herói esvoaçante animada no Canvas e rastro de partículas, suportando carregar a imagem \`hero-caricatura.png\` / \`minha-selfie.png\` ou trocar de foto direto na tela (#btn-upload-hero).\n5. Efeitos Sonoros Sintetizados (Web Audio API) e placar com medalhas executivas.\n\nApenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.`,
+      2: `Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (criando index.html, style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md.\nQuando terminar de criar os arquivos:\n1. Abra o jogo no Browser Sub-Agent.\n2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.\n3. Gere um Walkthrough Artifact com screenshots do jogo funcionando!`
     };
 
-    function setM1Prompt(trackNum) {
-      document.getElementById('prompt-m1-text').textContent = PROMPTS_M1[trackNum];
+    const PROMPTS_M2 = {
+      1: `Analise o jogo em @tracks/01-crisis-commander/ e crie um Implementation Plan para duas melhorias estratégicas:\n1. Personalize os cenários de crise para o setor de [SEU SETOR, ex: Finanças / Varejo / Saúde / Agro], criando 4 novos dilemas hiper-realistas para 2026-2027.\n2. Adicione um botão "Consultor IA do Board" (com limite de 2 usos por partida) que analisa o dilema atual e destaca visualmente a decisão que melhor protege a empresa contra falência, explicando o trade-off.\nApresente primeiro o Implementation Plan para minha revisão e, após aprovado, valide no Browser Sub-Agent.`,
+      2: `Analise o jogo em @tracks/02-orbital-defense/ e crie um Implementation Plan para duas melhorias:\n1. Crie um sistema de "Drones Autônomos de Defesa": a cada 150 pontos, o jogador pode lançar um drone orbital que orbita a estação e intercepta ameaças automaticamente.\n2. Adicione um evento de "Alerta de Boss Setorial" a cada 3 ondas, com barra de vida própria e escudo regenerativo.\nApresente primeiro o Implementation Plan para minha revisão e, após aprovado, valide no Browser Sub-Agent.`,
+      3: `Analise o simulador em @tracks/03-boardroom-simulator/ e crie um Implementation Plan para duas melhorias:\n1. Adicione 3 novos cenários pré-configurados específicos para o setor de [SEU SETOR, ex: Finanças / Varejo / Saúde / Agro].\n2. Crie um recurso de "Simulação de 3 Cenários (Otimista, Base e Estresse Severo)": ao rodar a simulação, mostre lado a lado as 3 projeções e indique qual conselheiro veta ou aprova cada cenário.\nApresente primeiro o Implementation Plan para minha revisão e, após aprovado, valide no Browser Sub-Agent.`
+    };
+
+    function setAto1Step(stepNum) {
+      document.getElementById('prompt-m1-text').textContent = ATO1_STEPS[stepNum];
+    }
+
+    function setM2Prompt(trackNum) {
+      document.getElementById('prompt-m2-text').textContent = PROMPTS_M2[trackNum];
     }
 
     function switchMission(id) {

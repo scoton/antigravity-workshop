@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selfie Studio — Criador de Foto para Super-Herói | AI Bootcamp 2026</title>
+  <style>
+    :root {
+      --bg: hsl(220, 32%, 6%);
+      --surface: hsl(220, 26%, 11%);
+      --elevated: hsl(220, 22%, 15%);
+      --border: hsla(215, 20%, 85%, 0.14);
+      --text: hsl(40, 25%, 96%);
+      --muted: hsl(215, 16%, 70%);
+      --amber: hsl(38, 92%, 55%);
+      --emerald: hsl(158, 64%, 45%);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --mono: 'JetBrains Mono', Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .back {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      padding: 0.45rem 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    h1 { font-size: 1.4rem; }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    video, canvas {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #05080f;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      justify-content: center;
+      width: 100%;
+    }
+    .btn {
+      padding: 0.65rem 1.1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--elevated);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--amber);
+      color: #090d16;
+      border-color: transparent;
+    }
+    .btn-success {
+      background: var(--emerald);
+      color: #090d16;
+      border-color: transparent;
+    }
+    .steps-box {
+      margin-top: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--amber);
+      border-radius: 8px;
+      padding: 1.15rem 1.35rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    code {
+      font-family: var(--mono);
+      color: var(--amber);
+    }
+    @media (max-width: 720px) {
+      .studio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">Trilha 04 • Utilitário de Captura Rápida</div>
+        <h1>📸 Selfie Studio: Crie a Base do Seu Super-Herói</h1>
+      </div>
+      <a href="../../index.html" class="back">← Voltar ao Hub</a>
+    </header>
+
+    <div class="studio-grid">
+      <div class="card">
+        <h3>1. Câmera ao Vivo (ou Upload)</h3>
+        <video id="webcam-video" autoplay playsinline muted></video>
+        <div class="btn-row">
+          <button id="btn-start-cam" class="btn" onclick="startCamera()">Ligar Webcam</button>
+          <button id="btn-snap" class="btn btn-primary" onclick="takeSnapshot()">📸 Capturar Selfie</button>
+          <label class="btn" style="cursor: pointer;">
+            📁 Subir Foto
+            <input type="file" accept="image/*" style="display: none;" onchange="handleFileUpload(event)" />
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>2. Sua Foto Pronta (`minha-selfie.png`)</h3>
+        <canvas id="snap-canvas" width="512" height="512"></canvas>
+        <div class="btn-row">
+          <button id="btn-download-selfie" class="btn btn-success" onclick="downloadSelfie()">
+            ⬇️ Baixar minha-selfie.png
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps-box">
+      <strong style="color: var(--text);">Como transformar sua foto no Super-Herói do jogo:</strong><br />
+      1. Clique em <strong>Ligar Webcam → Capturar Selfie → Baixar <code>minha-selfie.png</code></strong> e salve o arquivo dentro da pasta <code>tracks/04-flappy-hero/</code>.<br />
+      2. No chat do <strong>Google Antigravity</strong>, digite <code>/gerar-super-heroi</code> (ou peça ao agente para analisar <code>@tracks/04-flappy-hero/minha-selfie.png</code>, gerar uma caricatura de Super-Herói em <code>tracks/04-flappy-hero/hero-caricatura.png</code> e colocá-la como personagem principal do jogo!).
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById("webcam-video");
+    const canvas = document.getElementById("snap-canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Draw placeholder initially
+    ctx.fillStyle = "#0a0f1d";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#f59e0b";
+    ctx.font = "600 18px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText("Sua selfie aparecerá aqui", canvas.width / 2, canvas.height / 2);
+
+    async function startCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { width: 512, height: 512, facingMode: "user" },
+          audio: false
+        });
+        video.srcObject = stream;
+      } catch (err) {
+        alert("Não foi possível acessar a webcam. Você também pode clicar em 'Subir Foto' para escolher uma imagem do computador!");
+      }
+    }
+
+    function takeSnapshot() {
+      if (!video.srcObject) {
+        alert("Clique primeiro em 'Ligar Webcam' ou use 'Subir Foto'.");
+        return;
+      }
+      const vw = video.videoWidth || 512;
+      const vh = video.videoHeight || 512;
+      const side = Math.min(vw, vh);
+      const sx = (vw - side) / 2;
+      const sy = (vh - side) / 2;
+      ctx.drawImage(video, sx, sy, side, side, 0, 0, canvas.width, canvas.height);
+    }
+
+    function handleFileUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const img = new Image();
+      img.onload = () => {
+        const side = Math.min(img.width, img.height);
+        const sx = (img.width - side) / 2;
+        const sy = (img.height - side) / 2;
+        ctx.drawImage(img, sx, sy, side, side, 0, 0, canvas.width, canvas.height);
+      };
+      img.src = URL.createObjectURL(file);
+    }
+
+    function downloadSelfie() {
+      const link = document.createElement("a");
+      link.download = "minha-selfie.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    }
+  </script>
+</body>
+</html>
