@@ -30,8 +30,8 @@ Durante a sessão ao vivo de 33 minutos, **escolha 1 das 3 trilhas abaixo** para
    - Caso ainda não tenha instalado, baixe em: [https://antigravity.google](https://antigravity.google)
 2. **Clone ou baixe este repositório e abra a pasta no Antigravity:**
    ```bash
-   git clone https://github.com/SEU-USUARIO/ai-bootcamp-2026-antigravity.git
-   cd ai-bootcamp-2026-antigravity
+   git clone https://github.com/scoton/antigravity-workshop.git
+   cd antigravity-workshop
    ```
    *(Dica: Você também pode clicar em **Code -> Download ZIP** no GitHub, extrair a pasta e ir em **File -> Open Folder** no Antigravity).*
 3. **Conheça os 2 Modos de Trabalho do Antigravity:**
