@@ -1,0 +1,219 @@
+:root {
+  --bg-base: hsl(220, 32%, 6%);
+  --bg-surface: hsl(220, 26%, 10%);
+  --bg-elevated: hsl(220, 22%, 14%);
+  --bg-hover: hsl(220, 20%, 18%);
+  --border-subtle: hsla(215, 20%, 85%, 0.1);
+  --border-strong: hsla(215, 20%, 85%, 0.22);
+  --text-primary: hsl(40, 25%, 96%);
+  --text-secondary: hsl(215, 16%, 72%);
+  --text-muted: hsl(215, 14%, 52%);
+  --amber: hsl(38, 92%, 55%);
+  --emerald: hsl(158, 64%, 45%);
+  --crimson: hsl(352, 78%, 56%);
+  --cyan: hsl(199, 89%, 52%);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2.5rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 1.25rem;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.86rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+
+.title-block h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.title-block span {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.controls-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.btn {
+  padding: 0.55rem 0.95rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--bg-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: hsl(220, 35%, 8%);
+  border-color: transparent;
+}
+
+.btn-active-ai {
+  background: var(--emerald);
+  color: hsl(220, 35%, 8%);
+  border-color: transparent;
+}
+
+.arena-layout {
+  display: grid;
+  grid-template-columns: 1fr 310px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.canvas-wrapper {
+  position: relative;
+  background: hsl(222, 38%, 4%);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.7);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: crosshair;
+}
+
+.hud-sidebar {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.stat-box {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.stat-label {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+.tactical-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tactical-actions h2 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.telemetry-log {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.75rem;
+}
+
+.telemetry-log h3 {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.log-entries {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 190px;
+  overflow-y: auto;
+}
+
+.log-entries div {
+  padding: 0.35rem 0.5rem;
+  background: var(--bg-elevated);
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 920px) {
+  .arena-layout {
+    grid-template-columns: 1fr;
+  }
+}

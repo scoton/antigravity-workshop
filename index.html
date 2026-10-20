@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hub Prático do Workshop Google Antigravity no AI Bootcamp 2026 — Singularity Brazil." />
+  <title>AI Bootcamp 2026 | Google Antigravity Mission Hub</title>
+  <link rel="stylesheet" href="hub.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div>
+        <span class="eyebrow">Singularity Brazil • AI Bootcamp 2026</span>
+        <h1>Google Antigravity — Mission Hub</h1>
+        <p class="subtitle">
+          Da assistência individual à orquestração agêntica: escolha uma das 3 trilhas práticas abaixo e siga as 4 missões para planejar, construir, auditar no navegador e escalar em paralelo.
+        </p>
+      </div>
+      <div class="timer-box" aria-label="Cronômetro do Workshop">
+        <div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Tempo Hands-On</div>
+          <div id="workshop-timer" class="timer-display">33:00</div>
+        </div>
+        <div class="timer-controls">
+          <button id="btn-timer-toggle" class="btn btn-sm btn-primary" onclick="toggleTimer()">Iniciar</button>
+          <button id="btn-timer-reset" class="btn btn-sm" onclick="resetTimer()">Reset</button>
+        </div>
+      </div>
+    </header>
+
+    <section aria-labelledby="tracks-heading">
+      <div class="section-header">
+        <h2 id="tracks-heading">1. Escolha a Sua Trilha (Starter Kits Funcionais)</h2>
+        <span>Todas as 3 trilhas funcionam sem instalar dependências</span>
+      </div>
+
+      <div class="tracks-grid">
+        <!-- Trilha 1 -->
+        <article class="track-card" id="card-track-1">
+          <div>
+            <div class="track-meta">
+              <span class="track-tag tag-amber">TRILHA 01 • ESTRATÉGIA</span>
+              <span class="track-recommended">★ Recomendada para a Sessão</span>
+            </div>
+            <h3>Crisis Commander</h3>
+            <p>
+              Jogo executivo de tomada de decisão sob incerteza (estilo <em>Reigns</em>). Assuma o comando como CEO em 2026–2027 e atravesse choques regulatórios, cambiais e operacionais.
+            </p>
+            <ul class="track-features">
+              <li>4 Indicadores Vitais: Caixa, Agilidade, Mercado e Resiliência</li>
+              <li>Fácil personalização para o setor real da sua empresa</li>
+              <li>Perfeito para ver o Browser Sub-Agent jogando sozinho</li>
+            </ul>
+          </div>
+          <div class="track-actions">
+            <a id="btn-launch-track-1" href="tracks/01-crisis-commander/index.html" class="btn btn-primary" style="flex: 1;">Abrir Crisis Commander →</a>
+          </div>
+        </article>
+
+        <!-- Trilha 2 -->
+        <article class="track-card" id="card-track-2">
+          <div>
+            <div class="track-meta">
+              <span class="track-tag tag-cyan">TRILHA 02 • ARCADE CANVAS</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">60 FPS • HTML5 Canvas</span>
+            </div>
+            <h3>Antigravity Orbital Defense</h3>
+            <p>
+              Mini-jogo arcade e tático em tempo real. Comande uma estação orbital interceptando ondas de ameaças, gerenciando energia de escudos, pulso EMP e Piloto Automático de IA.
+            </p>
+            <ul class="track-features">
+              <li>Física em Canvas, partículas e telemetria em tempo real</li>
+              <li>Modo Piloto Automático Agêntico embutido para testes</li>
+              <li>Excelente para criar novos poderes, drones e Bosses</li>
+            </ul>
+          </div>
+          <div class="track-actions">
+            <a id="btn-launch-track-2" href="tracks/02-orbital-defense/index.html" class="btn" style="flex: 1;">Abrir Orbital Defense →</a>
+          </div>
+        </article>
+
+        <!-- Trilha 3 -->
+        <article class="track-card" id="card-track-3">
+          <div>
+            <div class="track-meta">
+              <span class="track-tag tag-emerald">TRILHA 03 • SIMULADOR C-LEVEL</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">War Room Executiva</span>
+            </div>
+            <h3>Boardroom War Room</h3>
+            <p>
+              Simulador de Conselho de Administração e estresse de cenários. Configure uma decisão estratégica e veja CFO, CTO e CRO debaterem riscos em uma matriz interativa.
+            </p>
+            <ul class="track-features">
+              <li>Alavancas dinâmicas de Investimento, Risco e Automação</li>
+              <li>Matriz Visual de Risco x Retorno e Índice de Sobrevivência</li>
+              <li>Pareceres detalhados e veredito do Conselho em tempo real</li>
+            </ul>
+          </div>
+          <div class="track-actions">
+            <a id="btn-launch-track-3" href="tracks/03-boardroom-simulator/index.html" class="btn" style="flex: 1;">Abrir Boardroom War Room →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Guia Rápido de Missões e Prompts -->
+    <section class="missions-section" aria-labelledby="missions-heading">
+      <div class="section-header">
+        <h2 id="missions-heading">2. Roteiro Self-Paced (4 Missões Práticas no Antigravity)</h2>
+        <span>Copie os prompts abaixo direto para o painel do Agente no Antigravity</span>
+      </div>
+
+      <div class="missions-tabs" role="tablist">
+        <button id="tab-m1" class="mission-tab active" onclick="switchMission('m1')">Missão 1: Planning & Artifacts (8 min)</button>
+        <button id="tab-m2" class="mission-tab" onclick="switchMission('m2')">Missão 2: Browser Sub-Agent (9 min)</button>
+        <button id="tab-m3" class="mission-tab" onclick="switchMission('m3')">Missão 3: Agent Manager Paralelo (8 min)</button>
+        <button id="tab-m4" class="mission-tab" onclick="switchMission('m4')">Missão 4: Rules & Workflows (5 min)</button>
+      </div>
+
+      <!-- Missão 1 -->
+      <div id="content-m1" class="mission-content active">
+        <div class="mission-header-bar">
+          <h3>Missão 1: Do Prompt ao Contrato Executivo (Planning Mode)</h3>
+          <span class="mission-duration">⏱️ 8 Minutos</span>
+        </div>
+        <div class="executive-insight">
+          <strong>Paradigma Executivo:</strong> Antes de permitir que um agente altere qualquer sistema, exija um <em>Implementation Plan</em>. Quando o plano aparecer no Antigravity, <strong>passe o mouse sobre um parágrafo, adicione um comentário de revisão humana</strong> e só então aprove a execução.
+        </div>
+        <div class="prompt-selector-bar">
+          <span>Selecione o prompt para a sua trilha:</span>
+          <button id="btn-prompt-t1" class="btn btn-sm" onclick="setM1Prompt(1)">Trilha 1 (Crisis Commander)</button>
+          <button id="btn-prompt-t2" class="btn btn-sm" onclick="setM1Prompt(2)">Trilha 2 (Orbital Defense)</button>
+          <button id="btn-prompt-t3" class="btn btn-sm" onclick="setM1Prompt(3)">Trilha 3 (Boardroom War Room)</button>
+        </div>
+        <div class="prompt-box">
+          <button id="btn-copy-m1" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m1-text', this)">Copiar Prompt</button>
+          <div id="prompt-m1-text">Analise o jogo em @tracks/01-crisis-commander/ e crie um Implementation Plan para duas melhorias estratégicas:
+1. Personalize os cenários de crise para o setor de [SEU SETOR, ex: Finanças / Varejo / Saúde / Agro], criando 4 novos dilemas hiper-realistas para 2026-2027.
+2. Adicione um botão "Consultor IA do Board" (com limite de 2 usos por partida) que analisa o dilema atual e destaca visualmente a decisão que melhor protege a empresa contra falência, explicando o trade-off.
+Não altere o código ainda; apresente primeiro o Implementation Plan para minha revisão.</div>
+        </div>
+      </div>
+
+      <!-- Missão 2 -->
+      <div id="content-m2" class="mission-content">
+        <div class="mission-header-bar">
+          <h3>Missão 2: O Agente que Testa o Próprio Trabalho (Browser Sub-Agent)</h3>
+          <span class="mission-duration">⏱️ 9 Minutos</span>
+        </div>
+        <div class="executive-insight">
+          <strong>Paradigma Executivo:</strong> Autonomia sem verificação gera risco operacional. O <em>Browser Sub-Agent</em> abre o navegador, clica nos botões da sua aplicação, valida se não há erros e entrega um <em>Walkthrough Artifact</em> com screenshots e gravação da tela.
+        </div>
+        <div class="prompt-box">
+          <button id="btn-copy-m2" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m2-text', this)">Copiar Prompt</button>
+          <div id="prompt-m2-text">Agora valide o seu trabalho na prática usando o Browser Sub-Agent:
+1. Abra a trilha que acabamos de atualizar no navegador.
+2. Interaja com a interface: inicie uma partida/simulação, teste os novos botões e recursos criados na Missão 1 e avance por pelo menos 3 interações completas.
+3. Verifique se não há nenhum erro no console ou problema visual.
+4. Gere um Walkthrough Artifact contendo o resumo executivo do que foi validado e os screenshots das telas em funcionamento.</div>
+        </div>
+      </div>
+
+      <!-- Missão 3 -->
+      <div id="content-m3" class="mission-content">
+        <div class="mission-header-bar">
+          <h3>Missão 3: Escala e Adaptação em Paralelo (Agent Manager)</h3>
+          <span class="mission-duration">⏱️ 8 Minutos</span>
+        </div>
+        <div class="executive-insight">
+          <strong>Paradigma Executivo:</strong> Pressione <code>Cmd + E</code> (Mac) ou <code>Ctrl + E</code> (Windows/Linux) para abrir o <strong>Agent Manager</strong>. Dispare uma nova frente de trabalho para ver como liderar múltiplos agentes simultâneos.
+        </div>
+        <div class="prompt-box">
+          <button id="btn-copy-m3" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m3-text', this)">Copiar Prompt</button>
+          <div id="prompt-m3-text">Na minha trilha atual, adicione um botão "Exportar Dossiê Executivo (.md)" que gera e baixa instantaneamente um relatório executivo da partida/simulação contendo: todas as decisões tomadas, o estado final dos indicadores e um diagnóstico automático do meu estilo de liderança sob incerteza (ex: Conservador, Resiliente, Arrojado ou Antifrágil). Valide o botão no navegador ao concluir.</div>
+        </div>
+      </div>
+
+      <!-- Missão 4 -->
+      <div id="content-m4" class="mission-content">
+        <div class="mission-header-bar">
+          <h3>Missão 4: Governança e Cultura em Código (Rules & Workflows)</h3>
+          <span class="mission-duration">⏱️ 5 Minutos</span>
+        </div>
+        <div class="executive-insight">
+          <strong>Paradigma Executivo:</strong> Este repositório já possui regras em <code>.agent/rules/</code> e workflows em <code>.agent/workflows/</code>. Digite <code>/modo-caos</code>, <code>/adaptar-setor</code> ou <code>/auditoria-executiva</code> no chat do Agente para acionar playbooks corporativos padronizados!
+        </div>
+        <div class="prompt-box">
+          <button id="btn-copy-m4" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m4-text', this)">Copiar Prompt</button>
+          <div id="prompt-m4-text">Execute o workflow @.agent/workflows/modo-caos.md na minha trilha atual para injetar o mecanismo de evento "Cisne Negro" com teste automatizado no navegador.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      <div>AI Bootcamp 2026 — Singularity Brazil • Material Hands-On Self-Paced</div>
+      <div>Consulte o arquivo <code>README.md</code> para instruções completas.</div>
+    </footer>
+  </div>
+
+  <script>
+    const PROMPTS_M1 = {
+      1: `Analise o jogo em @tracks/01-crisis-commander/ e crie um Implementation Plan para duas melhorias estratégicas:\n1. Personalize os cenários de crise para o setor de [SEU SETOR, ex: Finanças / Varejo / Saúde / Agro], criando 4 novos dilemas hiper-realistas para 2026-2027.\n2. Adicione um botão "Consultor IA do Board" (com limite de 2 usos por partida) que analisa o dilema atual e destaca visualmente a decisão que melhor protege a empresa contra falência, explicando o trade-off.\nNão altere o código ainda; apresente primeiro o Implementation Plan para minha revisão.`,
+      2: `Analise o jogo em @tracks/02-orbital-defense/ e crie um Implementation Plan para duas melhorias:\n1. Crie um sistema de "Drones Autônomos de Defesa": a cada 150 pontos, o jogador pode lançar um drone orbital que orbita a estação e intercepta ameaças automaticamente.\n2. Adicione um evento de "Alerta de Boss Setorial" a cada 3 ondas, com barra de vida própria e escudo regenerativo.\nNão altere o código ainda; apresente primeiro o Implementation Plan para minha revisão.`,
+      3: `Analise o simulador em @tracks/03-boardroom-simulator/ e crie um Implementation Plan para duas melhorias:\n1. Adicione 3 novos cenários pré-configurados específicos para o setor de [SEU SETOR, ex: Finanças / Varejo / Saúde / Agro].\n2. Crie um recurso de "Simulação de 3 Cenários (Otimista, Base e Estresse Severo)": ao rodar a simulação, mostre lado a lado as 3 projeções e indique qual conselheiro veta ou aprova cada cenário.\nNão altere o código ainda; apresente primeiro o Implementation Plan para minha revisão.`
+    };
+
+    function setM1Prompt(trackNum) {
+      document.getElementById('prompt-m1-text').textContent = PROMPTS_M1[trackNum];
+    }
+
+    function switchMission(id) {
+      document.querySelectorAll('.mission-tab').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.mission-content').forEach(div => div.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+      document.getElementById('content-' + id).classList.add('active');
+    }
+
+    function copyText(elementId, btn) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copiado ✓';
+        setTimeout(() => { btn.textContent = original; }, 1800);
+      });
+    }
+
+    // Workshop countdown timer (33 minutes)
+    let remainingSeconds = 33 * 60;
+    let timerInterval = null;
+
+    function renderTimer() {
+      const mins = String(Math.floor(remainingSeconds / 60)).padStart(2, '0');
+      const secs = String(remainingSeconds % 60).padStart(2, '0');
+      document.getElementById('workshop-timer').textContent = `${mins}:${secs}`;
+    }
+
+    function toggleTimer() {
+      const btn = document.getElementById('btn-timer-toggle');
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        btn.textContent = 'Retomar';
+      } else {
+        btn.textContent = 'Pausar';
+        timerInterval = setInterval(() => {
+          if (remainingSeconds > 0) {
+            remainingSeconds--;
+            renderTimer();
+          } else {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            btn.textContent = 'Concluído';
+          }
+        }, 1000);
+      }
+    }
+
+    function resetTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      remainingSeconds = 33 * 60;
+      renderTimer();
+      document.getElementById('btn-timer-toggle').textContent = 'Iniciar';
+    }
+  </script>
+</body>
+</html>

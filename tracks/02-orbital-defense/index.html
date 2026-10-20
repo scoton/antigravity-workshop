@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trilha 2: Antigravity Orbital Defense — Jogo Arcade e Estratégia em HTML5 Canvas." />
+  <title>Trilha 02: Antigravity Orbital Defense | AI Bootcamp 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-group">
+        <a id="btn-back-hub" href="../../index.html" class="back-link">← Hub Principal</a>
+        <div class="title-block">
+          <span>TRILHA 02 • ARCADE & ORQUESTRAÇÃO TÁTICA (HTML5 CANVAS)</span>
+          <h1>Antigravity Orbital Defense</h1>
+        </div>
+      </div>
+      <div class="controls-bar">
+        <button id="btn-start-game" class="btn btn-primary" onclick="toggleGameRunning()">Pausar / Retomar</button>
+        <button id="btn-toggle-autopilot" class="btn btn-active-ai" onclick="toggleAutopilot()">🤖 Piloto IA: ATIVO</button>
+        <button id="btn-reset-orbital" class="btn" onclick="resetGame()">Reiniciar Arena</button>
+      </div>
+    </header>
+
+    <main class="arena-layout">
+      <div class="canvas-wrapper">
+        <canvas id="orbital-canvas" width="800" height="520"></canvas>
+      </div>
+
+      <aside class="hud-sidebar">
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-label">Pontuação</div>
+            <div id="stat-score" class="stat-value" style="color: var(--amber);">0</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Onda (Wave)</div>
+            <div id="stat-wave" class="stat-value" style="color: var(--cyan);">1</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Integridade</div>
+            <div id="stat-hull" class="stat-value" style="color: var(--emerald);">100%</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Energia Reator</div>
+            <div id="stat-energy" class="stat-value" style="color: var(--amber);">100%</div>
+          </div>
+        </div>
+
+        <div class="tactical-actions">
+          <h2>Comandos Táticos da Estação</h2>
+          <button id="btn-emp-blast" class="btn" onclick="triggerEmpBlast()">
+            ⚡ Disparar Pulso EMP (40% Energia)
+          </button>
+          <button id="btn-overcharge-shield" class="btn" onclick="repairShield()">
+            🛡️ Reparar Escudo (+25% Integridade)
+          </button>
+          <button id="btn-spawn-wave" class="btn" onclick="spawnThreatWave(5)">
+            ☄️ Simular Onda de Choque (+5 Ameaças)
+          </button>
+        </div>
+
+        <div class="telemetry-log">
+          <h3>Telemetria em Tempo Real</h3>
+          <div id="combat-log" class="log-entries">
+            <div>[SISTEMA] Estação Orbital inicializada. Clique no Canvas para disparar ou use o Piloto IA.</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

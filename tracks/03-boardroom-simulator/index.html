@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trilha 3: Boardroom War Room — Simulador de Conselho de Administração e Estresse Estratégico." />
+  <title>Trilha 03: Boardroom War Room | AI Bootcamp 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-group">
+        <a id="btn-back-hub" href="../../index.html" class="back-link">← Hub Principal</a>
+        <div class="title-block">
+          <span>TRILHA 03 • SIMULADOR C-LEVEL DE CONSELHO & CENÁRIOS</span>
+          <h1>Boardroom War Room</h1>
+        </div>
+      </div>
+      <div class="presets-bar">
+        <button id="btn-preset-1" class="btn" onclick="loadPreset(0)">Cenário 1: Atendimento Agêntico</button>
+        <button id="btn-preset-2" class="btn" onclick="loadPreset(1)">Cenário 2: Supply Chain Preditiva</button>
+        <button id="btn-preset-3" class="btn" onclick="loadPreset(2)">Cenário 3: M&A Internacional</button>
+      </div>
+    </header>
+
+    <main class="warroom-grid">
+      <!-- Left Column: Levers -->
+      <section class="panel" aria-label="Alavancas da Decisão Estratégica">
+        <h2>Parâmetros da Proposta ao Board</h2>
+
+        <div class="field-group">
+          <label class="field-label" for="input-initiative">
+            <span>Iniciativa Estratégica</span>
+          </label>
+          <input
+            id="input-initiative"
+            type="text"
+            value="Migração de Operações Críticas para Agentes Autônomos"
+            oninput="runSimulation()"
+          />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="slider-capex">
+            <span>💰 Investimento (CAPEX)</span>
+            <span id="lbl-capex" class="field-value">R$ 25M</span>
+          </label>
+          <input id="slider-capex" type="range" min="5" max="100" step="5" value="25" oninput="runSimulation()" />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="slider-autonomy">
+            <span>⚡ Grau de Autonomia Agêntica</span>
+            <span id="lbl-autonomy" class="field-value">70%</span>
+          </label>
+          <input id="slider-autonomy" type="range" min="10" max="95" step="5" value="70" oninput="runSimulation()" />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="slider-governance">
+            <span>🛡️ Governança, Sandbox & Auditoria</span>
+            <span id="lbl-governance" class="field-value">65%</span>
+          </label>
+          <input id="slider-governance" type="range" min="10" max="100" step="5" value="65" oninput="runSimulation()" />
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="slider-timeline">
+            <span>⏱️ Prazo de Rollout</span>
+            <span id="lbl-timeline" class="field-value">9 meses</span>
+          </label>
+          <input id="slider-timeline" type="range" min="3" max="24" step="1" value="9" oninput="runSimulation()" />
+        </div>
+
+        <button id="btn-run-simulation" class="btn btn-primary" style="width: 100%; padding: 0.8rem; margin-top: 0.5rem;" onclick="runSimulation()">
+          Recalcular Parecer do Conselho
+        </button>
+      </section>
+
+      <!-- Right Column: Simulation Output -->
+      <section class="panel" aria-live="polite">
+        <div class="kpis-row">
+          <div class="kpi-box">
+            <div class="kpi-label">ROI Projetado (24m)</div>
+            <div id="kpi-roi" class="kpi-num" style="color: var(--emerald);">+184%</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-label">Índice de Resiliência</div>
+            <div id="kpi-survival" class="kpi-num" style="color: var(--cyan);">78 / 100</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-label">Payback Estimado</div>
+            <div id="kpi-payback" class="kpi-num" style="color: var(--amber);">7.5 meses</div>
+          </div>
+        </div>
+
+        <div class="matrix-and-verdict">
+          <canvas id="boardroom-canvas" width="280" height="210"></canvas>
+          <div class="verdict-card">
+            <div>
+              <span id="verdict-badge" class="verdict-status status-approved">APROVADO PELO CONSELHO (3 A 0)</span>
+              <h3 id="verdict-title" style="font-size: 1.15rem; margin-bottom: 0.45rem;">Proposta Equilibrada com Alta Alavancagem</h3>
+              <p id="verdict-summary" style="font-size: 0.9rem; color: var(--text-secondary);"></p>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-muted); margin-top: 0.85rem;">
+              Dica: Experimente aumentar a Autonomia para 95% e reduzir a Governança para 15% para ver a reação do CRO.
+            </div>
+          </div>
+        </div>
+
+        <h2>Pareceres Individuais dos Conselheiros</h2>
+        <div class="advisors-grid">
+          <div class="advisor-card" id="advisor-cfo">
+            <div class="advisor-header">
+              <span class="advisor-role">💼 CFO (Finanças)</span>
+              <span id="vote-cfo" class="advisor-vote status-approved">FAVORÁVEL</span>
+            </div>
+            <p id="text-cfo" class="advisor-text"></p>
+          </div>
+
+          <div class="advisor-card" id="advisor-cto">
+            <div class="advisor-header">
+              <span class="advisor-role">🚀 CTO (Tecnologia)</span>
+              <span id="vote-cto" class="advisor-vote status-approved">FAVORÁVEL</span>
+            </div>
+            <p id="text-cto" class="advisor-text"></p>
+          </div>
+
+          <div class="advisor-card" id="advisor-cro">
+            <div class="advisor-header">
+              <span class="advisor-role">⚖️ CRO (Risco & Gov)</span>
+              <span id="vote-cro" class="advisor-vote status-approved">FAVORÁVEL</span>
+            </div>
+            <p id="text-cro" class="advisor-text"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

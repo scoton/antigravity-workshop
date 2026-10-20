@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trilha 1: Crisis Commander — Simulador Executivo de Tomada de Decisão sob Incerteza." />
+  <title>Trilha 01: Crisis Commander | AI Bootcamp 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-group">
+        <a id="btn-back-hub" href="../../index.html" class="back-link">← Hub Principal</a>
+        <div class="title-block">
+          <span>TRILHA 01 • SIMULADOR DE ESTRATÉGIA E ADAPTAÇÃO</span>
+          <h1>Crisis Commander: Executive Decision Game</h1>
+        </div>
+      </div>
+      <div class="status-bar">
+        <span id="quarter-badge" class="badge-quarter">Trimestre 1 / 8 • Q1 2026</span>
+        <button id="btn-restart-game" class="btn" onclick="restartGame()">Reiniciar Partida</button>
+      </div>
+    </header>
+
+    <!-- 4 Vital Executive Metrics -->
+    <section class="metrics-grid" aria-label="Indicadores Vitais da Organização">
+      <div id="card-metric-cash" class="metric-card">
+        <div class="metric-header">
+          <span>💰 Caixa & Liquidez</span>
+          <span id="val-cash" class="metric-value">60%</span>
+        </div>
+        <div class="progress-track">
+          <div id="bar-cash" class="progress-fill" style="width: 60%; background: var(--emerald);"></div>
+        </div>
+      </div>
+
+      <div id="card-metric-agility" class="metric-card">
+        <div class="metric-header">
+          <span>⚡ Agilidade & IA</span>
+          <span id="val-agility" class="metric-value">60%</span>
+        </div>
+        <div class="progress-track">
+          <div id="bar-agility" class="progress-fill" style="width: 60%; background: var(--cyan);"></div>
+        </div>
+      </div>
+
+      <div id="card-metric-trust" class="metric-card">
+        <div class="metric-header">
+          <span>📈 Confiança do Mercado</span>
+          <span id="val-trust" class="metric-value">60%</span>
+        </div>
+        <div class="progress-track">
+          <div id="bar-trust" class="progress-fill" style="width: 60%; background: var(--amber);"></div>
+        </div>
+      </div>
+
+      <div id="card-metric-resilience" class="metric-card">
+        <div class="metric-header">
+          <span>🛡️ Resiliência & Segurança</span>
+          <span id="val-resilience" class="metric-value">60%</span>
+        </div>
+        <div class="progress-track">
+          <div id="bar-resilience" class="progress-fill" style="width: 60%; background: var(--emerald);"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Game Area -->
+    <main class="game-layout">
+      <section class="scenario-panel" aria-live="polite">
+        <div class="scenario-meta">
+          <span id="scenario-category" class="scenario-category">RUPTURA DE MERCADO</span>
+          <span id="scenario-urgency" class="scenario-urgency">Regra: Não deixe nenhum indicador chegar a 0%</span>
+        </div>
+
+        <h2 id="scenario-title" class="scenario-title">Carregando cenário...</h2>
+        <p id="scenario-description" class="scenario-description"></p>
+
+        <div id="feedback-banner" class="feedback-banner"></div>
+
+        <div id="choices-container" class="choices-list"></div>
+      </section>
+
+      <aside class="side-panel">
+        <h2>Diário do Conselho (Board Log)</h2>
+        <p class="helper">Histórico auditável das decisões estratégicas tomadas na gestão atual.</p>
+        <div id="decision-log" class="log-list">
+          <div class="log-item">
+            <div class="log-item-header"><span>INÍCIO DO MANDATO</span><span>Q1 2026</span></div>
+            <div class="log-item-title">Posse no Comando Executivo</div>
+            <div class="log-item-outcome">O Conselho aguarda sua resposta aos choques estratégicos dos próximos 8 trimestres.</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
