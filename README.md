@@ -11,13 +11,17 @@ Neste workshop de **~33 minutos**, você vai experimentar na prática a transiç
 
 ---
 
-## 🧭 Mapa do Repositório
+## 🧭 Mapa do Repositório (Guias Autoguiados por Trilha)
 
-| Módulo | Pasta no Repositório | O que você vai fazer |
+Cada trilha possui o seu próprio **`README.md` com o passo a passo completo e prompts prontos para copiar e colar**, permitindo que qualquer pessoa execute todo o workshop por conta própria mesmo sem ter participado presencialmente do evento:
+
+| Módulo / Trilha | Pasta e Guia Passo a Passo | O que você vai construir e operar |
 | :--- | :--- | :--- |
-| **🦸‍♂️ Atos 1 e 3: Flappy Executive Hero** | `tracks/04-flappy-hero/` | **Começa quase vazia!** Você gera a especificação (`SPEC_JOGO.md`), dispara a construção autônoma e no final usa o `selfie-studio.html` + `/gerar-super-heroi` para voar com a sua própria caricatura de Super-Herói! |
-| **🇧🇷 Ato 2: Radar Executivo com Servidor MCP Brasil** | `mcp/` & `tracks/05-radar-mcp-brasil/` | Conecta o agente a dados públicos brasileiros em tempo real (**CNPJ + Selic, CDI, IPCA e Dólar do Banco Central**) para construir um Dashboard Executivo personalizado para a sua empresa! (Veja também [`mcp/GUIA_MCP_BRASIL.md`](mcp/GUIA_MCP_BRASIL.md)). |
-| **🧪 Laboratório Extra (3 Simuladores Prontos)** | `tracks/01-crisis-commander/`<br>`tracks/02-orbital-defense/`<br>`tracks/03-boardroom-simulator/` | **Starter Kits completos** (*Crisis Commander*, *Orbital Defense* e *Boardroom War Room*) prontos para você explorar caso termine antes ou para praticar com sua equipe pós-evento! |
+| **🦸‍♂️ Trilha 04 (Atos 1 e 3): Flappy Executive Hero** | [`tracks/04-flappy-hero/README.md`](tracks/04-flappy-hero/README.md) | **Começa quase vazia!** Você gera a especificação (`SPEC_JOGO.md`), dispara a construção autônoma do jogo em background e no final usa o `selfie-studio.html` + `/gerar-super-heroi` para voar com a sua própria caricatura de Super-Herói! |
+| **🇧🇷 Trilha 05 (Ato 2): Radar Executivo MCP Brasil** | [`tracks/05-radar-mcp-brasil/README.md`](tracks/05-radar-mcp-brasil/README.md)<br>*(+ [`mcp/README.md`](mcp/README.md))* | Conecta um segundo agente em paralelo a dados oficiais brasileiros em tempo real (**CNPJ na Receita Federal + Selic, CDI, IPCA e Dólar no Banco Central**) para construir um Dashboard Executivo personalizado para a sua empresa e agendar com `/automation`! |
+| **🏛️ Trilha 01 (Lab Extra): Crisis Commander** | [`tracks/01-crisis-commander/README.md`](tracks/01-crisis-commander/README.md) | Simulador executivo de decisão sob incerteza (estilo *Reigns*) ao longo de 8 trimestres (2026–2027), com 4 missões práticas (`/adaptar-setor`, `/modo-caos`, Comitê de IA e `/auditoria-executiva`). |
+| **🛡️ Trilha 02 (Lab Extra): Orbital Defense (60 FPS)** | [`tracks/02-orbital-defense/README.md`](tracks/02-orbital-defense/README.md) | Jogo arcade tático em HTML5 Canvas com escudos, Pulso EMP e Piloto Automático IA, com 4 missões práticas (*Boss Fight* Cisne Negro, *Power-Ups* Executivos, Riscos do Setor e *Stress Test*). |
+| **📊 Trilha 03 (Lab Extra): Boardroom War Room** | [`tracks/03-boardroom-simulator/README.md`](tracks/03-boardroom-simulator/README.md) | Simulador C-Level de Conselho de Administração com Matriz Risco × Retorno e votos de CFO, CTO e CRO, com 4 missões práticas (4º Conselheiro CISO/LGPD, *Stress Test* Macroeconômico, Portfólio Real e Ata Executiva). |
 
 ---
 
@@ -143,8 +147,8 @@ Execute o workflow @.agent/workflows/gerar-super-heroi.md:
 
 ## 🧪 Laboratório Extra (Para quem terminar antes ou para explorar pós-evento!)
 
-O repositório também inclui **3 Simuladores Executivos completos** prontos para você evoluir usando os workflows `/modo-caos`, `/adaptar-setor` e `/auditoria-executiva`:
+O repositório também inclui **3 Simuladores Executivos completos** prontos para você evoluir usando as Skills `/modo-caos`, `/adaptar-setor` e `/auditoria-executiva`. Cada pasta possui um **`README.md` autoguiado com 4 missões passo a passo**:
 
-1. **`tracks/01-crisis-commander/`:** Jogo de tomada de decisão sob incerteza (estilo *Reigns*) ao longo de 8 trimestres (2026–2027).
-2. **`tracks/02-orbital-defense/`:** Jogo arcade tático em HTML5 Canvas (60 FPS) com escudos, Pulso EMP e Piloto Automático de IA.
-3. **`tracks/03-boardroom-simulator/`:** Simulador C-Level de Conselho de Administração com Matriz Risco x Retorno e votos de CFO, CTO e CRO.
+1. **[`tracks/01-crisis-commander/README.md`](tracks/01-crisis-commander/README.md):** Jogo de tomada de decisão sob incerteza (estilo *Reigns*) ao longo de 8 trimestres (2026–2027).
+2. **[`tracks/02-orbital-defense/README.md`](tracks/02-orbital-defense/README.md):** Jogo arcade tático em HTML5 Canvas (60 FPS) com escudos, Pulso EMP e Piloto Automático de IA.
+3. **[`tracks/03-boardroom-simulator/README.md`](tracks/03-boardroom-simulator/README.md):** Simulador C-Level de Conselho de Administração com Matriz Risco x Retorno e votos de CFO, CTO e CRO.
