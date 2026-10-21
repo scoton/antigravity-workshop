@@ -1,0 +1,30 @@
+---
+name: gerar-super-heroi
+description: >-
+  Transforma a selfie do participante (minha-selfie.png) em uma caricatura
+  divertida de Super-Herói ou Super-Heroína e integra como o personagem jogável
+  do Flappy Executive Hero em tracks/04-flappy-hero/. Use sempre que o usuário
+  pedir para criar o super-herói, usar a selfie no jogo ou acionar
+  /gerar-super-heroi.
+---
+
+# Skill: Gerar Super-Herói Caricatura (`/gerar-super-heroi`)
+
+Quando o usuário acionar esta skill para personalizar o personagem da **Trilha 04 (`tracks/04-flappy-hero/`)**:
+
+1. **Localizar a Foto Base (Selfie):**
+   - Verifique se existe o arquivo `tracks/04-flappy-hero/minha-selfie.png` (ou outra imagem `.png`/`.jpg` indicada pelo usuário na pasta `tracks/04-flappy-hero/`).
+   - Caso o usuário ainda não tenha colocado uma foto na pasta, oriente-o a abrir `tracks/04-flappy-hero/selfie-studio.html` no navegador para tirar uma selfie em 3 segundos (ou anexar uma foto no chat) — e, enquanto isso, ofereça gerar imediatamente um **Super-Herói Executivo Caricatural** baseado na descrição que ele preferir!
+
+2. **Analisar Traços Visuais e Gerar a Caricatura de Super-Herói:**
+   - Se houver foto (`minha-selfie.png` ou imagem anexada), inspecione a imagem para identificar as características marcantes (formato e cor do cabelo, barba, formato dos óculos, sorriso, expressão facial).
+   - Use a ferramenta de geração de imagens (se disponível no ambiente) para criar uma **ilustração estilo Caricatura Comic / Cartoon vibrante de Super-Herói ou Super-Heroína** com essas mesmas características marcantes, vestindo traje executivo-futurista de super-herói com capa, e salve em `tracks/04-flappy-hero/hero-caricatura.png`.
+   - *Fallback inteligente:* Caso a ferramenta de geração de imagem não esteja habilitada na conta do participante, crie um renderizador caricatural direto em HTML5 Canvas que recorta o rosto de `minha-selfie.png` em estilo *Bobblehead Caricatura* (com contorno estilizado, óculos/máscara de herói opcional, corpo de super-herói, capa vermelha/dourada ondulando com a física do voo e jato propulsor!).
+
+3. **Integrar ao Jogo (`tracks/04-flappy-hero/index.html` e `game.js`):**
+   - Atualize o jogo para usar o novo **Super-Herói** como personagem principal:
+     - Desenhe o avatar recortado em medalhão circular/hexagonal ou com remoção automática de fundo, acompanhado de uma **capa de super-herói animada via Canvas** que ondula conforme a velocidade vertical (`vy`) e partículas douradas a cada impulso!
+     - Adicione também na interface do jogo um botão **"📸 Trocar Foto / Carregar Selfie (`#btn-upload-hero`)"** via `<input type="file" accept="image/*">` e webcam para que o jogador possa trocar a foto do herói a qualquer momento direto na tela do jogo.
+
+4. **Validar no Browser Sub-Agent:**
+   - Abra o jogo atualizado no **Browser Sub-Agent**, inicie uma partida com o novo Super-Herói voando entre os obstáculos corporativos e gere um **Walkthrough Artifact** com um screenshot do Super-Herói em ação!

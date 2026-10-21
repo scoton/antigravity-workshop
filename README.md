@@ -21,6 +21,19 @@ Neste workshop de **~33 minutos**, você vai experimentar na prática a transiç
 
 ---
 
+## 🏛️ Anatomia de um "Workspace Executivo" no Google Antigravity
+
+Um **Workspace** no Antigravity não serve apenas para equipes de engenharia de software — ele é uma **"Sala de Guerra Digital" (War Room)** que você pode criar para qualquer iniciativa estratégica (ex.: `planejamento-2027/`, `comite-m-and-a/`, `inteligencia-setorial/`). Observe como este próprio repositório está organizado em **4 camadas executivas**:
+
+| Camada no Workspace | Onde Fica | Papel na Organização Agêntica |
+| :--- | :--- | :--- |
+| **1. Rules (`AGENTS.md` & `.agent/rules/`)** | Raiz e `.agent/rules/` | **Governança Sempre Ativa:** O "Código de Conduta e Compliance" que todo agente lê obrigatoriamente antes de agir. |
+| **2. Skills (`.agent/skills/<nome>/SKILL.md`)** | `.agent/skills/` | **Playbooks Sob Demanda (*Progressive Disclosure*):** Procedimentos especializados que não poluem a memória do agente e são ativados automaticamente quando o tema surge na conversa **ou** via comando `/` (`/radar-mcp-brasil`, `/gerar-super-heroi`). |
+| **3. MCP Servers (`mcp/`)** | `mcp/mcp_brasil_zero_deps.py` | **Conexão com Dados Reais:** Protocolo universal que conecta os agentes a APIs externas (Receita Federal, Banco Central) ou sistemas internos da sua empresa. |
+| **4. Automations (`/automation`)** | Comando `/automation` | **Execução Recorrente em Background:** Agentes agendados (diários/semanais) que rodam sozinhos com permissões auditadas e entregam relatórios prontos. |
+
+---
+
 ## ⏱️ Roteiro Self-Paced em 3 Atos (33 Minutos)
 
 ### 🏁 Preparação Rápida (2 minutos)
@@ -94,6 +107,13 @@ Execute o workflow @.agent/workflows/radar-mcp-brasil.md para o CNPJ [SEU_CNPJ_A
 
 *(Nota: Para conhecer também o ecossistema completo do `github.com/mcp-brasil/mcp-brasil` e do `mcp.apibrasil.io`, consulte o guia [`mcp/GUIA_MCP_BRASIL.md`](mcp/GUIA_MCP_BRASIL.md)).*
 
+#### Passo 2.3 (Próximo Nível — 1 min): Agendar como Automação Recorrente (`/automation`)
+E se, toda **segunda-feira às 08h00**, antes da sua reunião de diretoria, o Antigravity consultasse o Banco Central sozinho e atualizasse esse briefing? Experimente digitar no chat:
+
+```text
+/automation Crie uma automação semanal toda segunda-feira às 08h00 para consultar os indicadores atualizados do Banco Central via mcp/mcp_brasil_zero_deps.py e atualizar o resumo executivo da minha empresa em tracks/05-radar-mcp-brasil/.
+```
+
 ---
 
 ### 🦸‍♂️ ATO 3: O Retorno Triunfal & Sua Caricatura de Super-Herói (10 minutos)
@@ -116,6 +136,8 @@ Execute o workflow @.agent/workflows/gerar-super-heroi.md:
 3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão/escudo, capa vermelha e dourada esvoaçante animada no Canvas e botão na tela para alternar entre a Caricatura IA e a minha Selfie original!).
 4. Abra o jogo no Browser Sub-Agent, faça um voo de teste com o meu Super-Herói desviando das burocracias e gere o Walkthrough com o print final!
 ```
+
+> 💡 **Memória Organizacional (Transformando Conversas em Skills):** Sempre que você e sua equipe descobrirem um fluxo de alto valor no Antigravity, não deixe o conhecimento morrer no histórico do chat! Basta pedir: *"Transforme o fluxo que acabamos de executar em uma nova Skill reutilizável dentro de `.agent/skills/` para toda a equipe."*
 
 ---
 
