@@ -55,9 +55,10 @@
               <li>Selfie Studio incluso para criar seu Super-Herói Caricatura</li>
             </ul>
           </div>
-          <div class="track-actions">
+          <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-open-selfie-studio" href="tracks/04-flappy-hero/selfie-studio.html" class="btn btn-primary" style="flex: 1;">📸 Abrir Selfie Studio →</a>
-            <a id="btn-open-flappy-game" href="tracks/04-flappy-hero/index.html" class="btn" style="flex: 1;">🎮 Abrir Jogo (Após Ato 1) →</a>
+            <a id="btn-open-flappy-game" href="tracks/04-flappy-hero/index.html" class="btn" style="flex: 1;">🎮 Abrir Jogo / Blueprint →</a>
+            <a href="tracks/04-flappy-hero/README.md" class="btn btn-sm" style="width: 100%;">📖 Guia Passo a Passo Autoguiado (README.md)</a>
           </div>
         </article>
 
@@ -73,13 +74,14 @@
               Enquanto o <em>Flappy Hero</em> é construído na Aba 1, abra uma 2ª conversa no <em>Agent Manager</em> e acione o servidor <strong>MCP Brasil (<code>@mcp/mcp_brasil_zero_deps.py</code>)</strong> para consultar em tempo real o <strong>CNPJ da sua empresa na Receita Federal</strong> + as taxas atuais de <strong>Selic, CDI, IPCA e Dólar no Banco Central</strong>!
             </p>
             <ul class="track-features">
-              <li>Zero cadastro ou API Key: consulta oficial via BrasilAPI & BACEN</li>
+              <li>Zero cadastro ou API Key (com fallback inteligente para Wi-Fi de evento)</li>
               <li>Constrói um Painel de Inteligência Setorial para o seu CNPJ</li>
-              <li>Inclui referências para <code>mcp-brasil</code> e <code>mcp.apibrasil.io</code></li>
+              <li>Pré-configurado em <code>.gemini/settings.json</code> + referências <code>mcp-brasil</code></li>
             </ul>
           </div>
-          <div class="track-actions">
-            <a id="btn-open-mcp-radar" href="tracks/05-radar-mcp-brasil/index.html" class="btn btn-primary" style="flex: 1; background: var(--accent-emerald);">📊 Abrir Painel CNPJ (Após Ato 2) →</a>
+          <div class="track-actions" style="flex-wrap: wrap;">
+            <a id="btn-open-mcp-radar" href="tracks/05-radar-mcp-brasil/index.html" class="btn btn-primary" style="flex: 1; background: var(--accent-emerald); color: #041014;">📊 Abrir Painel / Blueprint →</a>
+            <a href="tracks/05-radar-mcp-brasil/README.md" class="btn btn-sm" style="flex: 1;">📖 Guia da Trilha 05 (README.md)</a>
           </div>
         </article>
       </div>
@@ -108,10 +110,10 @@
         <div class="executive-insight">
           <strong>Paradigma Executivo (Spec-Driven Development):</strong> Primeiro peça ao Antigravity para criar a especificação completa do jogo (Passo 1.1). Assim que ele gerar o arquivo <code>SPEC_JOGO.md</code>, dispare o Passo 1.2 para ele programar e testar o jogo completo e <strong>mude imediatamente para o Ato 2 enquanto ele trabalha!</strong>
         </div>
-        <div class="prompt-selector-bar">
+        <div class="prompt-selector-bar" style="flex-wrap: wrap;">
           <span>Escolha o passo do Ato 1:</span>
-          <button class="btn btn-sm" onclick="setAto1Step(1)">Passo 1.1: Gerar SPEC_JOGO.md</button>
-          <button class="btn btn-sm" onclick="setAto1Step(2)">Passo 1.2: Disparar Construção Completa do Jogo</button>
+          <button id="btn-ato1-step1" class="btn btn-sm active-step" onclick="setAto1Step(1, this)">Passo 1.1: Gerar SPEC_JOGO.md (1 min)</button>
+          <button id="btn-ato1-step2" class="btn btn-sm" onclick="setAto1Step(2, this)">Passo 1.2: Disparar Construção Completa do Jogo (Background)</button>
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m1" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m1-text', this)">Copiar Prompt</button>
@@ -137,19 +139,24 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
         <div class="executive-insight">
           <strong>Paradigma Executivo (MCP + Skills + Automations):</strong> Enquanto o Agente 1 constrói o jogo na Aba 1, pressione <code>Cmd + E</code> (Mac) ou <code>Ctrl + E</code> (Win/Linux) para abrir o <strong>Agent Manager</strong>, inicie uma <strong>2ª conversa</strong> e use a Skill <code>radar-mcp-brasil</code> (em <code>.agent/skills/</code>) para cruzar os dados reais do CNPJ da sua empresa com a Selic, IPCA e Dólar de hoje! Ao terminar, clique no botão <strong>⏰ Agendar com /automation</strong> para ver como automatizar esse relatório toda segunda-feira às 08h00.
         </div>
-        <div class="prompt-selector-bar">
-          <span>CNPJs rápidos ou Automação:</span>
-          <button class="btn btn-sm" onclick="setMcpCnpj('84.429.695/0001-11 (WEG S.A.)')">WEG</button>
-          <button class="btn btn-sm" onclick="setMcpCnpj('07.689.002/0001-89 (Embraer)')">Embraer</button>
-          <button class="btn btn-sm" onclick="setMcpCnpj('60.872.504/0001-23 (Itaú Holding)')">Itaú</button>
-          <button class="btn btn-sm" onclick="setMcpCnpj('47.960.950/0001-21 (Magazine Luiza)')">Magalu</button>
-          <button class="btn btn-sm" style="border-color: var(--accent-emerald); color: var(--accent-emerald);" onclick="setAutomationPrompt()">⏰ Agendar com /automation (1 min)</button>
+        <div class="prompt-selector-bar" style="flex-wrap: wrap;">
+          <span>CNPJs de Benchmark:</span>
+          <button class="btn btn-sm cnpj-btn active-step" onclick="setMcpCnpj('84.429.695/0001-11 (WEG S.A.)', this)">WEG</button>
+          <button class="btn btn-sm cnpj-btn" onclick="setMcpCnpj('07.689.002/0001-89 (Embraer)', this)">Embraer</button>
+          <button class="btn btn-sm cnpj-btn" onclick="setMcpCnpj('60.872.504/0001-23 (Itaú Holding)', this)">Itaú</button>
+          <button class="btn btn-sm cnpj-btn" onclick="setMcpCnpj('47.960.950/0001-21 (Magazine Luiza)', this)">Magalu</button>
+          <button class="btn btn-sm cnpj-btn" onclick="setMcpCnpj('33.000.167/0001-01 (Petrobras)', this)">Petrobras</button>
+          <button class="btn btn-sm cnpj-btn" onclick="setMcpCnpj('61.585.865/0001-51 (RD Saúde)', this)">RD Saúde</button>
+          <span style="margin-left: 0.25rem;">ou digite o seu:</span>
+          <input id="custom-cnpj-input" class="custom-cnpj-input" type="text" placeholder="Ex: 00.000.000/0001-00" />
+          <button class="btn btn-sm" onclick="applyCustomCnpj(this)">Usar Meu CNPJ</button>
+          <button class="btn btn-sm cnpj-btn" style="border-color: var(--accent-emerald); color: var(--accent-emerald);" onclick="setAutomationPrompt(this)">⏰ Agendar com /automation (1 min)</button>
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m2" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m2-text', this)">Copiar Prompt</button>
           <div id="prompt-m2-text">Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A.) [OU TROQUE PELO CNPJ DA SUA EMPRESA]:
 1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
-2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (index.html, style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
 3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!</div>
         </div>
       </div>
@@ -215,8 +222,9 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
               Jogo executivo de tomada de decisão sob incerteza. Assuma o comando como CEO em 2026–2027 e atravesse choques regulatórios, cambiais e operacionais.
             </p>
           </div>
-          <div class="track-actions">
+          <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-launch-track-1" href="tracks/01-crisis-commander/index.html" class="btn" style="flex: 1;">Abrir Crisis Commander →</a>
+            <a href="tracks/01-crisis-commander/README.md" class="btn btn-sm" style="width: 100%;">📖 Guia Passo a Passo (README.md)</a>
           </div>
         </article>
 
@@ -232,8 +240,9 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
               Mini-jogo arcade e tático em tempo real. Comande uma estação orbital interceptando ondas de ameaças, gerenciando escudos, pulso EMP e Piloto Automático de IA.
             </p>
           </div>
-          <div class="track-actions">
+          <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-launch-track-2" href="tracks/02-orbital-defense/index.html" class="btn" style="flex: 1;">Abrir Orbital Defense →</a>
+            <a href="tracks/02-orbital-defense/README.md" class="btn btn-sm" style="width: 100%;">📖 Guia Passo a Passo (README.md)</a>
           </div>
         </article>
 
@@ -249,8 +258,9 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
               Simulador de Conselho de Administração e estresse de cenários. Configure uma decisão estratégica e veja CFO, CTO e CRO debaterem riscos em uma matriz interativa.
             </p>
           </div>
-          <div class="track-actions">
+          <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-launch-track-3" href="tracks/03-boardroom-simulator/index.html" class="btn" style="flex: 1;">Abrir Boardroom War Room →</a>
+            <a href="tracks/03-boardroom-simulator/README.md" class="btn btn-sm" style="width: 100%;">📖 Guia Passo a Passo (README.md)</a>
           </div>
         </article>
       </div>
@@ -265,22 +275,38 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
   <script>
     const ATO1_STEPS = {
       1: `Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".\n\nA especificação deve detalhar:\n1. Mecânica e Física: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos e controle por Barra de Espaço / Clique.\n2. Obstáculos Bem-Humorados: Os "canos" devem ser barreiras corporativas com rótulos visíveis e divertidos, como "Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional".\n3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o herói calcular o pulo ideal sozinho para desviar das barreiras (ótimo para demonstração e testes automatizados).\n4. Sistema de Avatar Super-Herói: O personagem deve ser desenhado com uma capa de super-herói esvoaçante animada no Canvas e rastro de partículas, suportando carregar a imagem \`hero-caricatura.png\` / \`minha-selfie.png\` ou trocar de foto direto na tela (#btn-upload-hero).\n5. Efeitos Sonoros Sintetizados (Web Audio API) e placar com medalhas executivas.\n\nApenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.`,
-      2: `Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (criando index.html, style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md.\nQuando terminar de criar os arquivos:\n1. Abra o jogo no Browser Sub-Agent.\n2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.\n3. Gere um Walkthrough Artifact com screenshots do jogo funcionando!`
+      2: `Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md.\nQuando terminar de criar os arquivos:\n1. Abra o jogo no Browser Sub-Agent.\n2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.\n3. Gere um Walkthrough Artifact com screenshots do jogo funcionando!`
     };
 
-    function setAto1Step(stepNum) {
+    function setAto1Step(stepNum, btnEl) {
       document.getElementById('prompt-m1-text').textContent = ATO1_STEPS[stepNum];
+      document.getElementById('btn-ato1-step1').classList.remove('active-step');
+      document.getElementById('btn-ato1-step2').classList.remove('active-step');
+      if (btnEl) btnEl.classList.add('active-step');
     }
 
-    function setMcpCnpj(cnpjLabel) {
+    function setMcpCnpj(cnpjLabel, btnEl) {
+      document.querySelectorAll('.cnpj-btn').forEach(b => b.classList.remove('active-step'));
+      if (btnEl) btnEl.classList.add('active-step');
       document.getElementById('prompt-m2-text').textContent =
 `Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ ${cnpjLabel}:
 1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
-2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (index.html, style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
 3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!`;
     }
 
-    function setAutomationPrompt() {
+    function applyCustomCnpj(btnEl) {
+      const val = document.getElementById('custom-cnpj-input').value.trim();
+      if (!val) {
+        document.getElementById('custom-cnpj-input').focus();
+        return;
+      }
+      setMcpCnpj(val, btnEl);
+    }
+
+    function setAutomationPrompt(btnEl) {
+      document.querySelectorAll('.cnpj-btn').forEach(b => b.classList.remove('active-step'));
+      if (btnEl) btnEl.classList.add('active-step');
       document.getElementById('prompt-m2-text').textContent =
 `/automation Configure uma automação semanal toda segunda-feira às 08h00 para consultar os indicadores atualizados do Banco Central via mcp/mcp_brasil_zero_deps.py e atualizar o resumo executivo da minha empresa em tracks/05-radar-mcp-brasil/.`;
     }

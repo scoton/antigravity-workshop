@@ -73,9 +73,14 @@
           <input id="slider-timeline" type="range" min="3" max="24" step="1" value="9" oninput="runSimulation()" />
         </div>
 
-        <button id="btn-run-simulation" class="btn btn-primary" style="width: 100%; padding: 0.8rem; margin-top: 0.5rem;" onclick="runSimulation()">
-          Recalcular Parecer do Conselho
-        </button>
+        <div style="display: flex; gap: 0.6rem; margin-top: 0.5rem; flex-wrap: wrap;">
+          <button id="btn-run-simulation" class="btn btn-primary" style="flex: 1; padding: 0.8rem;" onclick="runSimulation()">
+            Recalcular Parecer do Conselho
+          </button>
+          <button id="btn-optimize-ai" class="btn" style="flex: 1; padding: 0.8rem; border-color: rgba(16, 185, 129, 0.45); color: #34d399;" onclick="optimizeWithAI()">
+            🤖 Otimizar com IA (3 a 0)
+          </button>
+        </div>
       </section>
 
       <!-- Right Column: Simulation Output -->

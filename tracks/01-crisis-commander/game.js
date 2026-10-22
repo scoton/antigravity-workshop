@@ -281,8 +281,63 @@ let state = {
     resilience: 60
   },
   history: [],
-  isGameOver: false
+  isGameOver: false,
+  aiDemoTimer: null
 };
+
+function chooseOptimalDecisionIndex() {
+  const scenario = SCENARIOS[state.currentIndex];
+  if (!scenario) return 0;
+  let bestIdx = 0;
+  let bestScore = -Infinity;
+
+  scenario.choices.forEach((choice, idx) => {
+    let score = 0;
+    Object.entries(state.metrics).forEach(([k, currentVal]) => {
+      const delta = choice.impacts[k] || 0;
+      const projected = clamp(currentVal + delta);
+      if (projected <= 0) {
+        score -= 1000; // Avoid fatal collapse at all costs
+      } else if (projected <= 25) {
+        score -= 80;
+      }
+      // Weight low metrics higher to keep balanced survival
+      const urgencyWeight = currentVal < 45 ? 1.8 : 1.0;
+      score += delta * urgencyWeight;
+    });
+    if (score > bestScore) {
+      bestScore = score;
+      bestIdx = idx;
+    }
+  });
+  return bestIdx;
+}
+
+function toggleAiDemo() {
+  const btn = document.getElementById("btn-ai-demo");
+  if (state.aiDemoTimer) {
+    clearInterval(state.aiDemoTimer);
+    state.aiDemoTimer = null;
+    if (btn) btn.textContent = "🤖 Modo Demo IA";
+    return;
+  }
+  if (state.isGameOver) {
+    restartGame();
+  }
+  if (btn) btn.textContent = "⏸️ Pausar Demo IA";
+  const stepAi = () => {
+    if (state.isGameOver) {
+      clearInterval(state.aiDemoTimer);
+      state.aiDemoTimer = null;
+      if (btn) btn.textContent = "🤖 Modo Demo IA";
+      return;
+    }
+    const bestIdx = chooseOptimalDecisionIndex();
+    selectChoice(bestIdx);
+  };
+  stepAi();
+  state.aiDemoTimer = setInterval(stepAi, 950);
+}
 
 function clamp(val) {
   return Math.max(0, Math.min(100, val));
@@ -484,11 +539,18 @@ function renderEndScreen(victory, failedKey) {
 }
 
 function restartGame() {
+  if (state.aiDemoTimer) {
+    clearInterval(state.aiDemoTimer);
+    state.aiDemoTimer = null;
+  }
+  const demoBtn = document.getElementById("btn-ai-demo");
+  if (demoBtn) demoBtn.textContent = "🤖 Modo Demo IA";
   state = {
     currentIndex: 0,
     metrics: { cash: 60, agility: 60, trust: 60, resilience: 60 },
     history: [],
-    isGameOver: false
+    isGameOver: false,
+    aiDemoTimer: null
   };
   document.getElementById("feedback-banner").style.display = "none";
   document.getElementById("decision-log").innerHTML = `

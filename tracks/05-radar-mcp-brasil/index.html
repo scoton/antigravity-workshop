@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trilha 05: Radar Executivo MCP Brasil (Blueprint) | AI Bootcamp 2026</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --card: #121212;
+      --card-alt: #181818;
+      --border: rgba(255, 255, 255, 0.14);
+      --lime: #D6FD3C;
+      --cyan: #0CE6E6;
+      --amber: #FFB635;
+      --text: #FFFFFF;
+      --muted: #B0B0B0;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      --mono: 'Consolas', 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--card-alt);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-cyan {
+      background: var(--cyan);
+      color: #000000;
+      border-color: var(--cyan);
+    }
+    .btn-lime {
+      background: var(--lime);
+      color: #000000;
+      border-color: var(--lime);
+    }
+    .hero-banner {
+      background: var(--card);
+      border: 2px solid var(--cyan);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .status-pill {
+      display: inline-block;
+      background: var(--cyan);
+      color: #000;
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+    }
+    .step-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--lime);
+      border-radius: 10px;
+      padding: 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+    .prompt-pre {
+      background: #070707;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: var(--mono);
+      font-size: 0.84rem;
+      color: #EBEBEB;
+      white-space: pre-wrap;
+      margin-top: 0.75rem;
+    }
+    .cnpj-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.85rem 0;
+      align-items: center;
+    }
+    input.cnpj-input {
+      background: #070707;
+      color: var(--lime);
+      border: 1px solid var(--cyan);
+      border-radius: 6px;
+      padding: 0.5rem 0.85rem;
+      font-family: var(--mono);
+      font-size: 0.88rem;
+      min-width: 240px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">RESPONSABILIDADE || ESTRATÉGIA || TRANSFORMAÇÃO • TRILHA 05 (MCP BRASIL)</div>
+        <h1>🇧🇷 Radar Executivo CNPJ + Banco Central — Canteiro Agêntico</h1>
+      </div>
+      <a href="../../index.html" class="btn">← Voltar ao Hub</a>
+    </header>
+
+    <section class="hero-banner">
+      <span class="status-pill">AGUARDANDO CONSULTA AO VIVO VIA SERVIDOR MCP BRASIL (ATO 2)</span>
+      <h2 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Construa o Painel da Sua Empresa em Tempo Real!</h2>
+      <p style="color: var(--muted);">
+        No <strong>Ato 2</strong> (enquanto o seu primeiro agente constrói o jogo na Aba 1), abra uma <strong>2ª conversa no Agent Manager (<code>Cmd/Ctrl + E</code>)</strong> e envie o prompt abaixo. O seu agente vai consultar a <strong>Receita Federal</strong> e o <strong>Banco Central (Selic, CDI, IPCA e Dólar)</strong> via <code>mcp/mcp_brasil_zero_deps.py</code> e substituir esta página pelo painel personalizado da sua empresa!
+      </p>
+    </section>
+
+    <div class="step-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <h3>Escolha ou digite o CNPJ da sua empresa:</h3>
+        <button class="btn btn-lime" onclick="copyPrompt('p-mcp', this)">📋 Copiar Prompt do Ato 2</button>
+      </div>
+
+      <div class="cnpj-bar">
+        <input id="cnpj-field" class="cnpj-input" type="text" placeholder="Digite seu CNPJ (ex: 84.429.695/0001-11)" oninput="updateCnpj(this.value)" />
+        <button class="btn" onclick="updateCnpj('84.429.695/0001-11 (WEG S.A.)')">WEG</button>
+        <button class="btn" onclick="updateCnpj('07.689.002/0001-89 (Embraer S.A.)')">Embraer</button>
+        <button class="btn" onclick="updateCnpj('60.872.504/0001-23 (Itaú Unibanco Holding)')">Itaú</button>
+        <button class="btn" onclick="updateCnpj('47.960.950/0001-21 (Magazine Luiza)')">Magalu</button>
+        <button class="btn" onclick="updateCnpj('33.000.167/0001-01 (Petrobras)')">Petrobras</button>
+        <button class="btn" onclick="updateCnpj('61.585.865/0001-51 (RD Saúde / Raia Drogasil)')">RD Saúde</button>
+      </div>
+
+      <div id="p-mcp" class="prompt-pre">Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A.):
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
+2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!</div>
+    </div>
+  </div>
+
+  <script>
+    function updateCnpj(val) {
+      const target = val && val.trim() ? val.trim() : "84.429.695/0001-11 (WEG S.A.)";
+      document.getElementById("p-mcp").textContent =
+`Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ ${target}:
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
+2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!`;
+    }
+
+    function copyPrompt(id, btn) {
+      const txt = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(txt).then(() => {
+        const old = btn.textContent;
+        btn.textContent = "✅ Copiado! Cole no Antigravity";
+        setTimeout(() => { btn.textContent = old; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

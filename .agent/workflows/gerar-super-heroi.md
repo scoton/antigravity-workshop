@@ -6,9 +6,10 @@ description: Transforma a selfie do participante em uma caricatura divertida de 
 
 Quando o usuário acionar este workflow para personalizar o personagem da **Trilha 04 (`tracks/04-flappy-hero/`)**:
 
-1. **Localizar a Foto Base (Selfie):**
-   - Verifique se existe o arquivo `tracks/04-flappy-hero/minha-selfie.png` (ou outra imagem `.png`/`.jpg` indicada pelo usuário na pasta `tracks/04-flappy-hero/`).
-   - Caso o usuário ainda não tenha colocado uma foto na pasta, oriente-o a abrir `tracks/04-flappy-hero/selfie-studio.html` no navegador para tirar uma selfie em 3 segundos (ou anexar uma foto no chat) — e, enquanto isso, ofereça gerar imediatamente um **Super-Herói Executivo Caricatural** baseado na descrição que ele preferir!
+1. **Localizar a Foto Base (Selfie) — Com Busca Automática em `~/Downloads`:**
+   - Verifique primeiro se existe o arquivo `tracks/04-flappy-hero/minha-selfie.png` (ou outra imagem `.png`/`.jpg` na pasta `tracks/04-flappy-hero/`).
+   - **Auto-Descoberta Inteligente:** Caso o arquivo ainda não esteja em `tracks/04-flappy-hero/minha-selfie.png`, verifique automaticamente na pasta `~/Downloads/` do usuário (ex.: `ls -t ~/Downloads/minha-selfie*.png`) e copie o arquivo mais recente para `tracks/04-flappy-hero/minha-selfie.png`!
+   - Caso não haja nenhuma foto nem em `tracks/04-flappy-hero/` nem em `~/Downloads/`, oriente o usuário a abrir `tracks/04-flappy-hero/selfie-studio.html` (onde ele pode tirar uma selfie ou escolher 1 dos 4 Avatares Executivos de Super-Herói em 1 clique!) — e gere imediatamente um **Super-Herói Executivo Caricatural**!
 
 2. **Analisar Traços Visuais e Gerar a Caricatura de Super-Herói:**
    - Se houver foto (`minha-selfie.png` ou imagem anexada), inspecione a imagem para identificar as características marcantes (formato e cor do cabelo, barba, formato dos óculos, sorriso, expressão facial).

@@ -1,23 +1,26 @@
 :root {
-  --bg-base: hsl(220, 32%, 6%);
-  --bg-surface: hsl(220, 26%, 10%);
-  --bg-elevated: hsl(220, 22%, 14%);
-  --bg-hover: hsl(220, 20%, 17%);
-  --border-subtle: hsla(215, 20%, 85%, 0.09);
-  --border-strong: hsla(215, 20%, 85%, 0.18);
-  --text-primary: hsl(40, 25%, 96%);
-  --text-secondary: hsl(215, 16%, 72%);
-  --text-muted: hsl(215, 14%, 52%);
-  --accent-amber: hsl(38, 92%, 55%);
-  --accent-amber-soft: hsla(38, 92%, 55%, 0.12);
-  --accent-emerald: hsl(158, 64%, 45%);
-  --accent-emerald-soft: hsla(158, 64%, 45%, 0.12);
-  --accent-cyan: hsl(199, 89%, 52%);
-  --accent-cyan-soft: hsla(199, 89%, 52%, 0.12);
+  --bg-base: #06090e;
+  --bg-surface: #0d131c;
+  --bg-elevated: #141d2b;
+  --bg-hover: #1c283a;
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent-lime: #d6fd3c;
+  --accent-lime-soft: rgba(214, 253, 60, 0.14);
+  --accent-amber: #ffb635;
+  --accent-amber-soft: rgba(255, 182, 53, 0.14);
+  --accent-emerald: #0ce6e6;
+  --accent-emerald-soft: rgba(12, 230, 230, 0.14);
+  --accent-cyan: #0ce6e6;
+  --accent-cyan-soft: rgba(12, 230, 230, 0.14);
+  --accent-magenta: #f550d7;
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
-  --shadow-card: 0 12px 32px -8px rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 12px 32px -8px rgba(0, 0, 0, 0.65);
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
 }
@@ -139,6 +142,29 @@ body {
 .btn-sm {
   padding: 0.4rem 0.75rem;
   font-size: 0.8rem;
+}
+
+.btn.active-step {
+  background: var(--accent-lime-soft);
+  border-color: var(--accent-lime);
+  color: var(--accent-lime);
+  box-shadow: 0 0 0 1px rgba(214, 253, 60, 0.25);
+}
+
+.custom-cnpj-input {
+  background: #06090e;
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 0.38rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  width: 210px;
+}
+
+.custom-cnpj-input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
 }
 
 /* Section Headers */

@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selfie Studio — Criador de Foto para Super-Herói | AI Bootcamp 2026</title>
+  <title>Selfie Studio — Criador de Super-Herói | AI Bootcamp 2026</title>
   <style>
     :root {
-      --bg: hsl(220, 32%, 6%);
-      --surface: hsl(220, 26%, 11%);
-      --elevated: hsl(220, 22%, 15%);
-      --border: hsla(215, 20%, 85%, 0.14);
-      --text: hsl(40, 25%, 96%);
-      --muted: hsl(215, 16%, 70%);
-      --amber: hsl(38, 92%, 55%);
-      --emerald: hsl(158, 64%, 45%);
+      --bg: #000000;
+      --surface: #121212;
+      --elevated: #1A1A1A;
+      --border: rgba(255, 255, 255, 0.14);
+      --text: #FFFFFF;
+      --muted: #B0B0B0;
+      --lime: #D6FD3C;
+      --cyan: #0CE6E6;
+      --amber: #FFB635;
+      --magenta: #F550D7;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --mono: 'JetBrains Mono', Consolas, monospace;
+      --mono: 'Consolas', 'JetBrains Mono', monospace;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -25,10 +27,7 @@
       min-height: 100vh;
       padding: 2rem 1.5rem;
     }
-    .wrap {
-      max-width: 880px;
-      margin: 0 auto;
-    }
+    .wrap { max-width: 920px; margin: 0 auto; }
     .topbar {
       display: flex;
       justify-content: space-between;
@@ -38,21 +37,23 @@
       border-bottom: 1px solid var(--border);
     }
     .back {
-      color: var(--muted);
+      color: var(--text);
       text-decoration: none;
       font-size: 0.88rem;
-      padding: 0.45rem 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 0.95rem;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 6px;
     }
-    h1 { font-size: 1.4rem; }
+    h1 { font-size: 1.45rem; }
     .eyebrow {
       font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--amber);
+      font-size: 0.76rem;
+      color: var(--lime);
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      margin-bottom: 0.25rem;
     }
     .studio-grid {
       display: grid;
@@ -63,64 +64,69 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 1.4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 0.9rem;
     }
     video, canvas {
       width: 100%;
-      max-width: 340px;
+      max-width: 320px;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      background: #05080f;
+      background: #070707;
       border: 2px solid var(--border);
       border-radius: 12px;
     }
     .btn-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.65rem;
+      gap: 0.55rem;
       justify-content: center;
       width: 100%;
     }
     .btn {
-      padding: 0.65rem 1.1rem;
+      padding: 0.6rem 1rem;
       border-radius: 6px;
       border: 1px solid var(--border);
       background: var(--elevated);
       color: var(--text);
-      font-weight: 600;
-      font-size: 0.88rem;
+      font-weight: 700;
+      font-size: 0.84rem;
       cursor: pointer;
       text-decoration: none;
     }
+    .btn:hover { border-color: var(--lime); }
     .btn-primary {
-      background: var(--amber);
-      color: #090d16;
-      border-color: transparent;
+      background: var(--lime);
+      color: #000000;
+      border-color: var(--lime);
     }
     .btn-success {
-      background: var(--emerald);
-      color: #090d16;
-      border-color: transparent;
+      background: var(--cyan);
+      color: #000000;
+      border-color: var(--cyan);
+    }
+    .presets-label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
     }
     .steps-box {
       margin-top: 1.5rem;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-left: 4px solid var(--amber);
+      border-left: 4px solid var(--lime);
       border-radius: 8px;
-      padding: 1.15rem 1.35rem;
+      padding: 1.25rem 1.4rem;
       font-size: 0.9rem;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
-    code {
-      font-family: var(--mono);
-      color: var(--amber);
-    }
+    code { font-family: var(--mono); color: var(--lime); }
     @media (max-width: 720px) {
       .studio-grid { grid-template-columns: 1fr; }
     }
@@ -130,41 +136,58 @@
   <div class="wrap">
     <header class="topbar">
       <div>
-        <div class="eyebrow">Trilha 04 • Utilitário de Captura Rápida</div>
+        <div class="eyebrow">RESPONSABILIDADE || ESTRATÉGIA || TRANSFORMAÇÃO • ATO 3 (TRILHA 04)</div>
         <h1>📸 Selfie Studio: Crie a Base do Seu Super-Herói</h1>
       </div>
-      <a href="../../index.html" class="back">← Voltar ao Hub</a>
+      <div style="display: flex; gap: 0.6rem;">
+        <a href="index.html" class="back">🎮 Abrir Jogo</a>
+        <a href="../../index.html" class="back">← Hub Principal</a>
+      </div>
     </header>
 
     <div class="studio-grid">
       <div class="card">
-        <h3>1. Câmera ao Vivo (ou Upload)</h3>
+        <h3>1. Webcam, Foto ou Avatar Pronto</h3>
         <video id="webcam-video" autoplay playsinline muted></video>
         <div class="btn-row">
-          <button id="btn-start-cam" class="btn" onclick="startCamera()">Ligar Webcam</button>
+          <button id="btn-start-cam" class="btn" onclick="startCamera()">🎥 Ligar Webcam</button>
           <button id="btn-snap" class="btn btn-primary" onclick="takeSnapshot()">📸 Capturar Selfie</button>
           <label class="btn" style="cursor: pointer;">
             📁 Subir Foto
             <input type="file" accept="image/*" style="display: none;" onchange="handleFileUpload(event)" />
           </label>
         </div>
+        <div class="presets-label">Sem webcam? Escolha um Avatar Executivo em 1 clique:</div>
+        <div class="btn-row">
+          <button class="btn" onclick="drawPresetAvatar(0)">🦸‍♂️ Visionário</button>
+          <button class="btn" onclick="drawPresetAvatar(1)">🦸‍♀️ Estrategista</button>
+          <button class="btn" onclick="drawPresetAvatar(2)">🕶️ Tech Leader</button>
+          <button class="btn" onclick="drawPresetAvatar(3)">⚡ C-Level Ágil</button>
+        </div>
       </div>
 
       <div class="card">
-        <h3>2. Sua Foto Pronta (`minha-selfie.png`)</h3>
+        <h3>2. Sua Foto Pronta (<code>minha-selfie.png</code>)</h3>
         <canvas id="snap-canvas" width="512" height="512"></canvas>
         <div class="btn-row">
           <button id="btn-download-selfie" class="btn btn-success" onclick="downloadSelfie()">
             ⬇️ Baixar minha-selfie.png
           </button>
+          <button id="btn-copy-hero-prompt" class="btn btn-primary" onclick="copyHeroPrompt(this)">
+            📋 Copiar Prompt /gerar-super-heroi
+          </button>
+        </div>
+        <div style="font-size: 0.78rem; color: var(--muted); text-align: center;">
+          Dica: Mesmo que o navegador salve em <code>Downloads/minha-selfie.png</code>, a Skill <code>/gerar-super-heroi</code> encontra e copia o arquivo automaticamente!
         </div>
       </div>
     </div>
 
     <div class="steps-box">
-      <strong style="color: var(--text);">Como transformar sua foto no Super-Herói do jogo:</strong><br />
-      1. Clique em <strong>Ligar Webcam → Capturar Selfie → Baixar <code>minha-selfie.png</code></strong> e salve o arquivo dentro da pasta <code>tracks/04-flappy-hero/</code>.<br />
-      2. No chat do <strong>Google Antigravity</strong>, digite <code>/gerar-super-heroi</code> (ou peça ao agente para analisar <code>@tracks/04-flappy-hero/minha-selfie.png</code>, gerar uma caricatura de Super-Herói em <code>tracks/04-flappy-hero/hero-caricatura.png</code> e colocá-la como personagem principal do jogo!).
+      <strong style="color: var(--text);">Passo a Passo do Ato 3 (Transformar sua Foto em Super-Herói no Jogo):</strong><br />
+      1. Capture sua selfie na webcam, suba uma foto sua <em>ou</em> clique em um dos <strong>4 Avatares Executivos</strong> acima e clique em <strong>⬇️ Baixar <code>minha-selfie.png</code></strong>.<br />
+      2. Clique em <strong>📋 Copiar Prompt <code>/gerar-super-heroi</code></strong> e cole na conversa da <strong>Trilha 04</strong> no <strong>Google Antigravity</strong>.<br />
+      3. O agente vai analisar a imagem, gerar sua <strong>Caricatura de Super-Herói</strong> (<code>hero-caricatura.png</code>) e colocá-la voando com capa esvoaçante no <em>Flappy Executive Hero</em>!
     </div>
   </div>
 
@@ -173,13 +196,125 @@
     const canvas = document.getElementById("snap-canvas");
     const ctx = canvas.getContext("2d");
 
-    // Draw placeholder initially
-    ctx.fillStyle = "#0a0f1d";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#f59e0b";
-    ctx.font = "600 18px sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillText("Sua selfie aparecerá aqui", canvas.width / 2, canvas.height / 2);
+    const PRESETS = [
+      { name: "EXECUTIVO VISIONÁRIO", bg1: "#0f172a", bg2: "#1e293b", skin: "#f1c27d", hair: "#1e293b", suit: "#D6FD3C", cape: "#ef4444", glasses: true, beard: true },
+      { name: "LÍDER ESTRATEGISTA", bg1: "#111827", bg2: "#311042", skin: "#e0ac69", hair: "#3b1d11", suit: "#0CE6E6", cape: "#F550D7", glasses: false, longHair: true },
+      { name: "ARQUITETO TECH", bg1: "#051923", bg2: "#003554", skin: "#ffdbac", hair: "#4a3728", suit: "#FFB635", cape: "#0CE6E6", glasses: true, beard: false },
+      { name: "COMANDANTE C-LEVEL", bg1: "#141414", bg2: "#292524", skin: "#8d5524", hair: "#09090b", suit: "#D6FD3C", cape: "#f59e0b", glasses: true, beard: true }
+    ];
+
+    function drawPresetAvatar(idx) {
+      const p = PRESETS[idx] || PRESETS[0];
+      const w = canvas.width;
+      const h = canvas.height;
+      const grad = ctx.createRadialGradient(w / 2, h / 2, 40, w / 2, h / 2, 260);
+      grad.addColorStop(0, p.bg2);
+      grad.addColorStop(1, p.bg1);
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Glowing Aura Ring
+      ctx.strokeStyle = p.suit;
+      ctx.lineWidth = 8;
+      ctx.beginPath();
+      ctx.arc(w / 2, h / 2, 210, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Cape behind shoulders
+      ctx.fillStyle = p.cape;
+      ctx.beginPath();
+      ctx.moveTo(w / 2 - 140, h - 40);
+      ctx.lineTo(w / 2 - 90, 270);
+      ctx.lineTo(w / 2 + 90, 270);
+      ctx.lineTo(w / 2 + 140, h - 40);
+      ctx.closePath();
+      ctx.fill();
+
+      // Suit shoulders
+      ctx.fillStyle = "#0b0f19";
+      ctx.strokeStyle = p.suit;
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.roundRect(w / 2 - 110, 310, 220, 150, 45);
+      ctx.fill();
+      ctx.stroke();
+
+      // Chest emblem star
+      ctx.fillStyle = p.suit;
+      ctx.beginPath();
+      ctx.arc(w / 2, 375, 28, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#000";
+      ctx.font = "900 22px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText("AI", w / 2, 383);
+
+      // Long hair back if applicable
+      if (p.longHair) {
+        ctx.fillStyle = p.hair;
+        ctx.beginPath();
+        ctx.arc(w / 2, 210, 105, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Head
+      ctx.fillStyle = p.skin;
+      ctx.beginPath();
+      ctx.arc(w / 2, 200, 82, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Hair top
+      ctx.fillStyle = p.hair;
+      ctx.beginPath();
+      ctx.arc(w / 2, 175, 84, Math.PI, Math.PI * 2);
+      ctx.fill();
+
+      // Beard if applicable
+      if (p.beard) {
+        ctx.fillStyle = p.hair;
+        ctx.beginPath();
+        ctx.arc(w / 2, 215, 76, 0.15 * Math.PI, 0.85 * Math.PI);
+        ctx.lineTo(w / 2, 255);
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      // Eyes
+      ctx.fillStyle = "#111";
+      ctx.beginPath();
+      ctx.arc(w / 2 - 28, 192, 8, 0, Math.PI * 2);
+      ctx.arc(w / 2 + 28, 192, 8, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Glasses
+      if (p.glasses) {
+        ctx.strokeStyle = p.suit;
+        ctx.lineWidth = 5;
+        ctx.strokeRect(w / 2 - 52, 176, 44, 30);
+        ctx.strokeRect(w / 2 + 8, 176, 44, 30);
+        ctx.beginPath();
+        ctx.moveTo(w / 2 - 8, 190);
+        ctx.lineTo(w / 2 + 8, 190);
+        ctx.stroke();
+      }
+
+      // Confident Smile
+      ctx.strokeStyle = "#fff";
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.arc(w / 2, 218, 26, 0.15 * Math.PI, 0.85 * Math.PI);
+      ctx.stroke();
+
+      // Badge label
+      ctx.fillStyle = p.suit;
+      ctx.fillRect(w / 2 - 145, 445, 290, 34);
+      ctx.fillStyle = "#000000";
+      ctx.font = "700 15px Consolas, monospace";
+      ctx.fillText(p.name, w / 2, 467);
+    }
+
+    // Draw default preset avatar on load so canvas is never empty!
+    drawPresetAvatar(0);
 
     async function startCamera() {
       try {
@@ -189,13 +324,13 @@
         });
         video.srcObject = stream;
       } catch (err) {
-        alert("Não foi possível acessar a webcam. Você também pode clicar em 'Subir Foto' para escolher uma imagem do computador!");
+        alert("Webcam indisponível ou bloqueada pelo navegador. Use 'Subir Foto' ou clique em um dos 4 Avatares Executivos prontos abaixo!");
       }
     }
 
     function takeSnapshot() {
       if (!video.srcObject) {
-        alert("Clique primeiro em 'Ligar Webcam' ou use 'Subir Foto'.");
+        alert("Clique primeiro em 'Ligar Webcam', use 'Subir Foto' ou escolha um dos 4 Avatares Executivos prontos!");
         return;
       }
       const vw = video.videoWidth || 512;
@@ -224,6 +359,19 @@
       link.download = "minha-selfie.png";
       link.href = canvas.toDataURL("image/png");
       link.click();
+    }
+
+    function copyHeroPrompt(btn) {
+      const promptTxt = `Execute a skill @.agent/skills/gerar-super-heroi/SKILL.md:
+1. Analise a minha foto em @tracks/04-flappy-hero/minha-selfie.png (ou busque automaticamente em ~/Downloads/minha-selfie.png caso o navegador tenha salvo na pasta Downloads).
+2. Gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em \`tracks/04-flappy-hero/hero-caricatura.png\`).
+3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão/escudo, capa vermelha e dourada esvoaçante animada no Canvas e botão na tela para alternar entre a Caricatura IA e a minha Selfie original!).
+4. Abra o jogo no Browser Sub-Agent, faça um voo de teste com o meu Super-Herói desviando das burocracias e gere o Walkthrough com o print final!`;
+      navigator.clipboard.writeText(promptTxt).then(() => {
+        const old = btn.textContent;
+        btn.textContent = "✅ Prompt Copiado!";
+        setTimeout(() => { btn.textContent = old; }, 2000);
+      });
     }
   </script>
 </body>

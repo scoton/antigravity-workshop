@@ -8,15 +8,15 @@
 
 ## 🎯 Sobre Esta Trilha
 
-**Crisis Commander** é um simulador executivo de tomada de decisão sob incerteza inspirado na mecânica do jogo *Reigns*. Você assume a cadeira de CEO ao longo de **8 trimestres consecutivos (Q1 2026 a Q4 2027)** e precisa escolher entre dois caminhos estratégicos a cada dilema.
+**Crisis Commander** é um simulador executivo de tomada de decisão sob incerteza inspirado na mecânica do jogo *Reigns*. Você assume a cadeira de CEO ao longo de **8 trimestres consecutivos (Q1 2026 a Q4 2027)** e precisa escolher entre **3 caminhos estratégicos** a cada dilema (`#btn-choice-0`, `#btn-choice-1`, `#btn-choice-2`) ou acionar o **🤖 Modo Demo IA (`#btn-ai-demo`)**.
 
 Cada escolha altera imediatamente **4 indicadores vitais da organização**:
-1. 💰 **Caixa & Liquidez**
-2. 🤝 **Confiança do Conselho**
-3. ⚡ **Velocidade de Inovação**
-4. 🛡️ **Governança & Segurança**
+1. 💰 **Caixa & Liquidez** (`#val-cash`)
+2. ⚡ **Agilidade & IA** (`#val-agility`)
+3. 📈 **Confiança do Mercado** (`#val-trust`)
+4. 🛡️ **Resiliência & Segurança** (`#val-resilience`)
 
-> **Regra de Sobrevivência:** Se qualquer um dos 4 indicadores cair a **0%** (colapso) ou atingir **100%** (excesso descontrolado, como excesso de caixa ocioso com paralisia de inovação ou burocracia extrema), sua gestão sofre uma intervenção do Conselho!
+> **Regra de Sobrevivência:** Se qualquer um dos 4 indicadores chegar a **0%** (colapso de liquidez, paralisia tecnológica, crise de confiança ou colapso operacional), sua gestão sofre intervenção imediata do Conselho!
 
 ---
 

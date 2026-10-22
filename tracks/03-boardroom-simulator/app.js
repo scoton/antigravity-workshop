@@ -39,6 +39,15 @@ function loadPreset(idx) {
   runSimulation();
 }
 
+function optimizeWithAI() {
+  // Calibrates the current initiative for Unanimous Board Approval (3-0) with high ROI & Resilience
+  document.getElementById("slider-capex").value = 35;
+  document.getElementById("slider-autonomy").value = 85;
+  document.getElementById("slider-governance").value = 80;
+  document.getElementById("slider-timeline").value = 8;
+  runSimulation();
+}
+
 function setVoteBadge(elId, status) {
   const el = document.getElementById(elId);
   if (status === "APPROVE") {

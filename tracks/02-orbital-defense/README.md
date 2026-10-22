@@ -13,9 +13,10 @@
 Você comanda uma estação orbital que protege o *Core Business* da organização contra uma chuva de **ameaças estratégicas e operacionais** (*Crise Cambial, Ataque Cibernético, Ruptura de Suprimentos, Obsolescência Tecnológica, Concorrente Agêntico*).
 
 O jogo já conta com:
-- 🎯 **Mira e Disparo Tático:** Controle via mouse ou toque no Canvas.
-- 💥 **Pulso Eletromagnético (EMP):** Pressione `Barra de Espaço` ou clique em **⚡ Pulso EMP (`#btn-emp`)** para limpar todas as ameaças da tela em momentos críticos.
-- 🤖 **Piloto Automático de IA (`#btn-autopilot`):** Um agente tático embutido que calcula trajetórias em tempo real, prioriza os alvos mais próximos da base e dispara automaticamente!
+- 🎯 **Mira e Disparo Tático:** Controle via mouse ou clique direto nas ameaças no Canvas (`#defense-canvas`).
+- 🤖 **Piloto Automático de IA (`#btn-toggle-autopilot`):** Um agente tático embutido (já ativado por padrão) que calcula trajetórias em tempo real, prioriza os alvos mais próximos do núcleo e dispara automaticamente!
+- 💥 **Pulso Eletromagnético (`#btn-emp-blast`):** Limpa instantaneamente todas as ameaças ativas no radar em momentos críticos.
+- 🛡️ **Reforçar Escudo (`#btn-overcharge-shield`) & ☄️ Simular Enxame (`#btn-spawn-wave`):** Controles táticos para recuperar +25% de integridade ou injetar uma onda extra de estresse operacional.
 
 ---
 
@@ -37,7 +38,7 @@ O jogo já conta com:
    python3 -m http.server 8080
    ```
 3. Abra no navegador: `http://localhost:8080/tracks/02-orbital-defense/index.html` *(ou dê dois cliques no arquivo `index.html`)*.
-4. Clique em **▶ Iniciar Missão** e depois ative o botão **🤖 Piloto IA: ON (`#btn-autopilot`)** para assistir à IA defendendo a base sozinha!
+4. Observe o **🤖 Piloto Automático IA (`#btn-toggle-autopilot`)** interceptando as ameaças em tempo real e teste os botões **⚡ Pulso EMP (`#btn-emp-blast`)** e **☄️ Simular Enxame de Crise (`#btn-spawn-wave`)**!
 
 ---
 
@@ -55,10 +56,10 @@ Vamos elevar a adrenalina do jogo adicionando uma **Nave-Mãe "Cisne Negro"** qu
 
 ```text
 Execute a Skill /modo-caos na pasta @tracks/02-orbital-defense/:
-1. Adicione em @tracks/02-orbital-defense/game.js um "Boss Cisne Negro" (um mega-asteroide blindado com barra de vida própria, aura vermelha pulsante e rótulo "CRISE SISTÊMICA GLOBAL") que surge a cada 300 pontos (ou quando o usuário clicar em um novo botão "🔥 Invocar Boss" #btn-spawn-boss na tela).
-2. Ao destruir o Boss, gere uma explosão épica de partículas douradas, recarregue 100% do Pulso EMP e restaure +25% do escudo da base.
-3. Atualize o algoritmo do Piloto Automático IA (#btn-autopilot) para priorizar o Boss quando ele estiver perigosamente próximo.
-4. Abra o jogo no Browser Sub-Agent, ative o Piloto IA, invoque o Boss para testar o combate e gere um Walkthrough Artifact com screenshots!
+1. Adicione em @tracks/02-orbital-defense/game.js um "Boss Cisne Negro" (um mega-asteroide blindado com barra de vida própria, aura vermelha pulsante e rótulo "CRISE SISTÊMICA GLOBAL") que surge quando o usuário clicar em um novo botão "🔥 Invocar Boss" (#btn-spawn-boss) na barra lateral de Comandos Táticos.
+2. Ao destruir o Boss, gere uma explosão épica de partículas douradas e restaure +25% do escudo da base.
+3. Atualize o algoritmo do Piloto Automático IA (#btn-toggle-autopilot) para priorizar o Boss quando ele estiver perigosamente próximo.
+4. Abra o jogo no Browser Sub-Agent, invoque o Boss (#btn-spawn-boss) para testar o combate e gere um Walkthrough Artifact com screenshots!
 ```
 
 ---
@@ -106,7 +107,7 @@ Peça ao agente para realizar uma bateria de testes automatizados no navegador v
 ```text
 Execute a Skill /auditoria-executiva em @tracks/02-orbital-defense/:
 1. Abra o jogo no Browser Sub-Agent.
-2. Inicie a missão, ative o Piloto Automático IA (#btn-autopilot), dispare o Pulso EMP (#btn-emp) e deixe o jogo rodar por 15 segundos sob carga intensa.
+2. Verifique o Piloto Automático IA (#btn-toggle-autopilot), acione o Enxame de Crise (#btn-spawn-wave), dispare o Pulso EMP (#btn-emp-blast) e deixe o jogo rodar por 10 segundos sob carga intensa.
 3. Confirme que não há erros de JavaScript no console, capture screenshots da ação em tela cheia e gere um Walkthrough Artifact com o laudo técnico.
 ```
 
@@ -115,4 +116,4 @@ Execute a Skill /auditoria-executiva em @tracks/02-orbital-defense/:
 ## 🧠 Resumo do Aprendizado Executivo
 
 Nesta trilha você comprovou como o **Google Antigravity** lida com sistemas dinâmicos em tempo real (física, colisão, áudio sintetizado e agentes autônomos de teste):
-- Em vez de testar manualmente cada mudança jogando por vários minutos, você criou um **Piloto Automático IA (`#btn-autopilot`)** que permite ao próprio **Browser Sub-Agent** homologar novas funcionalidades em segundos!
+- Em vez de testar manualmente cada mudança jogando por vários minutos, você utilizou um **Piloto Automático IA (`#btn-toggle-autopilot`)** que permite ao próprio **Browser Sub-Agent** homologar novas funcionalidades em segundos!

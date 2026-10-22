@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mcp-brasil-bootcamp": {
+      "command": "python3",
+      "args": ["mcp/mcp_brasil_zero_deps.py"],
+      "description": "Servidor MCP Brasil Zero-Config (Receita Federal CNPJ + Banco Central Selic/CDI/IPCA/Dólar + CEP + Feriados)"
+    }
+  }
+}

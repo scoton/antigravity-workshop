@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trilha 04: Flappy Executive Hero (Blueprint) | AI Bootcamp 2026</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --card: #121212;
+      --card-alt: #181818;
+      --border: rgba(255, 255, 255, 0.14);
+      --lime: #D6FD3C;
+      --cyan: #0CE6E6;
+      --amber: #FFB635;
+      --text: #FFFFFF;
+      --muted: #B0B0B0;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      --mono: 'Consolas', 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--lime);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--card-alt);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-lime {
+      background: var(--lime);
+      color: #000000;
+      border-color: var(--lime);
+    }
+    .btn-cyan {
+      background: var(--cyan);
+      color: #000000;
+      border-color: var(--cyan);
+    }
+    .hero-banner {
+      background: var(--card);
+      border: 2px solid var(--lime);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .status-pill {
+      display: inline-block;
+      background: var(--lime);
+      color: #000;
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+    }
+    .step-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--cyan);
+      border-radius: 10px;
+      padding: 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+    .prompt-pre {
+      background: #070707;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: var(--mono);
+      font-size: 0.84rem;
+      color: #EBEBEB;
+      white-space: pre-wrap;
+      margin-top: 0.75rem;
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">RESPONSABILIDADE || ESTRATÉGIA || TRANSFORMAÇÃO • TRILHA 04</div>
+        <h1>🦸‍♂️ Flappy Executive Hero — Canteiro de Obras Agêntico</h1>
+      </div>
+      <div style="display: flex; gap: 0.6rem;">
+        <a href="selfie-studio.html" class="btn btn-cyan">📸 Abrir Selfie Studio</a>
+        <a href="../../index.html" class="btn">← Voltar ao Hub</a>
+      </div>
+    </header>
+
+    <section class="hero-banner">
+      <span class="status-pill">AGUARDANDO CONSTRUÇÃO PELO SEU AGENTE (ATO 1)</span>
+      <h2 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Por que o jogo ainda não está na tela?</h2>
+      <p style="color: var(--muted);">
+        Porque na <strong>Trilha 04</strong> você vai experimentar o <strong>Desenvolvimento Orientado por Especificação (<em>Spec-Driven Development</em>)</strong>! Assim que você enviar os dois comandos abaixo no <strong>Google Antigravity</strong>, o seu agente vai substituir automaticamente esta página pelo jogo <strong>Flappy Executive Hero</strong> completo!
+      </p>
+    </section>
+
+    <div class="step-card" style="border-left-color: var(--lime);">
+      <div class="header-row">
+        <h3>Passo 1.1 — Gerar a Especificação do Produto (<code>SPEC_JOGO.md</code>)</h3>
+        <button class="btn btn-lime" onclick="copyPrompt('p1', this)">📋 Copiar Prompt 1.1</button>
+      </div>
+      <div id="p1" class="prompt-pre">Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".
+
+A especificação deve detalhar:
+1. Mecânica e Física: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos e controle por Barra de Espaço / Clique.
+2. Obstáculos Bem-Humorados: Os "canos" devem ser barreiras corporativas com rótulos visíveis e divertidos, como "Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional".
+3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o herói calcular o pulo ideal sozinho para desviar das barreiras (ótimo para demonstração e testes automatizados).
+4. Sistema de Avatar Super-Herói: O personagem deve ser desenhado com uma capa de super-herói esvoaçante animada no Canvas e rastro de partículas, suportando carregar a imagem `hero-caricatura.png` / `minha-selfie.png` ou trocar de foto direto na tela (#btn-upload-hero).
+5. Efeitos Sonoros Sintetizados (Web Audio API) e placar com medalhas executivas.
+
+Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.</div>
+    </div>
+
+    <div class="step-card" style="border-left-color: var(--cyan);">
+      <div class="header-row">
+        <h3>Passo 1.2 — Disparar a Construção Completa do Jogo (Sobrescreve esta página!)</h3>
+        <button class="btn btn-cyan" onclick="copyPrompt('p2', this)">📋 Copiar Prompt 1.2</button>
+      </div>
+      <div id="p2" class="prompt-pre">Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo index.html e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md.
+Quando terminar de criar os arquivos:
+1. Abra o jogo no Browser Sub-Agent.
+2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.
+3. Gere um Walkthrough Artifact com screenshots do jogo funcionando!</div>
+    </div>
+  </div>
+
+  <script>
+    function copyPrompt(id, btn) {
+      const txt = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(txt).then(() => {
+        const old = btn.textContent;
+        btn.textContent = "✅ Copiado! Cole no Antigravity";
+        setTimeout(() => { btn.textContent = old; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

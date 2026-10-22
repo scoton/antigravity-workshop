@@ -80,7 +80,7 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
 2. Agora dispare o **Prompt de Construção Completa** abaixo:
 
 ```text
-Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (criando index.html, style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md.
+Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md.
 Quando terminar de criar os arquivos:
 1. Abra o jogo no Browser Sub-Agent.
 2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.
@@ -103,9 +103,9 @@ Quando terminar de criar os arquivos:
 Copie o prompt abaixo, trocando `[SEU_CNPJ_AQUI]` pelo **CNPJ da sua empresa** *(ou use um CNPJ público de referência, como WEG `84.429.695/0001-11`, Embraer `07.689.002/0001-89`, Itaú `60.872.504/0001-23`, Magalu `47.960.950/0001-21` ou Petrobras `33.000.167/0001-01`)*:
 
 ```text
-Execute o workflow @.agent/workflows/radar-mcp-brasil.md para o CNPJ [SEU_CNPJ_AQUI, ex: 84.429.695/0001-11]:
+Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ [SEU_CNPJ_AQUI, ex: 84.429.695/0001-11]:
 1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
-2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (index.html, style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
 3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!
 ```
 
@@ -126,15 +126,15 @@ E se, toda **segunda-feira às 08h00**, antes da sua reunião de diretoria, o An
 
 Agora vamos para o grand finale: **colocar você mesmo como o Super-Herói/Super-Heroína do jogo!**
 
-#### Passo 3.1 — Capturar Sua Selfie Rápida (1 minuto)
+#### Passo 3.1 — Capturar Sua Selfie Rápida ou Escolher um Avatar em 1 Clique (1 minuto)
 1. No navegador, abra `tracks/04-flappy-hero/selfie-studio.html` (disponível no botão do Mission Hub).
-2. Clique em **Ligar Webcam → 📸 Capturar Selfie → ⬇️ Baixar `minha-selfie.png`** e salve o arquivo dentro da pasta `tracks/04-flappy-hero/minha-selfie.png` (ou coloque qualquer foto sua nessa pasta).
+2. Clique em **Ligar Webcam → 📸 Capturar Selfie** (ou, se estiver sem webcam, clique em um dos **4 Avatares Executivos de Super-Herói** prontos na tela!) e depois em **⬇️ Baixar `minha-selfie.png`**, salvando em `tracks/04-flappy-hero/minha-selfie.png` *(dica: se o navegador salvar na sua pasta `~/Downloads/`, a Skill encontra e copia automaticamente para você!)*.
 
 #### Passo 3.2 — Transformar Sua Selfie em Super-Herói Caricatura!
 De volta à conversa da **Trilha 04** no Antigravity, digite `/gerar-super-heroi` ou envie o prompt abaixo:
 
 ```text
-Execute o workflow @.agent/workflows/gerar-super-heroi.md:
+Execute a skill @.agent/skills/gerar-super-heroi/SKILL.md:
 1. Analise a minha foto em @tracks/04-flappy-hero/minha-selfie.png (observando meus traços marcantes como cabelo, óculos, barba, sorriso e expressão).
 2. Gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em `tracks/04-flappy-hero/hero-caricatura.png`).
 3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão/escudo, capa vermelha e dourada esvoaçante animada no Canvas e botão na tela para alternar entre a Caricatura IA e a minha Selfie original!).
@@ -152,3 +152,13 @@ O repositório também inclui **3 Simuladores Executivos completos** prontos par
 1. **[`tracks/01-crisis-commander/README.md`](tracks/01-crisis-commander/README.md):** Jogo de tomada de decisão sob incerteza (estilo *Reigns*) ao longo de 8 trimestres (2026–2027).
 2. **[`tracks/02-orbital-defense/README.md`](tracks/02-orbital-defense/README.md):** Jogo arcade tático em HTML5 Canvas (60 FPS) com escudos, Pulso EMP e Piloto Automático de IA.
 3. **[`tracks/03-boardroom-simulator/README.md`](tracks/03-boardroom-simulator/README.md):** Simulador C-Level de Conselho de Administração com Matriz Risco x Retorno e votos de CFO, CTO e CRO.
+
+---
+
+## 🔄 Como Resetar o Workshop para uma Nova Demonstração (`reset_workshop.py`)
+
+Terminou de executar as trilhas e quer restaurar as pastas `tracks/04-flappy-hero/` e `tracks/05-radar-mcp-brasil/` ao seu **estado inicial limpo (Blueprint Launchpad)** para demonstrar o workshop novamente à sua equipe? Basta rodar na raiz do repositório:
+
+```bash
+python3 reset_workshop.py
+```

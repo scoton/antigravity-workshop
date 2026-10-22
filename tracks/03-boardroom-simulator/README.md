@@ -10,13 +10,17 @@
 
 **Boardroom War Room** é um simulador executivo de alocação de capital e governança estratégica para reuniões de Diretoria e Conselho de Administração.
 
-Nele, você ajusta o **Orçamento Anual de Transformação (CAPEX/OPEX)**, define o **Apetite a Risco da Organização** e seleciona quais iniciativas estratégicas financiar no ciclo 2026–2027.
+Nele, você escolhe entre **3 Cenários Presets** (`#btn-preset-1`, `#btn-preset-2`, `#btn-preset-3`) ou digita sua própria iniciativa (`#input-initiative`), calibrando **4 Alavancas Estratégicas**:
+1. 💰 **Investimento CAPEX (`#slider-capex`):** De R$ 5M a R$ 100M.
+2. ⚡ **Grau de Autonomia Agêntica (`#slider-autonomy`):** De 10% a 95%.
+3. 🛡️ **Governança, Sandbox & Auditoria (`#slider-governance`):** De 10% a 100%.
+4. ⏱️ **Prazo de Rollout (`#slider-timeline`):** De 3 a 24 meses.
 
 Em tempo real, o simulador calcula e exibe:
-- 📈 **Matriz de Eficiência (Risco × Retorno em SVG):** Posicionamento visual de cada iniciativa selecionada.
-- 💵 **Indicadores Consolidados do Portfólio:** ROI Projetado, Payback Estimado (em meses) e Índice de Exposição a Risco.
-- 👥 **Votos e Pareceres Dinâmicos do C-Level:** Três conselheiros (**CFO**, **CTO** e **CRO/Risco**) reagem instantaneamente às suas escolhas, aprovando ou fazendo ressalvas ao portfólio.
-- 🤖 **Botão "Otimizar com IA" (`#btn-optimize-ai`):** Algoritmo que seleciona automaticamente a combinação de projetos que maximiza o retorno respeitando o teto de orçamento e risco!
+- 📈 **Matriz Risco × Retorno em HTML5 Canvas (`#boardroom-canvas`):** Posicionamento visual da proposta nos quadrantes estratégicos.
+- 💵 **Indicadores Consolidados:** ROI Projetado em 24m (`#kpi-roi`), Índice de Resiliência (`#kpi-survival`) e Payback Estimado (`#kpi-payback`).
+- 👥 **Votos e Pareceres Dinâmicos do C-Level:** Três conselheiros (**CFO**, **CTO** e **CRO/Risco**) votam `APROVADO`, `RESSALVAS` ou `VETADO` conforme o equilíbrio entre autonomia e governança.
+- 🤖 **Botão "Otimizar com IA (3 a 0)" (`#btn-optimize-ai`):** Calibra automaticamente as 4 alavancas para obter aprovação unânime do Conselho (3 a 0) com alto ROI e resiliência!
 
 ---
 
@@ -24,9 +28,9 @@ Em tempo real, o simulador calcula e exibe:
 
 | Arquivo | Função |
 | :--- | :--- |
-| [`index.html`](./index.html) | Layout do painel de Conselho, controles de orçamento e apetite a risco, cards de iniciativas, gráfico SVG Risco × Retorno e painel de pareceres do C-Level. |
+| [`index.html`](./index.html) | Layout do painel de Conselho, 3 presets de cenário, 4 sliders de alavancas estratégicas, matriz Canvas Risco × Retorno e painel de pareceres de CFO, CTO e CRO. |
 | [`style.css`](./style.css) | Design *Executive War Room* com indicadores semafóricos (Verde, Âmbar, Vermelho) e tipografia financeira. |
-| [`app.js`](./app.js) | Motor de cálculo de VPL/ROI ponderado pelo risco, renderização dinâmica do gráfico SVG, regras de voto de CFO/CTO/CRO e otimizador automático de portfólio. |
+| [`app.js`](./app.js) | Motor de cálculo de ROI/Payback/Resiliência, renderização dinâmica da matriz Canvas, regras de voto de CFO/CTO/CRO e calibrador automático com IA (`optimizeWithAI()`). |
 
 ---
 
@@ -38,7 +42,7 @@ Em tempo real, o simulador calcula e exibe:
    python3 -m http.server 8080
    ```
 3. Acesse no navegador: `http://localhost:8080/tracks/03-boardroom-simulator/index.html` *(ou abra o arquivo `index.html` diretamente no navegador)*.
-4. Mova o controle de **Orçamento Disponível**, marque/desmarque iniciativas e clique em **🤖 Otimizar Portfólio com IA (`#btn-optimize-ai`)** para ver a recomendação automática e a reação de CFO, CTO e CRO!
+4. Clique no **Cenário 3: M&A Internacional (`#btn-preset-3`)** para ver o Conselho vetar a proposta por falta de governança, e em seguida clique em **🤖 Otimizar com IA (3 a 0) (`#btn-optimize-ai`)** para ver a calibragem ótima!
 
 ---
 
