@@ -29,6 +29,15 @@ GENERATED_DIRS = [
 ]
 
 BLUEPRINT_FILES = [
+    "tracks/01-crisis-commander/index.html",
+    "tracks/01-crisis-commander/style.css",
+    "tracks/01-crisis-commander/game.js",
+    "tracks/02-orbital-defense/index.html",
+    "tracks/02-orbital-defense/style.css",
+    "tracks/02-orbital-defense/game.js",
+    "tracks/03-boardroom-simulator/index.html",
+    "tracks/03-boardroom-simulator/style.css",
+    "tracks/03-boardroom-simulator/app.js",
     "tracks/04-flappy-hero/index.html",
     "tracks/04-flappy-hero/selfie-studio.html",
     "tracks/05-radar-mcp-brasil/index.html",

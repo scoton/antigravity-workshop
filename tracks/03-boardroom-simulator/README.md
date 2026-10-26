@@ -2,7 +2,7 @@
 
 > **Tempo estimado:** 15 a 20 minutos (100% autoguiado no Google Antigravity)  
 > **Nível:** Iniciante a Avançado (Zero necessidade de programar manualmente)  
-> **Conceitos do Google Antigravity praticados:** *Planning Mode*, Visualização de Dados Interativa (SVG), Simulação Multi-Stakeholder (CFO, CTO, CRO), *Skills* (`/adaptar-setor`, `/modo-caos`, `/auditoria-executiva`) e Validação no *Browser Sub-Agent*.
+> **Conceitos do Google Antigravity praticados:** *Planning Mode*, Visualização de Dados Interativa em HTML5 Canvas (`#boardroom-canvas`), Simulação Multi-Stakeholder (CFO, CTO, CRO), *Skills* (`/adaptar-setor`, `/modo-caos`, `/auditoria-executiva`) e Validação no *Browser Sub-Agent*.
 
 ---
 
@@ -52,17 +52,17 @@ Copie qualquer uma das **4 missões abaixo** e cole no painel do Agente no **Goo
 
 ---
 
-### 🔹 Missão 1: Adicionar o 4º Conselheiro C-Level (CISO / Jurídico & ESG)
+### 🔹 Missão 1: Adicionar o 4º Conselheiro C-Level (CISO / Jurídico & LGPD)
 
-Em decisões envolvendo Inteligência Artificial e dados, o voto de **Segurança Cibernética, Privacidade (LGPD) e Sustentabilidade** tornou-se decisivo no Conselho. Vamos incluir esse 4º assento na mesa!
+Em decisões envolvendo Inteligência Artificial e dados, o voto de **Segurança Cibernética, Privacidade (LGPD) e Compliance** tornou-se decisivo no Conselho. Vamos incluir esse 4º assento na mesa!
 
 #### Copie e envie este prompt no Google Antigravity:
 
 ```text
 Evolua o simulador de Conselho em @tracks/03-boardroom-simulator/:
-1. Adicione um 4º card de Conselheiro no painel de Pareceres do C-Level em @tracks/03-boardroom-simulator/index.html e @tracks/03-boardroom-simulator/app.js: "CISO & Diretoria Jurídica / LGPD".
-2. Crie uma regra dinâmica onde esse conselheiro avalia o nível de governança de dados e segurança cibernética do portfólio selecionado (bloqueando o consenso caso projetos de IA de alto risco sejam escolhidos sem pelo menos 1 iniciativa de Governança/Segurança ativa!).
-3. Adicione no topo do painel um "Índice de Consenso do Conselho (0 a 4 votos favoráveis)".
+1. Adicione um 4º card de Conselheiro (#advisor-ciso) no painel .advisors-grid em @tracks/03-boardroom-simulator/index.html e @tracks/03-boardroom-simulator/app.js: "🔐 CISO & Jurídico (LGPD)".
+2. Crie uma regra dinâmica em runSimulation() onde o CISO avalia a relação entre Autonomia Agêntica (#slider-autonomy) e Governança (#slider-governance), vetando propostas com Autonomia > 75% e Governança < 70% por risco de conformidade LGPD.
+3. Atualize o veredito do Conselho (#verdict-badge) e o botão #btn-optimize-ai para considerar o consenso de 4 votos ("APROVAÇÃO UNÂNIME DO CONSELHO 4 A 0").
 4. Valide o novo conselheiro no Browser Sub-Agent e gere um Walkthrough Artifact com screenshots!
 ```
 
@@ -70,18 +70,18 @@ Evolua o simulador de Conselho em @tracks/03-boardroom-simulator/:
 
 ### 🔹 Missão 2: Stress Test Macroeconômico na Sala do Conselho (`/modo-caos`)
 
-Um bom portfólio estratégico precisa resistir a mudanças bruscas de cenário econômico. Vamos criar uma barra de **Testes de Estresse Macroeconômico**!
+Um bom plano estratégico precisa resistir a mudanças bruscas de cenário econômico. Vamos criar uma barra de **Testes de Estresse Macroeconômico**!
 
 #### Copie e envie este prompt no Google Antigravity:
 
 ```text
-Execute a Skill /modo-caos na pasta @tracks/03-boardroom-simulator/:
-1. Adicione uma seção "⚡ Stress Test de Cenário Macroeconômico" com 4 botões alternáveis:
+Execute a skill @.agent/skills/modo-caos/SKILL.md na pasta @tracks/03-boardroom-simulator/:
+1. Adicione uma seção "⚡ Stress Test de Cenário Macroeconômico" em @tracks/03-boardroom-simulator/index.html com 4 botões alternáveis:
    - "Cenário Base (Estável)"
-   - "Choque de Juros (Selic +3%)" -> encarece o custo de capital e penaliza projetos de payback longo.
-   - "Desvalorização Cambial (Dólar +25%)" -> aumenta o custo de projetos intensivos em nuvem/hardware importado.
-   - "Nova Regulação Estrita de IA" -> exige investimento obrigatório em compliance e valoriza projetos de governança.
-2. Quando o usuário clicar em qualquer cenário de estresse, recalcule instantaneamente o ROI, o Payback, a posição das bolhas no gráfico SVG Risco x Retorno e os votos do C-Level!
+   - "Choque de Juros (Selic +3%)" -> encarece o custo de capital e penaliza propostas de CAPEX alto (#slider-capex) e payback longo.
+   - "Desvalorização Cambial (Dólar +25%)" -> pressiona custos de infraestrutura de nuvem/IA.
+   - "Nova Regulação Estrita de IA" -> exige Governança (#slider-governance) mínima de 75% para evitar veto do CRO.
+2. Quando o usuário clicar em qualquer cenário de estresse, recalcule instantaneamente o ROI (#kpi-roi), o Índice de Resiliência (#kpi-survival), o Payback (#kpi-payback), a posição na Matriz Risco x Retorno no Canvas (#boardroom-canvas) e os votos do C-Level!
 3. Teste todos os cenários no Browser Sub-Agent e entregue um Walkthrough Artifact!
 ```
 
@@ -92,28 +92,28 @@ Execute a Skill /modo-caos na pasta @tracks/03-boardroom-simulator/:
 Transforme este simulador em uma ferramenta real para discutir o orçamento da sua diretoria na próxima semana!
 
 #### Copie e envie este prompt no Google Antigravity:
-*(Substitua `[SEU SETOR / SUA ÁREA]` pelo seu contexto real)*
+*(Ele já vem configurado com **Diretoria de Operações no Varejo & E-commerce** para funcionar em 1 clique caso você não edite nada; se preferir outra área, basta trocar na primeira linha)*
 
 ```text
-Execute a Skill /adaptar-setor na pasta @tracks/03-boardroom-simulator/ para o contexto de [SEU SETOR / SUA ÁREA, ex: Diretoria de Operações no Varejo / Indústria Farmacêutica / Banco Digital]:
-1. Substitua as iniciativas do portfólio em @tracks/03-boardroom-simulator/app.js por 8 projetos estratégicos realistas de IA, automação agêntica, eficiência operacional e governança típicos desse setor, com custos, retornos e riscos calibrados.
-2. Adicione um botão "📄 Exportar Ata Executiva para o Conselho" (#btn-export-memo) que gera na tela (e permite copiar em 1 clique) um resumo executivo estruturado em Markdown com as iniciativas aprovadas, o orçamento alocado, o ROI esperado e os pareceres de CFO, CTO e CRO.
+Execute a skill @.agent/skills/adaptar-setor/SKILL.md na pasta @tracks/03-boardroom-simulator/ para o contexto de Diretoria de Operações no Varejo & E-commerce (caso eu tenha mantido este setor padrão, execute imediatamente sem parar para perguntar):
+1. Atualize os Cenários Presets (PRESETS em @tracks/03-boardroom-simulator/app.js e os botões #btn-preset-1, #btn-preset-2, #btn-preset-3 em @tracks/03-boardroom-simulator/index.html) com iniciativas estratégicas realistas de IA Agêntica, logística omnichannel, prevenção a perdas e atendimento desse setor.
+2. Adicione um botão "📄 Exportar Ata Executiva para o Conselho" (#btn-export-memo) que gera na tela (e permite copiar em 1 clique) um resumo executivo estruturado em Markdown com a iniciativa avaliada, o CAPEX, o ROI projetado e os pareceres de CFO, CTO e CRO.
 3. Valide a exportação da ata no Browser Sub-Agent e gere um Walkthrough Artifact!
 ```
 
 ---
 
-### 🔹 Missão 4: Auditoria Autônoma de Portfólio (`/auditoria-executiva`)
+### 🔹 Missão 4: Auditoria Autônoma de Propostas (`/auditoria-executiva`)
 
-Peça ao **Browser Sub-Agent** para simular 3 perfis de investidor (Conservador, Moderado e Arrojado) no navegador e documentar qual portfólio gera o melhor retorno ajustado ao risco.
+Peça ao **Browser Sub-Agent** para testar os 3 Cenários Presets e o botão de Otimização com IA no navegador, documentando a calibragem ótima para o Conselho.
 
 #### Copie e envie este prompt no Google Antigravity:
 
 ```text
-Execute a Skill /auditoria-executiva em @tracks/03-boardroom-simulator/:
+Execute a skill @.agent/skills/auditoria-executiva/SKILL.md em @tracks/03-boardroom-simulator/:
 1. Abra o simulador no Browser Sub-Agent.
-2. Teste o botão "Otimizar com IA" (#btn-optimize-ai) em 3 níveis diferentes de Orçamento e Apetite a Risco (Conservador, Moderado e Agressivo).
-3. Capture screenshots comparativos e gere um Walkthrough Artifact recomendando a alocação ótima para apresentação ao Conselho de Administração.
+2. Teste os 3 Cenários Presets (#btn-preset-1, #btn-preset-2 e #btn-preset-3) e, em seguida, acione o botão "🤖 Otimizar com IA" (#btn-optimize-ai).
+3. Capture screenshots comparativos (antes e depois da otimização com IA) e gere um Walkthrough Artifact recomendando a alocação ótima para apresentação ao Conselho de Administração.
 ```
 
 ---

@@ -55,19 +55,18 @@ Você pode executar as **4 missões abaixo** em sequência ou escolher a que mai
 Vamos transformar este simulador genérico em uma **ferramenta de treinamento estratégico sob medida para o seu setor de atuação** (ex.: *Agronegócio, Saúde Suplementar, Varejo, Mercado Financeiro, Energia, Educação, Indústria ou Logística*).
 
 #### 1. Copie e envie este prompt no Google Antigravity:
-*(Substitua `[SEU SETOR]` pelo seu mercado real)*
+*(Ele já vem configurado com o setor **Agronegócio & Logística Exportadora** para funcionar em 1 clique caso você não edite nada; se preferir outro mercado, basta trocar o nome do setor na primeira linha)*
 
 ```text
-Execute a Skill /adaptar-setor na pasta @tracks/01-crisis-commander/ para o setor de [SEU SETOR, ex: Agronegócio / Saúde / Varejo Financeiro]:
-1. Reescreva os 8 dilemas trimestrais em @tracks/01-crisis-commander/game.js para refletirem decisões reais, pressões competitivas, dilemas de IA e gargalos regulatórios típicos desse setor no Brasil.
-2. Adapte os títulos, cargos dos conselheiros e rótulos dos 4 indicadores em @tracks/01-crisis-commander/index.html para a linguagem executiva desse mercado.
-3. Antes de alterar o código, gere um Implementation Plan para minha revisão.
-4. Após implementar, abra o jogo no Browser Sub-Agent, ative o botão #btn-ai-demo por 4 rodadas para validar os novos cenários e gere um Walkthrough Artifact com screenshots!
+Execute a skill @.agent/skills/adaptar-setor/SKILL.md na pasta @tracks/01-crisis-commander/ para o setor de Agronegócio & Logística Exportadora (caso eu tenha mantido este setor padrão, execute imediatamente sem parar para perguntar):
+1. Reescreva os 8 dilemas trimestrais (SCENARIOS) em @tracks/01-crisis-commander/game.js para refletirem decisões reais, pressões competitivas, dilemas de IA e gargalos regulatórios típicos desse setor no Brasil.
+2. Adapte os títulos e rótulos dos 4 indicadores em @tracks/01-crisis-commander/index.html para a linguagem executiva desse mercado.
+3. Após implementar, abra o jogo no Browser Sub-Agent, ative o botão #btn-ai-demo por 4 rodadas para validar os novos cenários e gere um Walkthrough Artifact com screenshots!
 ```
 
 #### 2. O que observar no Antigravity:
-- Veja como o agente cria primeiro um **Implementation Plan (Artifact)**. Passe o mouse sobre qualquer linha do plano se quiser deixar um comentário ou ajuste antes de aprovar.
-- Após aprovar, observe o **Browser Sub-Agent** abrir o navegador sozinho, clicar no botão de Demo IA e capturar evidências visuais no **Walkthrough**.
+- Caso o Antigravity exiba um **Implementation Plan (Artifact)** com botão **`Proceed` / `Accept`**, clique nele para autorizar a execução.
+- Observe o **Browser Sub-Agent** abrir o navegador sozinho, clicar no botão de Demo IA (`#btn-ai-demo`) e capturar evidências visuais no **Walkthrough**.
 
 ---
 
@@ -78,25 +77,25 @@ No mundo real, planos lineares são interrompidos por choques externos inesperad
 #### Copie e envie este prompt no Google Antigravity:
 
 ```text
-Execute a Skill /modo-caos na pasta @tracks/01-crisis-commander/:
-1. Adicione um botão de destaque "⚡ Disparar Cisne Negro" (#btn-black-swan) na barra superior do simulador em @tracks/01-crisis-commander/index.html.
+Execute a skill @.agent/skills/modo-caos/SKILL.md na pasta @tracks/01-crisis-commander/:
+1. Adicione um botão de destaque "⚡ Disparar Cisne Negro" (#btn-black-swan) na barra superior (.status-bar) do simulador em @tracks/01-crisis-commander/index.html.
 2. Crie em @tracks/01-crisis-commander/game.js um baralho especial de 4 eventos extremos de crise ("Ataque Ransomware Global", "Choque Cambial +30%", "Ruptura de Fornecedor Crítico de IA", "Nova Regulação Emergencial").
-3. Quando o botão for acionado (ou com 20% de chance automática a cada trimestre), exiba um alerta visual dramático com animação de tremor na tela (screen shake em CSS) e efeito sonoro via Web Audio API, exigindo uma decisão de contenção imediata.
-4. Valide o novo botão no Browser Sub-Agent e documente o teste em um Walkthrough Artifact!
+3. Quando o botão #btn-black-swan for acionado, exiba um alerta visual dramático com animação de tremor na tela (screen shake em CSS) e efeito sonoro via Web Audio API, exigindo uma decisão de contenção imediata.
+4. Valide o novo botão #btn-black-swan no Browser Sub-Agent e documente o teste em um Walkthrough Artifact!
 ```
 
 ---
 
 ### 🔹 Missão 3: Criar um "Comitê Consultivo de IA" em Tempo Real
 
-Que tal adicionar um painel onde **3 agentes conselheiros (CFO, CTO e Diretor de Risco)** debatem rapidamente os prós e contras de cada carta antes de você clicar na Opção A ou B?
+Que tal adicionar um painel onde **3 agentes conselheiros (CFO, CTO e CRO)** debatem rapidamente os prós e contras de cada carta antes de você escolher entre as 3 opções (`#btn-choice-0`, `#btn-choice-1`, `#btn-choice-2`)?
 
 #### Copie e envie este prompt no Google Antigravity:
 
 ```text
-Evolua o simulador em @tracks/01-crisis-commander/ adicionando um painel "Parecer do Comitê Executivo" logo abaixo da carta de decisão:
-1. Para cada trimestre, mostre uma recomendação curta de 1 linha de três perspectivas: CFO (foco em Caixa), CTO (foco em Inovação) e CRO (foco em Governança), indicando qual indicador atual está mais vulnerável.
-2. Destaque visualmente em amarelo/vermelho qualquer indicador que esteja abaixo de 25% ou acima de 80%, alertando o jogador sobre o risco iminente antes do clique.
+Evolua o simulador em @tracks/01-crisis-commander/ adicionando um painel "Parecer do Comitê Executivo" (#committee-panel) logo abaixo da descrição do cenário em @tracks/01-crisis-commander/index.html e @tracks/01-crisis-commander/game.js:
+1. Para cada trimestre, mostre uma recomendação curta de 1 linha de três perspectivas: CFO (foco em Caixa), CTO (foco em Agilidade & IA) e CRO (foco em Resiliência & Governança), indicando qual dos 4 indicadores está mais vulnerável no momento.
+2. Destaque visualmente em amarelo/vermelho qualquer indicador que esteja abaixo de 25%, alertando o executivo sobre o risco iminente de intervenção do Conselho antes do clique.
 3. Teste a nova funcionalidade no Browser Sub-Agent e gere um Walkthrough Artifact com screenshot!
 ```
 
@@ -109,9 +108,9 @@ Por fim, coloque o agente para atuar como um **Auditor de Qualidade (QA) autôno
 #### Copie e envie este prompt no Google Antigravity:
 
 ```text
-Execute a Skill /auditoria-executiva em @tracks/01-crisis-commander/:
+Execute a skill @.agent/skills/auditoria-executiva/SKILL.md em @tracks/01-crisis-commander/:
 1. Abra o simulador no Browser Sub-Agent.
-2. Execute uma partida completa de 8 trimestres usando o Modo Demo IA (#btn-ai-demo) e também teste o botão de Reiniciar.
+2. Execute uma partida completa de 8 trimestres usando o Modo Demo IA (#btn-ai-demo) e também teste o botão de Reiniciar (#btn-restart-game).
 3. Verifique que não há erros no console do navegador e produza um Walkthrough Artifact contendo prints do início, meio e fim da simulação, além de um diagnóstico sobre o equilíbrio matemático dos 4 indicadores.
 ```
 

@@ -83,7 +83,7 @@ Depois que o agente entregar o painel da sua empresa e mostrar o **Walkthrough**
 #### Copie e envie este prompt no mesmo chat:
 
 ```text
-Excelente! Agora consulte também no servidor MCP Brasil (@mcp/mcp_brasil_zero_deps.py) este segundo CNPJ: [SEGUNDO_CNPJ, ex: 07.689.002/0001-89] e adicione no painel de @tracks/05-radar-mcp-brasil/ uma seção "Benchmarking & Comparativo Setorial" comparando lado a lado o Porte, Capital Social, CNAE, localização e exposição macroeconômica (sensibilidade a Juros vs. Câmbio) das duas empresas! Valide no Browser Sub-Agent.
+Excelente! Agora consulte também no servidor MCP Brasil (@mcp/mcp_brasil_zero_deps.py, ex: rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli 07689002000189`) este segundo CNPJ: 07.689.002/0001-89 (Embraer S.A. — caso eu tenha mantido este 2º CNPJ padrão, execute imediatamente sem parar para perguntar) e adicione no painel de @tracks/05-radar-mcp-brasil/ uma seção "Benchmarking & Comparativo Setorial" comparando lado a lado o Porte, Capital Social, CNAE, localização e exposição macroeconômica (sensibilidade a Juros vs. Câmbio) das duas empresas! Valide no Browser Sub-Agent.
 ```
 
 ---

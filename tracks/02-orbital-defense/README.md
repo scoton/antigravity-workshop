@@ -13,7 +13,7 @@
 Você comanda uma estação orbital que protege o *Core Business* da organização contra uma chuva de **ameaças estratégicas e operacionais** (*Crise Cambial, Ataque Cibernético, Ruptura de Suprimentos, Obsolescência Tecnológica, Concorrente Agêntico*).
 
 O jogo já conta com:
-- 🎯 **Mira e Disparo Tático:** Controle via mouse ou clique direto nas ameaças no Canvas (`#defense-canvas`).
+- 🎯 **Mira e Disparo Tático:** Controle via mouse ou clique direto nas ameaças no Canvas (`#orbital-canvas`).
 - 🤖 **Piloto Automático de IA (`#btn-toggle-autopilot`):** Um agente tático embutido (já ativado por padrão) que calcula trajetórias em tempo real, prioriza os alvos mais próximos do núcleo e dispara automaticamente!
 - 💥 **Pulso Eletromagnético (`#btn-emp-blast`):** Limpa instantaneamente todas as ameaças ativas no radar em momentos críticos.
 - 🛡️ **Reforçar Escudo (`#btn-overcharge-shield`) & ☄️ Simular Enxame (`#btn-spawn-wave`):** Controles táticos para recuperar +25% de integridade ou injetar uma onda extra de estresse operacional.
@@ -55,10 +55,10 @@ Vamos elevar a adrenalina do jogo adicionando uma **Nave-Mãe "Cisne Negro"** qu
 #### Copie e envie este prompt no Google Antigravity:
 
 ```text
-Execute a Skill /modo-caos na pasta @tracks/02-orbital-defense/:
-1. Adicione em @tracks/02-orbital-defense/game.js um "Boss Cisne Negro" (um mega-asteroide blindado com barra de vida própria, aura vermelha pulsante e rótulo "CRISE SISTÊMICA GLOBAL") que surge quando o usuário clicar em um novo botão "🔥 Invocar Boss" (#btn-spawn-boss) na barra lateral de Comandos Táticos.
+Execute a skill @.agent/skills/modo-caos/SKILL.md na pasta @tracks/02-orbital-defense/:
+1. Adicione em @tracks/02-orbital-defense/game.js um "Boss Cisne Negro" (um mega-asteroide blindado com barra de vida própria, aura vermelha pulsante e rótulo "CRISE SISTÊMICA GLOBAL") que surge quando o usuário clicar em um novo botão "🔥 Invocar Boss" (#btn-spawn-boss) na barra lateral de Comandos Táticos (.tactical-actions) em @tracks/02-orbital-defense/index.html.
 2. Ao destruir o Boss, gere uma explosão épica de partículas douradas e restaure +25% do escudo da base.
-3. Atualize o algoritmo do Piloto Automático IA (#btn-toggle-autopilot) para priorizar o Boss quando ele estiver perigosamente próximo.
+3. Atualize o algoritmo do Piloto Automático IA (#btn-toggle-autopilot) para priorizar o Boss quando ele estiver ativo.
 4. Abra o jogo no Browser Sub-Agent, invoque o Boss (#btn-spawn-boss) para testar o combate e gere um Walkthrough Artifact com screenshots!
 ```
 
@@ -71,12 +71,12 @@ Quando sua organização neutraliza uma ameaça, ela captura aprendizado e recur
 #### Copie e envie este prompt no Google Antigravity:
 
 ```text
-Evolua o jogo em @tracks/02-orbital-defense/ adicionando um sistema de Power-Ups Estratégicos no Canvas:
-1. Quando um asteroide for destruído, dê 25% de chance de surgir um ícone brilhante flutuante que pode ser atingido por um tiro (ou coletado automaticamente pelo Piloto IA):
+Evolua o jogo em @tracks/02-orbital-defense/ adicionando um sistema de Power-Ups Estratégicos no Canvas (#orbital-canvas):
+1. Quando uma ameaça for destruída, dê 25% de chance de surgir um ícone brilhante flutuante que é coletado automaticamente pelo Piloto IA:
    - "⚡ ESQUADRÃO AGÊNTICO": Ativa Disparo Triplo em leque por 8 segundos.
-   - "🛡️ HEDGE CAMBIAL": Reduz a velocidade de queda das ameaças em 50% (Câmera Lenta) por 6 segundos.
+   - "🛡️ HEDGE CAMBIAL": Reduz a velocidade das ameaças em 50% por 6 segundos.
    - "💰 LIQUIDEZ EXTRA": Recupera +20% de integridade do escudo imediatamente.
-2. Mostre no HUD superior qual Power-Up está ativo no momento e adicione efeitos sonoros sintetizados via Web Audio API para os disparos e explosões.
+2. Mostre no HUD lateral qual Power-Up está ativo no momento e adicione efeitos sonoros sintetizados via Web Audio API para os disparos e explosões.
 3. Valide no Browser Sub-Agent com o Piloto IA ativado e gere um Walkthrough Artifact!
 ```
 
@@ -87,13 +87,13 @@ Evolua o jogo em @tracks/02-orbital-defense/ adicionando um sistema de Power-Ups
 Adapte o radar orbital para que os meteoros tragam os nomes dos **riscos reais que tiram o sono da diretoria do seu setor**.
 
 #### Copie e envie este prompt no Google Antigravity:
-*(Substitua `[SEU SETOR]` pela sua área de atuação)*
+*(Ele já vem configurado com **Bancos, Fintechs & Meios de Pagamento (Pix/Open Finance)** para funcionar em 1 clique caso você não edite nada; se preferir outro setor, basta alterar na primeira linha)*
 
 ```text
-Execute a Skill /adaptar-setor na pasta @tracks/02-orbital-defense/ para o setor de [SEU SETOR, ex: Bancos e Fintechs / Varejo / Energia / Indústria]:
-1. Personalize a lista de ameaças em @tracks/02-orbital-defense/game.js com os 10 maiores riscos reais desse setor (ex.: fraude em Pix, inadimplência, ruptura logística, ataque DDoS, mudança regulatória, etc.), classificando-os em 3 tamanhos/velocidades diferentes.
-2. Adicione no painel lateral ou inferior um "Relatório Pós-Missão" que mostra quantas ameaças de cada categoria foram neutralizadas durante a partida.
-3. Teste a partida no Browser Sub-Agent com o Piloto IA e documente o resultado em um Walkthrough Artifact!
+Execute a skill @.agent/skills/adaptar-setor/SKILL.md na pasta @tracks/02-orbital-defense/ para o setor de Bancos, Fintechs & Meios de Pagamento (Pix/Open Finance) (caso eu tenha mantido este setor padrão, execute imediatamente sem parar para perguntar):
+1. Personalize a lista de ameaças em @tracks/02-orbital-defense/game.js com os 10 maiores riscos reais desse setor (ex.: Fraude Pix, Ataque DDoS, Inadimplência, Mudança Regulatória Bacen, Vazamento LGPD, Latência em API Open Finance), classificando-os em 3 tamanhos/velocidades diferentes.
+2. Adicione na barra lateral (.hud-sidebar) um contador "Ameaças Neutralizadas por Categoria".
+3. Teste a partida no Browser Sub-Agent com o Piloto IA (#btn-toggle-autopilot) e documente o resultado em um Walkthrough Artifact!
 ```
 
 ---
@@ -105,9 +105,9 @@ Peça ao agente para realizar uma bateria de testes automatizados no navegador v
 #### Copie e envie este prompt no Google Antigravity:
 
 ```text
-Execute a Skill /auditoria-executiva em @tracks/02-orbital-defense/:
+Execute a skill @.agent/skills/auditoria-executiva/SKILL.md em @tracks/02-orbital-defense/:
 1. Abra o jogo no Browser Sub-Agent.
-2. Verifique o Piloto Automático IA (#btn-toggle-autopilot), acione o Enxame de Crise (#btn-spawn-wave), dispare o Pulso EMP (#btn-emp-blast) e deixe o jogo rodar por 10 segundos sob carga intensa.
+2. Verifique o Piloto Automático IA (#btn-toggle-autopilot), acione a Onda de Choque (#btn-spawn-wave), dispare o Pulso EMP (#btn-emp-blast) e deixe o jogo rodar por 10 segundos sob carga intensa.
 3. Confirme que não há erros de JavaScript no console, capture screenshots da ação em tela cheia e gere um Walkthrough Artifact com o laudo técnico.
 ```
 
