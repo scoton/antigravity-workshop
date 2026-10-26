@@ -88,21 +88,43 @@ Excelente! Agora consulte também no servidor MCP Brasil (@mcp/mcp_brasil_zero_d
 
 ---
 
-### 🔹 Etapa 4: Transformar em Automação Agendada (`/automation`)
+### 🔹 Etapa 4: Transformar em Automação Agendada com Governança (`/automation`)
 
 Na vida real de um executivo, você não quer lembrar de abrir o chat toda semana para pedir a atualização das taxas do Banco Central. No **Google Antigravity**, você pode criar **Agentes Agendados em Background** usando o comando `/automation`!
 
 #### Experimente enviar no chat:
 
 ```text
-/automation Configure uma automação semanal toda segunda-feira às 08h00 para consultar os indicadores atualizados do Banco Central (Selic, CDI, IPCA e Dólar) via mcp/mcp_brasil_zero_deps.py e atualizar o resumo executivo da minha empresa em tracks/05-radar-mcp-brasil/.
+/automation Configure uma automação semanal toda segunda-feira às 08h00 (fuso America/Sao_Paulo) para consultar os indicadores atualizados do Banco Central (Selic, CDI, IPCA e Dólar) via python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111 e atualizar o resumo executivo da minha empresa em tracks/05-radar-mcp-brasil/.
+```
+
+#### 🛡️ O que acontece por baixo dos panos (Governança *Zero Cheque em Branco*):
+1. **Agendamento Cron + Nova Conversa Limpa:** O Antigravity cria um sidecar em `~/.gemini/config/sidecars/<id>/sidecar.json` com `"builtin": "schedule"` e `"args": ["CRON_TZ=America/Sao_Paulo 0 8 * * 1", "agentapi", "new-conversation", "--", "<prompt autossuficiente>"]`.
+2. **Test Run Obrigatório (Calibragem de Permissões):** Quando um agente roda sozinho às 08h00 da manhã sem um humano presente, qualquer comando não autorizado previamente é bloqueado automaticamente por segurança. Por isso, o Antigravity faz **1 execução de teste assistida (Test Run)** com você agora para gravar no `sidecar.json` **apenas as permissões exatas** necessárias (`workspace_uris` e `access_grants` específicos, proibindo curingas amplos como `command(*)`).
+3. **Painel de Controle (`sidecar://dashboard`):** Ao finalizar, o agente mostra o botão **[Open Automations Dashboard](sidecar://dashboard)** para você ligar/pausar a rotina, clicar em **Run Now** ou auditar o histórico de execuções!
+
+---
+
+### 🔹 Etapa 5 (Bônus de Segunda-Feira): Criar Seu Próprio Workspace Executivo (`/criar-workspace-executivo`)
+
+Quer sair do workshop com uma **"Sala de Guerra Digital" (Workspace Executivo)** pronta para um projeto real da sua diretoria na segunda-feira? Use a Skill `/criar-workspace-executivo` para gerar automaticamente uma pasta completa estruturada nas **4 camadas do Antigravity** (*Rules + Skills + MCP + Automação Agendada + Cockpit Visual*):
+
+```text
+Execute a skill @.agent/skills/criar-workspace-executivo/SKILL.md para criar o meu Workspace Executivo de segunda-feira chamado `comite-estrategico-2027` (focado em Planejamento Estratégico, Monitoramento Macroeconômico e Governança de IA — execute imediatamente com estes parâmetros sem parar para perguntar):
+1. Crie dentro de `workspaces-executivos/comite-estrategico-2027/` as 4 camadas completas:
+   - Camada 1 (Rules): `AGENTS.md` e `.agents/rules/governanca-setorial.md` com os guardrails de compliance, LGPD e padrão executivo C-Level;
+   - Camada 2 (Skills): `.agents/skills/ritual-semanal-diretoria/SKILL.md` com Progressive Disclosure para preparar a pauta de segunda-feira;
+   - Camada 3 (MCP): `.gemini/settings.json` conectado ao servidor MCP Brasil;
+   - Camada 4 (Automação): `AUTOMACAO_SEGUNDA_FEIRA.md` com o comando `/automation` e o modelo de `sidecar.json` com permissões estritas (`access_grants` calibrados via Test Run).
+2. Crie o Cockpit Visual da Sala de Guerra em `workspaces-executivos/comite-estrategico-2027/index.html`, valide no Browser Sub-Agent e gere o Walkthrough!
 ```
 
 ---
 
 ## 🧠 Resumo do Aprendizado Executivo
 
-Nesta trilha você dominou os 3 conceitos mais avançados de um **Workspace Executivo** no Google Antigravity:
+Nesta trilha você dominou os 4 conceitos mais avançados de um **Workspace Executivo** no Google Antigravity:
 1. **MCP (Model Context Protocol):** Como tirar os agentes do isolamento e conectá-los a APIs oficiais e dados vivos da sua empresa.
-2. **Skills Sob Demanda (`.agent/skills/`):** Como empacotar um protocolo complexo de análise em uma Skill reutilizável por toda a sua equipe.
-3. **Automations (`/automation`):** Como passar da interação manual por chat para rotinas executivas recorrentes e auditáveis.
+2. **Skills Sob Demanda com *Progressive Disclosure* (`.agents/skills/`):** Como empacotar um protocolo complexo de análise em uma Skill reutilizável por toda a sua equipe sem poluir a memória do agente.
+3. **Automations com Test Run (`/automation`):** Como passar da interação manual por chat para rotinas executivas recorrentes e auditáveis com permissões estritas (`sidecar.json`).
+4. **Arquitetura de Workspaces (`/criar-workspace-executivo`):** Como estruturar Salas de Guerra dedicadas para cada comitê ou iniciativa estratégica da sua organização.

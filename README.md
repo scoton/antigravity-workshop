@@ -27,14 +27,18 @@ Cada trilha possui o seu próprio **`README.md` com o passo a passo completo e p
 
 ## 🏛️ Anatomia de um "Workspace Executivo" no Google Antigravity
 
-Um **Workspace** no Antigravity não serve apenas para equipes de engenharia de software — ele é uma **"Sala de Guerra Digital" (War Room)** que você pode criar para qualquer iniciativa estratégica (ex.: `planejamento-2027/`, `comite-m-and-a/`, `inteligencia-setorial/`). Observe como este próprio repositório está organizado em **4 camadas executivas**:
+Um **Workspace** no Antigravity não serve apenas para equipes de engenharia de software — ele é uma **"Sala de Guerra Digital" (War Room)** que você pode criar para qualquer iniciativa estratégica (ex.: `planejamento-2027/`, `comite-m-and-a/`, `inteligencia-setorial/`).
+
+> 💡 **Escopo Global (`~/.gemini/`) vs. Escopo do Workspace (Pasta do Projeto):** Configurações na pasta do seu usuário valem para todos os seus projetos pessoais; já tudo o que está **dentro da pasta do Workspace** tem prioridade máxima e **viaja junto no Git/ZIP** quando você compartilha a pasta com a sua diretoria!
+
+Observe como este próprio repositório está organizado nas **4 camadas executivas** do Antigravity:
 
 | Camada no Workspace | Onde Fica | Papel na Organização Agêntica |
 | :--- | :--- | :--- |
-| **1. Rules (`AGENTS.md` & `.agent/rules/`)** | Raiz e `.agent/rules/` | **Governança Sempre Ativa:** O "Código de Conduta e Compliance" que todo agente lê obrigatoriamente antes de agir. |
-| **2. Skills (`.agent/skills/<nome>/SKILL.md`)** | `.agent/skills/` | **Playbooks Sob Demanda (*Progressive Disclosure*):** Procedimentos especializados que não poluem a memória do agente e são ativados automaticamente quando o tema surge na conversa **ou** via comando `/` (`/radar-mcp-brasil`, `/gerar-super-heroi`). |
-| **3. MCP Servers (`mcp/`)** | `mcp/mcp_brasil_zero_deps.py` | **Conexão com Dados Reais:** Protocolo universal que conecta os agentes a APIs externas (Receita Federal, Banco Central) ou sistemas internos da sua empresa. |
-| **4. Automations (`/automation`)** | Comando `/automation` | **Execução Recorrente em Background:** Agentes agendados (diários/semanais) que rodam sozinhos com permissões auditadas e entregam relatórios prontos. |
+| **1. Rules (`AGENTS.md` & `.agents/rules/`)** | Raiz e `.agents/rules/` | **Governança Sempre Ativa:** O "Código de Conduta e Compliance" injetado automaticamente no *System Prompt* que todo agente lê obrigatoriamente antes de agir. |
+| **2. Skills (`.agents/skills/<nome>/SKILL.md`)** | `.agents/skills/` *(e `.agent/skills/`)* | **Playbooks Sob Demanda (*Progressive Disclosure*):** Em repouso, o agente lê apenas o cabeçalho YAML (`name` e `description`), gastando quase zero memória. O playbook completo só é carregado quando o tema surge na conversa **ou** via comando `/` (`/radar-mcp-brasil`, `/gerar-super-heroi`, `/criar-workspace-executivo`). |
+| **3. MCP Servers (`.gemini/settings.json` + `mcp/`)** | `mcp/mcp_brasil_zero_deps.py` | **Conexão com Dados Reais:** Protocolo universal (JSON-RPC) que conecta os agentes a APIs oficiais (Receita Federal, Banco Central) ou sistemas internos da sua empresa. |
+| **4. Automations (`/automation`)** | `~/.gemini/config/sidecars/<id>/sidecar.json` | **Execução Recorrente com Governança (*Zero Cheque em Branco*):** Agentes agendados (Cron com `CRON_TZ=America/Sao_Paulo`) que passam por um **Test Run** assistido para gravar permissões estritas (`access_grants` sem curingas) e são gerenciados no **Automations Dashboard (`sidecar://dashboard`)**. |
 
 ---
 
@@ -121,12 +125,18 @@ Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/
 
 *(Nota: Para conhecer também o ecossistema completo do `github.com/mcp-brasil/mcp-brasil` e do `mcp.apibrasil.io`, consulte o guia [`mcp/GUIA_MCP_BRASIL.md`](mcp/GUIA_MCP_BRASIL.md)).*
 
-#### Passo 2.3 (Próximo Nível — 1 min): Agendar como Automação Recorrente (`/automation`)
-E se, toda **segunda-feira às 08h00**, antes da sua reunião de diretoria, o Antigravity consultasse o Banco Central sozinho e atualizasse esse briefing? Experimente digitar no chat:
+#### Passo 2.3 (Próximo Nível — 2 min): Agendar como Automação Recorrente com Governança (`/automation`)
+E se, toda **segunda-feira às 08h00**, antes da sua reunião de diretoria, um agente autônomo consultasse o Banco Central sozinho e atualizasse esse briefing sem você precisar lembrar de abrir o chat? Experimente enviar na mesma conversa:
 
 ```text
-/automation Crie uma automação semanal toda segunda-feira às 08h00 para consultar os indicadores atualizados do Banco Central via mcp/mcp_brasil_zero_deps.py e atualizar o resumo executivo da minha empresa em tracks/05-radar-mcp-brasil/.
+/automation Configure uma automação semanal toda segunda-feira às 08h00 (fuso America/Sao_Paulo) para consultar os indicadores atualizados do Banco Central (Selic, CDI, IPCA e Dólar) via python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111 e atualizar o resumo executivo da minha empresa em tracks/05-radar-mcp-brasil/.
 ```
+
+> 🛡️ **Como funciona a Governança de Automações no Antigravity (*Zero Cheque em Branco*):**
+> Quando você aciona `/automation`, o Antigravity não dá um "cheque em branco" para a IA rodar comandos invisíveis no seu computador. Observe as 3 etapas que acontecem:
+> 1. **Prompt Autossuficiente & Cron (`CRON_TZ=America/Sao_Paulo 0 8 * * 1`):** Cada execução agendada abre uma nova conversa limpa (`agentapi new-conversation`).
+> 2. **Test Run Obrigatório (Calibragem de Permissões):** Como agentes rodando em background têm qualquer comando não autorizado bloqueado automaticamente, o Antigravity faz **1 execução de teste assistida (Test Run)** agora com você para gravar no arquivo `sidecar.json` **apenas as permissões exatas** necessárias (`workspace_uris` e `access_grants` específicos, proibindo curingas como `command(*)`).
+> 3. **Painel de Controle (`sidecar://dashboard`):** Ao final, ele exibe o botão **[Open Automations Dashboard](sidecar://dashboard)**, onde você pode ligar/pausar o agendamento, clicar em **Run Now** ou auditar o histórico de todas as execuções!
 
 ---
 
@@ -153,6 +163,24 @@ Execute a skill @.agent/skills/gerar-super-heroi/SKILL.md:
 ```
 
 > 💡 **Memória Organizacional (Transformando Conversas em Skills):** Sempre que você e sua equipe descobrirem um fluxo de alto valor no Antigravity, não deixe o conhecimento morrer no histórico do chat! Basta pedir: *"Transforme o fluxo que acabamos de executar em uma nova Skill reutilizável dentro de `.agent/skills/` para toda a equipe."*
+
+---
+
+## 🏛️ Passo Bônus para Segunda-Feira: Gerar Seu Próprio Workspace Executivo (`/criar-workspace-executivo`)
+
+Quer sair do workshop com uma **"Sala de Guerra Digital" (Workspace Executivo)** pronta para usar na sua empresa na segunda-feira às 09h00? Criamos a Skill `/criar-workspace-executivo` (`.agent/skills/criar-workspace-executivo/SKILL.md`) que gera automaticamente uma pasta completa estruturada nas **4 camadas do Antigravity** (*Rules + Skills + MCP Server + Automação Agendada + Cockpit Visual*).
+
+Basta copiar e colar o prompt abaixo no chat do Agente *(você pode manter o tema padrão `comite-estrategico-2027` ou trocar pelo desafio real da sua diretoria)*:
+
+```text
+Execute a skill @.agent/skills/criar-workspace-executivo/SKILL.md para criar o meu Workspace Executivo de segunda-feira chamado `comite-estrategico-2027` (focado em Planejamento Estratégico, Monitoramento Macroeconômico e Governança de IA — execute imediatamente com estes parâmetros sem parar para perguntar):
+1. Crie dentro de `workspaces-executivos/comite-estrategico-2027/` as 4 camadas completas:
+   - Camada 1 (Rules): `AGENTS.md` e `.agents/rules/governanca-setorial.md` com os guardrails de compliance, LGPD e padrão executivo C-Level;
+   - Camada 2 (Skills): `.agents/skills/ritual-semanal-diretoria/SKILL.md` com Progressive Disclosure para preparar a pauta de segunda-feira;
+   - Camada 3 (MCP): `.gemini/settings.json` conectado ao servidor MCP Brasil;
+   - Camada 4 (Automação): `AUTOMACAO_SEGUNDA_FEIRA.md` com o comando `/automation` e o modelo de `sidecar.json` com permissões estritas (`access_grants` calibrados via Test Run).
+2. Crie o Cockpit Visual da Sala de Guerra em `workspaces-executivos/comite-estrategico-2027/index.html`, valide no Browser Sub-Agent e gere o Walkthrough!
+```
 
 ---
 

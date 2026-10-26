@@ -8,6 +8,7 @@ e restaurando os index.html originais via Git.
 """
 
 import os
+import shutil
 import subprocess
 import sys
 
@@ -21,6 +22,10 @@ GENERATED_FILES = [
     "tracks/04-flappy-hero/hero-caricatura.png",
     "tracks/05-radar-mcp-brasil/app.js",
     "tracks/05-radar-mcp-brasil/style.css",
+]
+
+GENERATED_DIRS = [
+    "workspaces-executivos",
 ]
 
 BLUEPRINT_FILES = [
@@ -38,6 +43,13 @@ def main() -> int:
         if os.path.exists(abs_path):
             os.remove(abs_path)
             print(f"  🗑️ Removido: {rel_path}")
+            removed += 1
+
+    for rel_dir in GENERATED_DIRS:
+        abs_dir = os.path.join(ROOT_DIR, rel_dir)
+        if os.path.isdir(abs_dir):
+            shutil.rmtree(abs_dir)
+            print(f"  🗑️ Pasta removida: {rel_dir}/")
             removed += 1
 
     # Restore blueprint HTML files via git checkout if git is available

@@ -13,6 +13,7 @@ Este repositório contém o laboratório prático (*Hands-On Self-Paced*) para o
 - `.agent/skills/` (e `.agents/skills/`): **Skills com Descoberta Semântica Sob Demanda (*Progressive Disclosure*)** — cada pasta contém um `SKILL.md` que o Antigravity descobre automaticamente pelo contexto da conversa ou via comando `/`:
   - `/radar-mcp-brasil` → `.agent/skills/radar-mcp-brasil/SKILL.md`
   - `/gerar-super-heroi` → `.agent/skills/gerar-super-heroi/SKILL.md`
+  - `/criar-workspace-executivo` → `.agent/skills/criar-workspace-executivo/SKILL.md`
   - `/modo-caos` → `.agent/skills/modo-caos/SKILL.md`
   - `/adaptar-setor` → `.agent/skills/adaptar-setor/SKILL.md`
   - `/auditoria-executiva` → `.agent/skills/auditoria-executiva/SKILL.md`
