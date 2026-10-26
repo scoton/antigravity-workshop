@@ -363,8 +363,8 @@
 
     function copyHeroPrompt(btn) {
       const promptTxt = `Execute a skill @.agent/skills/gerar-super-heroi/SKILL.md:
-1. Analise a minha foto em @tracks/04-flappy-hero/minha-selfie.png (ou busque automaticamente em ~/Downloads/minha-selfie.png caso o navegador tenha salvo na pasta Downloads).
-2. Gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em \`tracks/04-flappy-hero/hero-caricatura.png\`).
+1. Localize a minha foto em \`tracks/04-flappy-hero/minha-selfie.png\` (caso ainda não esteja nessa pasta, busque automaticamente o arquivo mais recente \`~/Downloads/minha-selfie*.png\` e copie para \`tracks/04-flappy-hero/minha-selfie.png\`; se não houver nenhum arquivo, gere um Avatar Executivo de Super-Herói padrão).
+2. Analise meus traços marcantes na imagem e gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em \`tracks/04-flappy-hero/hero-caricatura.png\`).
 3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão/escudo, capa vermelha e dourada esvoaçante animada no Canvas e botão na tela para alternar entre a Caricatura IA e a minha Selfie original!).
 4. Abra o jogo no Browser Sub-Agent, faça um voo de teste com o meu Super-Herói desviando das burocracias e gere o Walkthrough com o print final!`;
       navigator.clipboard.writeText(promptTxt).then(() => {

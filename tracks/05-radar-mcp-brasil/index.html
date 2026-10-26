@@ -157,9 +157,9 @@
         <button class="btn" onclick="updateCnpj('61.585.865/0001-51 (RD Saúde / Raia Drogasil)')">RD Saúde</button>
       </div>
 
-      <div id="p-mcp" class="prompt-pre">Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A.):
-1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
-2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+      <div id="p-mcp" class="prompt-pre">Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — execute imediatamente para esta empresa sem parar para perguntar):
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
+2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
 3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!</div>
     </div>
   </div>
@@ -168,9 +168,9 @@
     function updateCnpj(val) {
       const target = val && val.trim() ? val.trim() : "84.429.695/0001-11 (WEG S.A.)";
       document.getElementById("p-mcp").textContent =
-`Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ ${target}:
-1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
-2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+`Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ ${target} (execute imediatamente para esta empresa sem parar para perguntar):
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
+2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
 3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!`;
     }
 
