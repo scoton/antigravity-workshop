@@ -62,7 +62,7 @@ Agora que o documento `SPEC_JOGO.md` está pronto, vamos ordenar que o agente im
 1. No mesmo chat do **Google Antigravity**, copie e envie:
 
 ```text
-Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (criando index.html, style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md.
+Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.
 Quando terminar de criar os arquivos:
 1. Abra o jogo no Browser Sub-Agent.
 2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.
@@ -70,32 +70,32 @@ Quando terminar de criar os arquivos:
 ```
 
 2. ⚡ **Experimente a Orquestração Paralela (`Cmd/Ctrl + E`):**
-   - Enquanto este agente programa os arquivos e abre o navegador (o que leva cerca de 3 minutos), pressione **`Cmd + E`** (Mac) ou **`Ctrl + E`** (Windows/Linux) para abrir o **Agent Manager**.
+   - **Dica para Iniciantes:** Se aparecer um botão azul **`Proceed` / `Approve` / `Accept`** no chat do Antigravity pedindo confirmação do plano, **clique nele primeiro** para iniciar a criação dos arquivos!
+   - Enquanto este agente programa os arquivos e abre o navegador (o que leva cerca de 3 minutos), pressione **`Cmd + E`** (Mac) ou **`Ctrl + E`** (Windows/Linux) — ou clique no botão **`+` (New Conversation)** — para abrir o **Agent Manager**.
    - Clique em **New Conversation** e siga o passo a passo da **[Trilha 05 — Radar Executivo MCP Brasil](../05-radar-mcp-brasil/README.md)** em paralelo!
    - Quando terminar (ou quando o Agent Manager notificar que a conversa da Trilha 04 concluiu), volte para esta conversa e veja o jogo pronto e testado no **Walkthrough Artifact**!
 
 ---
 
-### 📸 Etapa 3: Capturar Sua Selfie Rápida (1 Minuto)
+### 📸 Etapa 3: Capturar Sua Selfie Rápida ou Escolher um Avatar em 1 Clique (1 Minuto)
 
 Agora vamos transformar **você** no protagonista do jogo!
 
-1. Abra o arquivo [`tracks/04-flappy-hero/selfie-studio.html`](./selfie-studio.html) no seu navegador (ou acesse `http://localhost:8080/tracks/04-flappy-hero/selfie-studio.html`).
-2. Clique em **🎥 Ligar Webcam** → faça uma pose de líder ou super-herói → clique em **📸 Capturar Selfie**.
-3. Clique em **⬇️ Baixar `minha-selfie.png`** e salve o arquivo dentro desta pasta:
-   `tracks/04-flappy-hero/minha-selfie.png`
-   *(Nota: se preferir não usar webcam, basta copiar qualquer foto de rosto sua para dentro desta pasta com o nome `minha-selfie.png`!).*
+1. Abra o arquivo [`tracks/04-flappy-hero/selfie-studio.html`](./selfie-studio.html) no seu navegador (ou clique em **📸 Abrir Selfie Studio** no Mission Hub `index.html`).
+2. Clique em **🎥 Ligar Webcam** → faça uma pose de líder ou super-herói → clique em **📸 Capturar Selfie** *(ou, se estiver sem webcam, clique em um dos **4 Avatares Executivos de Super-Herói** prontos na tela!)*.
+3. Clique em **⬇️ Baixar `minha-selfie.png`**.
+   *(Nota: se o seu navegador salvar automaticamente na pasta `~/Downloads/minha-selfie.png`, não precisa mover o arquivo manualmente — a Skill abaixo encontra e copia da pasta `Downloads` sozinha para você!).*
 
 ---
 
 ### 🎨 Etapa 4: Transformar Sua Selfie em uma Caricatura de Super-Herói (`/gerar-super-heroi`)
 
-Com o arquivo `minha-selfie.png` salvo nesta pasta, volte para a conversa desta trilha no **Google Antigravity** e acione a Skill `/gerar-super-heroi` enviando o prompt abaixo:
+Volte para a conversa desta trilha no **Google Antigravity** e envie o prompt abaixo:
 
 ```text
-Execute a Skill /gerar-super-heroi:
-1. Analise a minha foto em @tracks/04-flappy-hero/minha-selfie.png (observando meus traços marcantes como formato do rosto, cabelo, óculos, barba, sorriso e expressão).
-2. Gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim e salve em `tracks/04-flappy-hero/hero-caricatura.png`.
+Execute a skill @.agent/skills/gerar-super-heroi/SKILL.md:
+1. Localize a minha foto em `tracks/04-flappy-hero/minha-selfie.png` (caso ainda não esteja nessa pasta, busque automaticamente o arquivo mais recente `~/Downloads/minha-selfie*.png` e copie para `tracks/04-flappy-hero/minha-selfie.png`; se não houver nenhum arquivo, gere um Avatar Executivo de Super-Herói padrão).
+2. Analise meus traços marcantes na imagem e gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim e salve em `tracks/04-flappy-hero/hero-caricatura.png`.
 3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão dourado, capa vermelha esvoaçante animada no Canvas e um botão na tela para alternar ao vivo entre a Caricatura IA e a minha Selfie original!).
 4. Abra o jogo no Browser Sub-Agent, ative o Piloto IA para fazer um voo de teste com o meu Super-Herói desviando das burocracias e gere o Walkthrough com o print final!
 ```

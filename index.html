@@ -58,7 +58,7 @@
           <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-open-selfie-studio" href="tracks/04-flappy-hero/selfie-studio.html" class="btn btn-primary" style="flex: 1;">📸 Abrir Selfie Studio →</a>
             <a id="btn-open-flappy-game" href="tracks/04-flappy-hero/index.html" class="btn" style="flex: 1;">🎮 Abrir Jogo / Blueprint →</a>
-            <a href="tracks/04-flappy-hero/README.md" class="btn btn-sm" style="width: 100%;">📖 Guia Passo a Passo Autoguiado (README.md)</a>
+            <button type="button" onclick="openGuideModal('tracks/04-flappy-hero/README.md', '🦸‍♂️ Guia Passo a Passo — Trilha 04: Flappy Executive Hero')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo (Atos 1 e 3)</button>
           </div>
         </article>
 
@@ -81,7 +81,7 @@
           </div>
           <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-open-mcp-radar" href="tracks/05-radar-mcp-brasil/index.html" class="btn btn-primary" style="flex: 1; background: var(--accent-emerald); color: #041014;">📊 Abrir Painel / Blueprint →</a>
-            <a href="tracks/05-radar-mcp-brasil/README.md" class="btn btn-sm" style="flex: 1;">📖 Guia da Trilha 05 (README.md)</a>
+            <button type="button" onclick="openGuideModal('tracks/05-radar-mcp-brasil/README.md', '🇧🇷 Guia Passo a Passo — Trilha 05: Radar MCP Brasil')" class="btn btn-sm" style="flex: 1;">📖 Abrir Guia da Trilha 05</button>
           </div>
         </article>
       </div>
@@ -108,7 +108,8 @@
           <span class="mission-duration">⏱️ 7 Minutos</span>
         </div>
         <div class="executive-insight">
-          <strong>Paradigma Executivo (Spec-Driven Development):</strong> Primeiro peça ao Antigravity para criar a especificação completa do jogo (Passo 1.1). Assim que ele gerar o arquivo <code>SPEC_JOGO.md</code>, dispare o Passo 1.2 para ele programar e testar o jogo completo e <strong>mude imediatamente para o Ato 2 enquanto ele trabalha!</strong>
+          <strong>Paradigma Executivo (Spec-Driven Development):</strong> Primeiro peça ao Antigravity para criar a especificação completa do jogo (Passo 1.1). Assim que ele gerar o arquivo <code>SPEC_JOGO.md</code>, dispare o Passo 1.2 para ele programar e testar o jogo completo.<br/>
+          <span style="color: var(--accent-lime);">👀 <strong>Dica para Iniciantes no Antigravity:</strong> Se aparecer um botão azul <strong><code>Proceed</code> / <code>Approve</code> / <code>Accept</code></strong> no chat pedindo confirmação do plano, clique nele para iniciar a construção e <strong>mude imediatamente para o Ato 2 enquanto ele trabalha!</strong></span>
         </div>
         <div class="prompt-selector-bar" style="flex-wrap: wrap;">
           <span>Escolha o passo do Ato 1:</span>
@@ -154,9 +155,9 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m2" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m2-text', this)">Copiar Prompt</button>
-          <div id="prompt-m2-text">Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A.) [OU TROQUE PELO CNPJ DA SUA EMPRESA]:
-1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
-2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+          <div id="prompt-m2-text">Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — caso eu tenha mantido este CNPJ padrão, execute imediatamente para a WEG S.A. sem parar para perguntar):
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (ex: rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
+2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
 3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!</div>
         </div>
       </div>
@@ -168,13 +169,13 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
           <span class="mission-duration">⏱️ 10 Minutos</span>
         </div>
         <div class="executive-insight">
-          <strong>O Grande Final:</strong> Volte para a 1ª conversa no <strong>Agent Manager</strong> e veja o seu jogo <em>Flappy Executive Hero</em> pronto! Agora abra o <a href="tracks/04-flappy-hero/selfie-studio.html" style="color: var(--accent-amber);">Selfie Studio</a>, salve sua selfie como <code>tracks/04-flappy-hero/minha-selfie.png</code> e envie o prompt abaixo (ou digite <code>/gerar-super-heroi</code>).
+          <strong>O Grande Final:</strong> Volte para a 1ª conversa no <strong>Agent Manager (<code>Cmd/Ctrl + E</code>)</strong> e veja o seu jogo <em>Flappy Executive Hero</em> pronto! Agora abra o <a href="tracks/04-flappy-hero/selfie-studio.html" style="color: var(--accent-amber);">Selfie Studio</a>, tire sua selfie (ou escolha 1 dos 4 Avatares Executivos em 1 clique), clique em <strong>Baixar <code>minha-selfie.png</code></strong> (não precisa mover da pasta <code>Downloads</code>!) e envie o prompt abaixo:
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m3" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m3-text', this)">Copiar Prompt</button>
           <div id="prompt-m3-text">Execute a skill @.agent/skills/gerar-super-heroi/SKILL.md:
-1. Analise a minha foto em @tracks/04-flappy-hero/minha-selfie.png (observando meus traços marcantes como cabelo, óculos, barba, sorriso e expressão).
-2. Gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em `tracks/04-flappy-hero/hero-caricatura.png`).
+1. Localize a minha foto em `tracks/04-flappy-hero/minha-selfie.png` (caso ainda não esteja nessa pasta, busque automaticamente o arquivo mais recente `~/Downloads/minha-selfie*.png` e copie para `tracks/04-flappy-hero/minha-selfie.png`; se não houver nenhum arquivo, gere um Avatar Executivo de Super-Herói padrão).
+2. Analise meus traços marcantes na imagem e gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em `tracks/04-flappy-hero/hero-caricatura.png`).
 3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão/escudo, capa vermelha e dourada esvoaçante animada no Canvas e botão na tela para alternar entre a Caricatura IA e a minha Selfie original!).
 4. Abra o jogo no Browser Sub-Agent, faça um voo de teste com o meu Super-Herói desviando das burocracias e gere o Walkthrough com o print final!</div>
         </div>
@@ -224,7 +225,7 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
           </div>
           <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-launch-track-1" href="tracks/01-crisis-commander/index.html" class="btn" style="flex: 1;">Abrir Crisis Commander →</a>
-            <a href="tracks/01-crisis-commander/README.md" class="btn btn-sm" style="width: 100%;">📖 Guia Passo a Passo (README.md)</a>
+            <button type="button" onclick="openGuideModal('tracks/01-crisis-commander/README.md', '🏛️ Guia Passo a Passo — Trilha 01: Crisis Commander')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
           </div>
         </article>
 
@@ -242,7 +243,7 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
           </div>
           <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-launch-track-2" href="tracks/02-orbital-defense/index.html" class="btn" style="flex: 1;">Abrir Orbital Defense →</a>
-            <a href="tracks/02-orbital-defense/README.md" class="btn btn-sm" style="width: 100%;">📖 Guia Passo a Passo (README.md)</a>
+            <button type="button" onclick="openGuideModal('tracks/02-orbital-defense/README.md', '🛡️ Guia Passo a Passo — Trilha 02: Orbital Defense')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
           </div>
         </article>
 
@@ -260,7 +261,7 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
           </div>
           <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-launch-track-3" href="tracks/03-boardroom-simulator/index.html" class="btn" style="flex: 1;">Abrir Boardroom War Room →</a>
-            <a href="tracks/03-boardroom-simulator/README.md" class="btn btn-sm" style="width: 100%;">📖 Guia Passo a Passo (README.md)</a>
+            <button type="button" onclick="openGuideModal('tracks/03-boardroom-simulator/README.md', '📊 Guia Passo a Passo — Trilha 03: Boardroom War Room')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
           </div>
         </article>
       </div>
@@ -272,10 +273,21 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
     </footer>
   </div>
 
+  <!-- Modal Leitor Interativo de Guias Passo a Passo -->
+  <div id="guide-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.82); z-index: 9999; padding: 2rem 1rem; overflow-y: auto;" onclick="if(event.target===this) closeGuideModal()">
+    <div style="max-width: 900px; margin: 0 auto; background: var(--bg-surface); border: 1px solid var(--accent-lime); border-radius: 14px; padding: 1.75rem; box-shadow: 0 24px 60px rgba(0,0,0,0.85);">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.25rem; gap: 1rem;">
+        <h2 id="guide-modal-title" style="font-size: 1.25rem; color: var(--accent-lime);">📖 Guia Passo a Passo</h2>
+        <button class="btn btn-sm" onclick="closeGuideModal()">✕ Fechar Guia (ESC)</button>
+      </div>
+      <div id="guide-modal-body" style="font-size: 0.94rem; line-height: 1.65; color: var(--text-secondary);"></div>
+    </div>
+  </div>
+
   <script>
     const ATO1_STEPS = {
       1: `Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".\n\nA especificação deve detalhar:\n1. Mecânica e Física: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos e controle por Barra de Espaço / Clique.\n2. Obstáculos Bem-Humorados: Os "canos" devem ser barreiras corporativas com rótulos visíveis e divertidos, como "Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional".\n3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o herói calcular o pulo ideal sozinho para desviar das barreiras (ótimo para demonstração e testes automatizados).\n4. Sistema de Avatar Super-Herói: O personagem deve ser desenhado com uma capa de super-herói esvoaçante animada no Canvas e rastro de partículas, suportando carregar a imagem \`hero-caricatura.png\` / \`minha-selfie.png\` ou trocar de foto direto na tela (#btn-upload-hero).\n5. Efeitos Sonoros Sintetizados (Web Audio API) e placar com medalhas executivas.\n\nApenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.`,
-      2: `Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md.\nQuando terminar de criar os arquivos:\n1. Abra o jogo no Browser Sub-Agent.\n2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.\n3. Gere um Walkthrough Artifact com screenshots do jogo funcionando!`
+      2: `Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.\nQuando terminar de criar os arquivos:\n1. Abra o jogo no Browser Sub-Agent.\n2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.\n3. Gere um Walkthrough Artifact com screenshots do jogo funcionando!`
     };
 
     function setAto1Step(stepNum, btnEl) {
@@ -289,9 +301,9 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
       document.querySelectorAll('.cnpj-btn').forEach(b => b.classList.remove('active-step'));
       if (btnEl) btnEl.classList.add('active-step');
       document.getElementById('prompt-m2-text').textContent =
-`Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ ${cnpjLabel}:
-1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
-2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+`Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ ${cnpjLabel} (execute imediatamente para esta empresa sem parar para perguntar):
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
+2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
 3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!`;
     }
 
@@ -377,6 +389,63 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
       renderTimer();
       document.getElementById('btn-timer-toggle').textContent = 'Iniciar';
     }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function renderMarkdownToHtml(md) {
+      const blocks = [];
+      let processed = md.replace(/```([a-zA-Z0-9_-]*)\n([\s\S]*?)```/g, (_, lang, code) => {
+        const idx = blocks.length;
+        const blockId = 'md-code-' + idx;
+        blocks.push(`
+          <div class="prompt-box" style="margin: 0.9rem 0;">
+            <button class="btn btn-sm btn-primary copy-btn" onclick="copyText('${blockId}', this)">📋 Copiar</button>
+            <div id="${blockId}">${escapeHtml(code.trim())}</div>
+          </div>
+        `);
+        return `@@CODEBLOCK_${idx}@@`;
+      });
+
+      processed = escapeHtml(processed)
+        .replace(/^### (.*)$/gm, '<h4 style="color: var(--text-primary); font-size: 1.05rem; margin: 1.1rem 0 0.4rem;">$1</h4>')
+        .replace(/^## (.*)$/gm, '<h3 style="color: var(--accent-cyan); font-size: 1.18rem; margin: 1.35rem 0 0.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.3rem;">$1</h3>')
+        .replace(/^# (.*)$/gm, '<h2 style="color: var(--accent-lime); font-size: 1.35rem; margin: 0.5rem 0 0.75rem;">$1</h2>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong style="color: var(--text-primary);">$1</strong>')
+        .replace(/`([^`]+)`/g, '<code style="background: var(--bg-elevated); padding: 0.12rem 0.38rem; border-radius: 4px; color: var(--accent-amber); font-family: var(--font-mono); font-size: 0.84em;">$1</code>')
+        .replace(/\n\n/g, '<br/><br/>');
+
+      blocks.forEach((html, idx) => {
+        processed = processed.replace(`@@CODEBLOCK_${idx}@@`, html);
+      });
+      return processed;
+    }
+
+    async function openGuideModal(mdPath, title) {
+      const modal = document.getElementById('guide-modal');
+      const titleEl = document.getElementById('guide-modal-title');
+      const bodyEl = document.getElementById('guide-modal-body');
+      titleEl.textContent = title;
+      bodyEl.innerHTML = 'Carregando guia passo a passo...';
+      modal.style.display = 'block';
+      try {
+        const res = await fetch(mdPath);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const md = await res.text();
+        bodyEl.innerHTML = renderMarkdownToHtml(md);
+      } catch (err) {
+        bodyEl.innerHTML = `<p>Abra o arquivo <code>${mdPath}</code> diretamente no painel do Google Antigravity para visualizar o guia passo a passo com todos os prompts.</p>`;
+      }
+    }
+
+    function closeGuideModal() {
+      document.getElementById('guide-modal').style.display = 'none';
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeGuideModal();
+    });
   </script>
 </body>
 </html>

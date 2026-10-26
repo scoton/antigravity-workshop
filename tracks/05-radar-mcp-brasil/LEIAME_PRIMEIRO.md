@@ -60,12 +60,12 @@ Mesmo que você esteja executando este repositório em casa após o evento, bast
    > - **Petrobras S.A. (Energia / Óleo & Gás):** `33.000.167/0001-01`
    > - **Raia Drogasil S.A. (Saúde & Varejo Farmacêutico):** `61.585.865/0001-51`
 
-2. Copie o prompt abaixo, substitua `[SEU_CNPJ_AQUI]` pelo CNPJ escolhido e envie para o Agente:
+2. Copie e envie o prompt abaixo para o Agente! *(Ele já vem preenchido com o CNPJ da **WEG S.A. `84.429.695/0001-11`** para funcionar em 1 clique caso você não queira editar nada; se quiser consultar a sua empresa, basta substituir o CNPJ na primeira linha)*:
 
 ```text
-Execute a Skill /radar-mcp-brasil para o CNPJ [SEU_CNPJ_AQUI, ex: 84.429.695/0001-11]:
-1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Atividades Secundárias, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA 12m e Dólar PTAX).
-2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" completo (index.html, style.css e app.js) personalizado para esta empresa.
+Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — caso eu tenha mantido este CNPJ padrão, execute imediatamente para a WEG S.A. sem parar para perguntar):
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (ex: rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Atividades Secundárias, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA 12m e Dólar PTAX).
+2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" completo (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa.
 3. Inclua no painel:
    - Card de Identidade Corporativa e CNAE real da empresa;
    - Cards com as taxas oficiais de hoje do Banco Central (Selic, CDI, IPCA e Dólar);

@@ -40,18 +40,26 @@ Um **Workspace** no Antigravity não serve apenas para equipes de engenharia de 
 
 ## ⏱️ Roteiro Self-Paced em 3 Atos (33 Minutos)
 
-### 🏁 Preparação Rápida (2 minutos)
+### 🏁 Preparação Rápida (2 minutos — Zero Conhecimento Técnico Necessário!)
 
-1. Baixe/Clone este repositório e abra a pasta no **Google Antigravity**:
-   ```bash
-   git clone https://github.com/scoton/antigravity-workshop.git
-   cd antigravity-workshop
-   ```
-2. Para visualizar o portal inicial no navegador, rode no terminal (ou peça ao agente):
-   ```bash
-   python3 -m http.server 8080
-   ```
-   *(Ou simplesmente abra o arquivo `index.html` diretamente no navegador).*
+Nunca usou o **Google Antigravity**, Git ou Terminal antes? Não se preocupe — você **não precisa saber programar nem usar linha de comando**:
+
+1. **Baixe e abra esta pasta no Google Antigravity:**
+   - **Opção A (Sem Terminal — Mais Fácil):** No topo desta página do GitHub, clique no botão verde **`<> Code` → `Download ZIP`**, extraia o arquivo `.zip` no seu computador e, dentro do **Google Antigravity**, clique no menu superior **`File` → `Open Folder...` (Abrir Pasta)** selecionando a pasta `antigravity-workshop`.
+   - **Opção B (Via Terminal/Git):**
+     ```bash
+     git clone https://github.com/scoton/antigravity-workshop.git
+     cd antigravity-workshop
+     ```
+2. **Abra o Portal Interativo do Workshop (`index.html`):**
+   - Você pode simplesmente dar **dois cliques** no arquivo `index.html` dentro da pasta para abri-lo no seu navegador, **ou** colar esta frase na caixa de chat do Agente no Antigravity para que ele mesmo inicie o servidor para você:
+     ```text
+     Inicie um servidor web local na porta 8080 nesta pasta em background e me informe o link para abrir o index.html no navegador.
+     ```
+3. **💡 3 Dicas de Ouro para Iniciantes no Antigravity:**
+   - **Onde colar os Prompts:** Todos os blocos cinzas de texto abaixo devem ser copiados e colados na **caixa de Chat do Agente** (painel do Antigravity).
+   - **Botões `Proceed` / `Accept` / `Allow`:** Sempre que o Antigravity criar um plano (*Implementation Plan*) ou pedir permissão para rodar um comando / abrir o navegador, aparecerá um botão azul **`Proceed` / `Accept` / `Run`** no chat. **Clique nele** para autorizar o agente a continuar!
+   - **Como ter 2 Agentes trabalhando ao mesmo tempo (*Agent Manager*):** Pressione **`Cmd + E`** (no Mac) ou **`Ctrl + E`** (no Windows/Linux) — ou clique no ícone **`+` (New Conversation)** no painel de conversas — para alternar entre o **Agente 1 (Jogo Flappy Hero)** e o **Agente 2 (Radar CNPJ + Banco Central)**!
 
 ---
 
@@ -80,14 +88,16 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
 2. Agora dispare o **Prompt de Construção Completa** abaixo:
 
 ```text
-Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md.
+Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.
 Quando terminar de criar os arquivos:
 1. Abra o jogo no Browser Sub-Agent.
 2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.
 3. Gere um Walkthrough Artifact com screenshots do jogo funcionando!
 ```
 
-> ⚡ **ATENÇÃO — NÃO FIQUE ESPERANDO!** Assim que o agente começar a trabalhar nesse comando (o que levará cerca de 3 a 4 minutos), **passe imediatamente para o Ato 2 abaixo!**
+> ⚡ **ATENÇÃO — OLHO NO BOTÃO `PROCEED` E PASSE PARA O ATO 2!**
+> - Se o Antigravity exibir um plano (*Implementation Plan*) com um botão azul **`Proceed` / `Approve` / `Accept`**, **clique nele primeiro** para destravar a execução!
+> - Assim que você vir que o agente começou a criar os arquivos (`index.html`, `style.css`, `game.js`), **não fique esperando os 3 minutos parado:** passe imediatamente para o **Ato 2** abaixo!
 
 ---
 
@@ -96,16 +106,16 @@ Quando terminar de criar os arquivos:
 **💡 O Conceito Executivo:** Enquanto seu "Engenheiro Autônomo #1" constrói e testa o *Flappy Executive Hero* em background, você vai abrir o **Agent Manager (`Cmd/Ctrl + E`)**, iniciar uma **segunda conversa em paralelo** e conectar um agente a **dados oficiais do Brasil em tempo real via MCP (Model Context Protocol)**!
 
 #### Passo 2.1 — Abrir uma Nova Conversa no Agent Manager
-1. Pressione `Cmd + E` (Mac) ou `Ctrl + E` (Windows/Linux) para abrir o **Agent Manager**.
-2. Clique em **New Conversation / Novo Agente** para iniciar um segundo agente trabalhando em paralelo.
+1. Pressione `Cmd + E` (Mac) ou `Ctrl + E` (Windows/Linux) — ou clique no botão **`+` (New Conversation)** no topo/lateral do painel do Agente — para abrir o **Agent Manager**.
+2. Clique em **New Conversation / Novo Agente** para iniciar um segundo agente trabalhando em paralelo (sem fechar a Conversa 1!).
 
 #### Passo 2.2 — Consultar o CNPJ da Sua Empresa + Banco Central via MCP Brasil
-Copie o prompt abaixo, trocando `[SEU_CNPJ_AQUI]` pelo **CNPJ da sua empresa** *(ou use um CNPJ público de referência, como WEG `84.429.695/0001-11`, Embraer `07.689.002/0001-89`, Itaú `60.872.504/0001-23`, Magalu `47.960.950/0001-21` ou Petrobras `33.000.167/0001-01`)*:
+Copie e envie o prompt abaixo! *(Ele já vem configurado com o CNPJ da **WEG S.A. `84.429.695/0001-11`** para funcionar em 1 clique mesmo que você não edite nada; se quiser analisar a sua empresa, basta trocar o número do CNPJ na primeira linha ou digitar no campo do Mission Hub `index.html`)*:
 
 ```text
-Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ [SEU_CNPJ_AQUI, ex: 84.429.695/0001-11]:
-1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar).
-2. Com base nos dados reais retornados, construa dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo index.html e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
+Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — caso eu tenha mantido este CNPJ padrão, execute imediatamente para a WEG S.A. sem parar para perguntar):
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (ex: rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
+2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
 3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!
 ```
 
@@ -127,16 +137,17 @@ E se, toda **segunda-feira às 08h00**, antes da sua reunião de diretoria, o An
 Agora vamos para o grand finale: **colocar você mesmo como o Super-Herói/Super-Heroína do jogo!**
 
 #### Passo 3.1 — Capturar Sua Selfie Rápida ou Escolher um Avatar em 1 Clique (1 minuto)
-1. No navegador, abra `tracks/04-flappy-hero/selfie-studio.html` (disponível no botão do Mission Hub).
-2. Clique em **Ligar Webcam → 📸 Capturar Selfie** (ou, se estiver sem webcam, clique em um dos **4 Avatares Executivos de Super-Herói** prontos na tela!) e depois em **⬇️ Baixar `minha-selfie.png`**, salvando em `tracks/04-flappy-hero/minha-selfie.png` *(dica: se o navegador salvar na sua pasta `~/Downloads/`, a Skill encontra e copia automaticamente para você!)*.
+1. No navegador, abra `tracks/04-flappy-hero/selfie-studio.html` (clicando no botão **📸 Abrir Selfie Studio** no `index.html` ou abrindo o arquivo direto da pasta).
+2. Clique em **🎥 Ligar Webcam → 📸 Capturar Selfie** (ou, se estiver sem webcam, clique em um dos **4 Avatares Executivos de Super-Herói** prontos na tela!) e depois clique no botão verde **⬇️ Baixar `minha-selfie.png`**.
+   > 💡 **Zero trabalho manual com pastas:** Quando você clica em Baixar, o navegador salva o arquivo na sua pasta padrão `Downloads` (`~/Downloads/minha-selfie.png`). **Você não precisa mover o arquivo manualmente** — no passo abaixo o próprio Agente busca automaticamente na sua pasta `Downloads`!
 
 #### Passo 3.2 — Transformar Sua Selfie em Super-Herói Caricatura!
-De volta à conversa da **Trilha 04** no Antigravity, digite `/gerar-super-heroi` ou envie o prompt abaixo:
+Volte para a **1ª conversa** no **Agent Manager (`Cmd/Ctrl + E`)** (a conversa da Trilha 04) e envie o prompt abaixo:
 
 ```text
 Execute a skill @.agent/skills/gerar-super-heroi/SKILL.md:
-1. Analise a minha foto em @tracks/04-flappy-hero/minha-selfie.png (observando meus traços marcantes como cabelo, óculos, barba, sorriso e expressão).
-2. Gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em `tracks/04-flappy-hero/hero-caricatura.png`).
+1. Localize a minha foto em `tracks/04-flappy-hero/minha-selfie.png` (caso ainda não esteja nessa pasta, busque automaticamente o arquivo mais recente `~/Downloads/minha-selfie*.png` e copie para `tracks/04-flappy-hero/minha-selfie.png`; se não houver nenhum arquivo, gere um Avatar Executivo de Super-Herói padrão).
+2. Analise meus traços marcantes na imagem e gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em `tracks/04-flappy-hero/hero-caricatura.png`).
 3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão/escudo, capa vermelha e dourada esvoaçante animada no Canvas e botão na tela para alternar entre a Caricatura IA e a minha Selfie original!).
 4. Abra o jogo no Browser Sub-Agent, faça um voo de teste com o meu Super-Herói desviando das burocracias e gere o Walkthrough com o print final!
 ```
