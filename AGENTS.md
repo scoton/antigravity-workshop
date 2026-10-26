@@ -10,7 +10,12 @@ Este repositório contém o laboratório prático (*Hands-On Self-Paced*) para o
 - `mcp/mcp_brasil_zero_deps.py` & `tracks/05-radar-mcp-brasil/`: **Ato 2 (Caso Prático com Servidor MCP Brasil)**. Enquanto o Flappy Hero é construído em background na Aba 1, o participante abre uma 2ª conversa no *Agent Manager* e usa o servidor MCP Brasil (zero dependências, conectado à Receita Federal/BrasilAPI e ao Banco Central) para consultar o CNPJ real da sua empresa + Selic/IPCA/Dólar de hoje e construir um **Painel Executivo de Inteligência Macroeconômica e Setorial** em `tracks/05-radar-mcp-brasil/`.
 - `tracks/01-crisis-commander/`, `tracks/02-orbital-defense/`, `tracks/03-boardroom-simulator/`: **Laboratório Extra (3 Simuladores Completos)** disponíveis no repositório para exploração adicional durante ou após o evento.
 - `.agent/rules/`: Regras de governança e padrões de código do projeto (sempre ativas no contexto).
-- `.agent/skills/`: **Skills com Descoberta Semântica Sob Demanda (*Progressive Disclosure*)** — cada pasta contém um `SKILL.md` que o Antigravity descobre automaticamente pelo contexto da conversa ou via comando `/` (`/radar-mcp-brasil`, `/gerar-super-heroi`, `/modo-caos`, `/adaptar-setor`, `/auditoria-executiva`).
+- `.agent/skills/` (e `.agents/skills/`): **Skills com Descoberta Semântica Sob Demanda (*Progressive Disclosure*)** — cada pasta contém um `SKILL.md` que o Antigravity descobre automaticamente pelo contexto da conversa ou via comando `/`:
+  - `/radar-mcp-brasil` → `.agent/skills/radar-mcp-brasil/SKILL.md`
+  - `/gerar-super-heroi` → `.agent/skills/gerar-super-heroi/SKILL.md`
+  - `/modo-caos` → `.agent/skills/modo-caos/SKILL.md`
+  - `/adaptar-setor` → `.agent/skills/adaptar-setor/SKILL.md`
+  - `/auditoria-executiva` → `.agent/skills/auditoria-executiva/SKILL.md`
 - `.agent/workflows/`: Espelho de compatibilidade dos workflows acionáveis via comandos `/`.
 
 ## Diretrizes Obrigatórias para Agentes
