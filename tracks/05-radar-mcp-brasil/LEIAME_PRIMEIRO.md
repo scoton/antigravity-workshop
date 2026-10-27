@@ -63,15 +63,10 @@ Mesmo que você esteja executando este repositório em casa após o evento, bast
 2. Copie e envie o prompt abaixo para o Agente! *(Ele já vem preenchido com o CNPJ da **WEG S.A. `84.429.695/0001-11`** para funcionar em 1 clique caso você não queira editar nada; se quiser consultar a sua empresa, basta substituir o CNPJ na primeira linha)*:
 
 ```text
-Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — caso eu tenha mantido este CNPJ padrão, execute imediatamente para a WEG S.A. sem parar para perguntar):
-1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (ex: rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Atividades Secundárias, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA 12m e Dólar PTAX).
-2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" completo (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa.
-3. Inclua no painel:
-   - Card de Identidade Corporativa e CNAE real da empresa;
-   - Cards com as taxas oficiais de hoje do Banco Central (Selic, CDI, IPCA e Dólar);
-   - Simulador Interativo de Sensibilidade (sliders de Selic, Câmbio e IPCA) que recalcula ao vivo o impacto no Custo de Capital, Margem Operacional e Demanda do setor (CNAE) da empresa;
-   - Matriz de Recomendações Táticas (Curto, Médio e Longo Prazo) para a Diretoria.
-4. Faça uma única visita rápida no Browser Sub-Agent apenas para verificar que o painel renderizou sem erros no console, capture 1 screenshot e gere imediatamente o Walkthrough Artifact com o diagnóstico estratégico!
+Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — caso eu tenha mantido este CNPJ padrão, execute imediatamente para a WEG S.A. sem parar para perguntar; caso eu tenha trocado o CNPJ acima, extraia os 14 dígitos dele automaticamente):
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli <OS_14_DIGITOS_DO_CNPJ_ACIMA>`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Atividades Secundárias, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA 12m e Dólar PTAX).
+2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" completo (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela e matriz de recomendações táticas.
+3. Garanta que o servidor web local na porta 8080 esteja ativo, faça uma única visita rápida no Browser Sub-Agent (`http://localhost:8080/tracks/05-radar-mcp-brasil/index.html`) apenas para verificar que o painel renderizou sem erros no console, capture 1 screenshot, gere o Walkthrough Artifact com o diagnóstico estratégico e exiba no final da resposta o link `http://localhost:8080/tracks/05-radar-mcp-brasil/index.html`!
 ```
 
 ---
@@ -87,15 +82,15 @@ Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/
    - Clique no `Implementation Plan` ou no arquivo `SPEC_JOGO.md` gerado no chat para abri-lo no painel lateral de **Artifacts**.
    - Passe o mouse sobre qualquer linha do documento: repare no botão **`+` (Add Comment)** que aparece ao lado do parágrafo. É assim que líderes e arquitetos governam agentes no Antigravity: comentando direto em um ponto específico do plano (como no Google Docs) antes de clicar em `Proceed`!
 3. **🏛️ Descoberta 3 — Ler os 3 Arquivos que Governam o Seu Workspace nos Bastidores:**
-   - Abra os arquivos abaixo (pelo explorador do projeto ou pelo navegador) para entender como o seu Workspace sabe o que fazer sem precisar de prompts gigantes:
+   - Abra os arquivos abaixo (pelo GitHub ou pelo explorador do projeto) para entender como o seu Workspace sabe o que fazer sem precisar de prompts gigantes:
      - [`../../AGENTS.md`](../../AGENTS.md): Veja a **Camada 1 (Rules)** — o "Código de Conduta" injetado automaticamente no *System Prompt* de todas as conversas da equipe.
      - [`../../.agents/skills/radar-mcp-brasil/SKILL.md`](../../.agents/skills/radar-mcp-brasil/SKILL.md): Veja na prática o conceito de **Progressive Disclosure** — o cabeçalho YAML (`name` e `description`) no topo gasta quase zero memória em repouso, e o manual completo abaixo só foi carregado agora quando você pediu o Radar!
      - [`../../.gemini/settings.json`](../../.gemini/settings.json): Veja como apenas 8 linhas de JSON registram o servidor Python [`../../mcp/mcp_brasil_zero_deps.py`](../../mcp/mcp_brasil_zero_deps.py) via protocolo **MCP**.
 4. **⚙️ Descoberta 4 — Explorar os Menus de *Customizations*, *MCP* e *Automations* do Antigravity 2.0:**
    - Na barra lateral esquerda do **Antigravity 2.0**, clique nos ícones de **Customizations / Settings** e **Automations**. Veja onde a interface lista visualmente todas as **Skills**, **Rules**, **Plugins** e **Servidores MCP** ativos no seu projeto, além da **Allowlist de Terminal**.
 5. **🎮 Descoberta 5 — Degustar no Navegador os 3 Simuladores Executivos Prontos (100% Local, Zero Tokens!):**
-   - Já explorou a interface e o agente ainda está finalizando a validação no navegador? Vá até a seção **3. Laboratório Extra** no Mission Hub (`index.html`) e clique nos botões **`Abrir Crisis Commander →`**, **`Abrir Orbital Defense →`** ou **`Abrir Boardroom War Room →`**!
-   - Esses 3 simuladores já vêm prontos de fábrica no repositório e rodam 100% no seu navegador local (sem acionar a IA e **sem gastar 1 único token**) para você testar enquanto aguarda!
+   - Já explorou a interface e o agente ainda está finalizando a validação no navegador? Você pode jogar agora mesmo (sem acionar a IA e **sem gastar 1 único token**) os 3 simuladores que já vêm prontos no repositório:
+     - Acesse no navegador: `http://localhost:8080/tracks/01-crisis-commander/index.html`, `http://localhost:8080/tracks/02-orbital-defense/index.html` ou `http://localhost:8080/tracks/03-boardroom-simulator/index.html` *(ou dê **dois cliques** no arquivo `index.html` dentro dessas pastas no seu computador!)*.
 
 ---
 

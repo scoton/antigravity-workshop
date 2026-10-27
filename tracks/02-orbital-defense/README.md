@@ -32,12 +32,9 @@ O jogo já conta com:
 
 ## 🚀 Passo 0: Como Abrir e Testar o Jogo Atual (1 Minuto)
 
-1. Abra a pasta raiz do repositório no **Google Antigravity**.
-2. Se ainda não iniciou um servidor local, rode no terminal na raiz do projeto:
-   ```bash
-   python3 -m http.server 8080
-   ```
-3. Abra no navegador: `http://localhost:8080/tracks/02-orbital-defense/index.html` *(ou dê dois cliques no arquivo `index.html`)*.
+1. **Se o servidor local já estiver rodando:** Acesse `http://localhost:8080/tracks/02-orbital-defense/index.html` (ou clique em **Abrir Orbital Defense →** no Mission Hub `http://localhost:8080/index.html`).
+2. **Direto pela pasta no seu computador:** Dê **dois cliques** no arquivo `tracks/02-orbital-defense/index.html`.
+3. **Ou peça ao Agente no chat:** *"Inicie um servidor web local na porta 8080 e abra `tracks/02-orbital-defense/index.html` no navegador."*
 4. Observe o **🤖 Piloto Automático IA (`#btn-toggle-autopilot`)** interceptando as ameaças em tempo real e teste os botões **⚡ Pulso EMP (`#btn-emp-blast`)** e **☄️ Simular Enxame de Crise (`#btn-spawn-wave`)**!
 
 ---

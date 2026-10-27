@@ -3,11 +3,29 @@ name: criar-workspace-executivo
 description: Cria do zero um Workspace Executivo ("Sala de Guerra Digital" / War Room) completo e pronto para a segunda-feira dentro de workspaces-executivos/<nome>/, estruturado nas 4 camadas do Google Antigravity: Rules (AGENTS.md e .agents/rules/), Skills sob demanda com Progressive Disclosure (.agents/skills/), Servidor MCP (.gemini/settings.json) e Guia/Template de Automação Agendada (/automation com sidecar.json e Test Run de governança), além de um Cockpit HTML interativo.
 ---
 
-# Skill: Construtor de Workspace Executivo ("Sala de Guerra de Segunda-Feira") (`/criar-workspace-executivo`)
+# 🏗️ Laboratório Extra 04 — Construtor de Workspace Executivo (`/criar-workspace-executivo`)
 
-Use esta skill sempre que o participante pedir para **criar um Workspace Executivo próprio**, estruturar uma **Sala de Guerra Digital (War Room)** para uma iniciativa real da empresa dele (ex.: `comite-estrategico-2027`, `planejamento-orcamentario`, `war-room-m-and-a`, `monitoramento-regulatorio`) ou empacotar **Rules + Skills + MCP + Automações** para levar para o trabalho na segunda-feira.
+Use esta Skill sempre que quiser **criar um Workspace Executivo próprio**, estruturar uma **Sala de Guerra Digital (War Room)** para uma iniciativa real da sua empresa (ex.: `comite-estrategico-2027`, `planejamento-orcamentario`, `war-room-m-and-a`, `monitoramento-regulatorio`) ou empacotar **Rules + Skills + MCP + Automações** para levar para o trabalho na segunda-feira.
 
-## Passo a Passo de Execução
+---
+
+## 🚀 Como Executar Este Laboratório Extra no Google Antigravity (Copie e Cole)
+
+Basta copiar o prompt abaixo e colar no chat do **Google Antigravity 2.0** *(ele já vem configurado para criar a Sala de Guerra `comite-estrategico-2027` em 1 clique; se quiser outro tema ou empresa, altere a primeira linha)*:
+
+```text
+Execute a skill @.agent/skills/criar-workspace-executivo/SKILL.md para criar o meu Workspace Executivo de segunda-feira chamado `comite-estrategico-2027` (focado em Planejamento Estratégico, Monitoramento Macroeconômico e Governança de IA para a WEG S.A. — caso eu tenha mantido estes parâmetros padrão, execute imediatamente sem parar para perguntar):
+1. Crie dentro de `workspaces-executivos/comite-estrategico-2027/` as 4 camadas completas:
+   - Camada 1 (Rules): `AGENTS.md` e `.agents/rules/governanca-setorial.md` com os guardrails de compliance, LGPD e padrão executivo C-Level;
+   - Camada 2 (Skills): `.agents/skills/ritual-semanal-diretoria/SKILL.md` com Progressive Disclosure para preparar a pauta de segunda-feira;
+   - Camada 3 (MCP): `.gemini/settings.json` conectado ao servidor MCP Brasil;
+   - Camada 4 (Automação): `AUTOMACAO_SEGUNDA_FEIRA.md` com o comando `/automation` e o modelo de `sidecar.json` com permissões estritas (`access_grants` calibrados via Test Run).
+2. Crie o Cockpit Visual da Sala de Guerra em `workspaces-executivos/comite-estrategico-2027/index.html`, faça uma visita rápida no Browser Sub-Agent para validar e gere o Walkthrough Artifact!
+```
+
+---
+
+## 🛠️ Protocolo de Execução para o Agente
 
 1. **Identificação da Iniciativa e do Setor (Zero Bloqueio):**
    - Verifique o nome do Workspace, a empresa/CNPJ e o objetivo estratégico informados no prompt do participante.

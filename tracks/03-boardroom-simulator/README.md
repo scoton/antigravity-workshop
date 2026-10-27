@@ -36,12 +36,9 @@ Em tempo real, o simulador calcula e exibe:
 
 ## 🚀 Passo 0: Como Abrir e Testar o Simulador Atual (1 Minuto)
 
-1. Abra a pasta raiz do repositório no **Google Antigravity**.
-2. Caso ainda não tenha um servidor local rodando, execute no terminal na raiz do projeto:
-   ```bash
-   python3 -m http.server 8080
-   ```
-3. Acesse no navegador: `http://localhost:8080/tracks/03-boardroom-simulator/index.html` *(ou abra o arquivo `index.html` diretamente no navegador)*.
+1. **Se o servidor local já estiver rodando:** Acesse `http://localhost:8080/tracks/03-boardroom-simulator/index.html` (ou clique em **Abrir Boardroom War Room →** no Mission Hub `http://localhost:8080/index.html`).
+2. **Direto pela pasta no seu computador:** Dê **dois cliques** no arquivo `tracks/03-boardroom-simulator/index.html`.
+3. **Ou peça ao Agente no chat:** *"Inicie um servidor web local na porta 8080 e abra `tracks/03-boardroom-simulator/index.html` no navegador."*
 4. Clique no **Cenário 3: M&A Internacional (`#btn-preset-3`)** para ver o Conselho vetar a proposta por falta de governança, e em seguida clique em **🤖 Otimizar com IA (3 a 0) (`#btn-optimize-ai`)** para ver a calibragem ótima!
 
 ---

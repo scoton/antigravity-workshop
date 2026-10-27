@@ -32,14 +32,11 @@ Cada escolha altera imediatamente **4 indicadores vitais da organização**:
 
 ## 🚀 Passo 0: Como Abrir e Testar o Jogo Atual (1 Minuto)
 
-Antes de pedir ao agente do **Google Antigravity** para evoluir o simulador, veja como ele funciona hoje:
+Antes de pedir ao agente do **Google Antigravity 2.0** para evoluir o simulador, veja como ele funciona hoje por qualquer um destes caminhos:
 
-1. Abra a pasta raiz do repositório no **Google Antigravity**.
-2. Caso ainda não tenha um servidor local rodando, abra o terminal integrado (ou peça ao agente) e execute na raiz do repositório:
-   ```bash
-   python3 -m http.server 8080
-   ```
-3. Acesse no navegador: `http://localhost:8080/tracks/01-crisis-commander/index.html` *(ou abra o arquivo `index.html` diretamente no navegador)*.
+1. **Se o servidor local já estiver rodando:** Acesse `http://localhost:8080/tracks/01-crisis-commander/index.html` (ou clique em **Abrir Crisis Commander →** no Mission Hub `http://localhost:8080/index.html`).
+2. **Direto pela pasta no seu computador:** Dê **dois cliques** no arquivo `tracks/01-crisis-commander/index.html`.
+3. **Ou peça ao Agente no chat:** *"Inicie um servidor web local na porta 8080 e abra `tracks/01-crisis-commander/index.html` no navegador."*
 4. Clique no botão **🤖 Modo Demo IA** no topo direito para ver o piloto automático tomar decisões equilibradas sozinho!
 
 ---

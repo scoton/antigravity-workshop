@@ -64,8 +64,8 @@ Agora que o documento `SPEC_JOGO.md` está pronto, vamos ordenar que o agente im
 ```text
 Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md, garantindo que o pássaro clássico do Flappy Bird fique bem desenhado e os rótulos das burocracias fiquem grandes e fáceis de ler nas placas horizontais e no banner superior. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.
 Quando terminar de criar os arquivos:
-1. Faça uma única visita rápida no Browser Sub-Agent abrindo o jogo e dando 1 clique inicial apenas para verificar que o Canvas, o pássaro clássico e o placar renderizaram sem erros no console (não fique jogando várias partidas no navegador).
-2. Capture 1 screenshot e gere imediatamente o Walkthrough Artifact!
+1. Garanta que um servidor web local esteja ativo na porta 8080 (em background) e faça uma única visita rápida no Browser Sub-Agent abrindo `http://localhost:8080/tracks/04-flappy-hero/index.html` e dando 1 clique inicial apenas para verificar que o Canvas, o pássaro clássico e o placar renderizaram sem erros no console (não fique jogando várias partidas no navegador).
+2. Capture 1 screenshot, gere imediatamente o Walkthrough Artifact e exiba no final da sua resposta o link clicável `http://localhost:8080/tracks/04-flappy-hero/index.html` para eu abrir e jogar!
 ```
 
 2. ⚡ **Experimente a Orquestração Paralela (`Cmd/Ctrl + E`):**

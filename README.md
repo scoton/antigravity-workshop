@@ -104,8 +104,8 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
 ```text
 Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md, garantindo que o pássaro clássico do Flappy Bird fique bem desenhado e os rótulos das burocracias fiquem grandes e fáceis de ler nas placas horizontais e no banner superior. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.
 Quando terminar de criar os arquivos:
-1. Faça uma única visita rápida no Browser Sub-Agent abrindo o jogo e dando 1 clique inicial apenas para verificar que o Canvas, o pássaro clássico e o placar renderizaram sem erros no console (não fique jogando várias partidas no navegador).
-2. Capture 1 screenshot e gere imediatamente o Walkthrough Artifact!
+1. Garanta que um servidor web local esteja ativo na porta 8080 (em background) e faça uma única visita rápida no Browser Sub-Agent abrindo `http://localhost:8080/tracks/04-flappy-hero/index.html` e dando 1 clique inicial apenas para verificar que o Canvas, o pássaro clássico e o placar renderizaram sem erros no console (não fique jogando várias partidas no navegador).
+2. Capture 1 screenshot, gere imediatamente o Walkthrough Artifact e exiba no final da sua resposta o link clicável `http://localhost:8080/tracks/04-flappy-hero/index.html` para eu abrir e jogar!
 ```
 
 > ⚡ **ATENÇÃO — OLHO NO BOTÃO `PROCEED` E PASSE PARA O ATO 2!**
@@ -114,7 +114,7 @@ Quando terminar de criar os arquivos:
 
 ---
 
-### 🇧🇷 ATO 2: Conexão com o Mundo Real — *2º Agente em Paralelo, Servidor MCP Brasil & Tour de Bastidores* (20 minutos)
+### 🇧🇷 ATO 2: Conexão com o Mundo Real — *2º Agente em Paralelo, Servidor MCP Brasil & Tour de Bastidores* (18 minutos)
 
 **💡 O Conceito Executivo:** Enquanto seu "Engenheiro Autônomo #1" constrói e valida o *Flappy Executive Bird* em background, você vai usar a barra lateral do **Antigravity 2.0 (Agent Manager)** para iniciar uma **segunda conversa em paralelo** e conectar um agente a **dados oficiais do Brasil em tempo real via MCP (Model Context Protocol)**!
 
@@ -123,13 +123,14 @@ Quando terminar de criar os arquivos:
 2. Isso inicia um **segundo agente trabalhando em paralelo** na mesma pasta, sem interromper nem fechar a Conversa 1!
 
 #### Passo 2.2 — Consultar o CNPJ da Sua Empresa + Banco Central via MCP Brasil
-Copie e envie o prompt abaixo! *(Ele já vem configurado com o CNPJ da **WEG S.A. `84.429.695/0001-11`** para funcionar em 1 clique mesmo que você não edite nada; se quiser analisar a sua empresa, basta trocar o número do CNPJ na primeira linha ou digitar no campo do Mission Hub `index.html`)*:
+Copie e envie o prompt abaixo!
+> 💡 **Quer usar o CNPJ da sua empresa (ou um benchmark)?** O prompt já vem configurado com a **WEG S.A. (`84.429.695/0001-11`)** para funcionar em 1 clique. Se quiser analisar a sua empresa ou outro setor, basta trocar o CNPJ na **primeira linha** (ou usar um destes exemplos: **Embraer** `07.689.002/0001-89` • **Itaú** `60.872.504/0001-23` • **Magalu** `47.960.950/0001-21` • **Petrobras** `33.000.167/0001-01` • **RD Saúde** `61.585.865/0001-51`):
 
 ```text
-Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — caso eu tenha mantido este CNPJ padrão, execute imediatamente para a WEG S.A. sem parar para perguntar):
-1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (ex: rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
+Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — caso eu tenha mantido este CNPJ padrão, execute imediatamente para a WEG S.A. sem parar para perguntar; caso eu tenha trocado o CNPJ acima, extraia os 14 dígitos dele automaticamente):
+1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli <OS_14_DIGITOS_DO_CNPJ_ACIMA>`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
 2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
-3. Faça uma única visita rápida no Browser Sub-Agent apenas para verificar que o painel renderizou sem erros no console, capture 1 screenshot e gere imediatamente o Walkthrough Artifact com o diagnóstico estratégico!
+3. Garanta que o servidor web local na porta 8080 esteja ativo, faça uma única visita rápida no Browser Sub-Agent (`http://localhost:8080/tracks/05-radar-mcp-brasil/index.html`) apenas para verificar que o painel renderizou sem erros no console, capture 1 screenshot, gere o Walkthrough Artifact com o diagnóstico estratégico e exiba no final da resposta o link `http://localhost:8080/tracks/05-radar-mcp-brasil/index.html`!
 ```
 
 *(Nota: Para conhecer também o ecossistema completo do `github.com/mcp-brasil/mcp-brasil` e do `mcp.apibrasil.io`, consulte o guia [`mcp/GUIA_MCP_BRASIL.md`](mcp/GUIA_MCP_BRASIL.md)).*
@@ -147,20 +148,20 @@ Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/
    - Clique no `Implementation Plan` ou no arquivo `SPEC_JOGO.md` gerado no chat para abri-lo no painel lateral de **Artifacts**.
    - Passe o mouse sobre qualquer linha do documento: repare no botão **`+` (Add Comment)** que aparece ao lado do parágrafo. É assim que líderes e arquitetos governam agentes no Antigravity: comentando direto em um ponto específico do plano (como no Google Docs) antes de clicar em `Proceed`!
 3. **🏛️ Descoberta 3 — Ler os 3 Arquivos que Governam o Seu Workspace nos Bastidores:**
-   - Abra os arquivos abaixo (pelo explorador do projeto ou pelo navegador) para entender como o seu Workspace sabe o que fazer sem precisar de prompts gigantes:
+   - Clique nos links abaixo (aqui mesmo no GitHub ou no explorador do projeto) para entender como o seu Workspace sabe o que fazer sem precisar de prompts gigantes:
      - [`AGENTS.md`](AGENTS.md): Veja a **Camada 1 (Rules)** — o "Código de Conduta" injetado automaticamente no *System Prompt* de todas as conversas da equipe.
      - [`.agents/skills/radar-mcp-brasil/SKILL.md`](.agents/skills/radar-mcp-brasil/SKILL.md): Veja na prática o conceito de **Progressive Disclosure** — o cabeçalho YAML (`name` e `description`) no topo gasta quase zero memória em repouso, e o manual completo abaixo só foi carregado agora quando você pediu o Radar!
      - [`.gemini/settings.json`](.gemini/settings.json): Veja como apenas 8 linhas de JSON registram o servidor Python [`mcp/mcp_brasil_zero_deps.py`](mcp/mcp_brasil_zero_deps.py) via protocolo **MCP**.
 4. **⚙️ Descoberta 4 — Explorar os Menus de *Customizations*, *MCP* e *Automations* do Antigravity 2.0:**
    - Na barra lateral esquerda do **Antigravity 2.0**, clique nos ícones de **Customizations / Settings** e **Automations**. Veja onde a interface lista visualmente todas as **Skills**, **Rules**, **Plugins** e **Servidores MCP** ativos no seu projeto, além da **Allowlist de Terminal** (que controla quais comandos podem rodar sem pedir confirmação).
 5. **🎮 Descoberta 5 — Degustar no Navegador os 3 Simuladores Executivos Prontos (100% Local, Zero Tokens!):**
-   - Já explorou a interface e o agente ainda está finalizando a validação no navegador? Vá até a seção **3. Laboratório Extra** no Mission Hub (`index.html`) e clique nos botões **`Abrir Crisis Commander →`**, **`Abrir Orbital Defense →`** ou **`Abrir Boardroom War Room →`**!
-   - Esses 3 simuladores já vêm prontos de fábrica no repositório e rodam 100% no seu navegador local (sem acionar a IA e **sem gastar 1 único token**) para você testar enquanto aguarda!
+   - Já explorou a interface e o agente ainda está finalizando a validação no navegador? Você pode jogar agora mesmo (sem acionar a IA e **sem gastar 1 único token**) os 3 simuladores que já vêm prontos no repositório:
+     - Se o servidor local na porta `8080` já estiver ativo, acesse no navegador: `http://localhost:8080/tracks/01-crisis-commander/index.html`, `http://localhost:8080/tracks/02-orbital-defense/index.html` ou `http://localhost:8080/tracks/03-boardroom-simulator/index.html` *(ou dê **dois cliques** no arquivo `index.html` dentro dessas pastas no seu computador!)*.
 
 ---
 
 #### Passo 2.4 (Próximo Nível — 2 min): Agendar como Automação Recorrente com Governança (`/automation`)
-Assim que o Agente 2 concluir o painel da sua empresa e exibir o *Walkthrough*, experimente agendar uma rotina para que, toda **segunda-feira às 08h00**, um agente autônomo consulte o Banco Central e atualize seu briefing:
+Assim que o Agente 2 concluir o painel da sua empresa (você pode abri-lo em `http://localhost:8080/tracks/05-radar-mcp-brasil/index.html` ou dando dois cliques em `tracks/05-radar-mcp-brasil/index.html`), experimente agendar uma rotina para que, toda **segunda-feira às 08h00**, um agente autônomo consulte o Banco Central e atualize seu briefing:
 
 ```text
 /automation Configure uma automação semanal toda segunda-feira às 08h00 (fuso America/Sao_Paulo) para consultar os indicadores atualizados do Banco Central (Selic, CDI, IPCA e Dólar) via python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111 e atualizar o resumo executivo da minha empresa em tracks/05-radar-mcp-brasil/.
@@ -183,8 +184,11 @@ Enquanto você analisava dados da Receita Federal e do Banco Central na Conversa
 2. Abriu o navegador sozinho via **Browser Sub-Agent** e validou que o pássaro clássico e os obstáculos corporativos renderizaram sem erros;
 3. Entregou o **Walkthrough Artifact** com a prova visual (screenshot) do jogo funcionando!
 
-#### Como Jogar e Testar Agora:
-1. Abra `tracks/04-flappy-hero/index.html` no seu navegador (clicando no botão **🎮 Abrir Jogo Flappy Bird →** no Mission Hub `index.html`).
+#### Como Jogar e Testar Agora (Funciona pelo GitHub ou pelo Hub Local!):
+1. Abra o seu jogo pronto no navegador por qualquer um destes 3 caminhos:
+   - **Caminho 1 (Link Direto Local):** Acesse `http://localhost:8080/tracks/04-flappy-hero/index.html` (clique no link entregue pelo Agente 1 no final da conversa);
+   - **Caminho 2 (Pelo Computador):** Dê **dois cliques** no arquivo `tracks/04-flappy-hero/index.html` na pasta onde você extraiu o workshop;
+   - **Caminho 3 (Pelo Mission Hub):** Se estiver com `http://localhost:8080/index.html` aberto, clique em **🎮 Abrir Jogo / Blueprint →**.
 2. Jogue usando a **Barra de Espaço** ou **Clique do Mouse** para desviar de *"Reunião que podia ser e-mail"*, *"Planilha V14_FINAL.xlsx"* e *"Aprovação em 7 Níveis"*, e tente conquistar a medalha máxima de **C-Level**!
 
 > 💡 **Memória Organizacional (Transformando Conversas em Skills):** Sempre que você e sua equipe descobrirem um fluxo de alto valor no Antigravity, não deixe o conhecimento morrer no histórico do chat! Basta pedir: *"Transforme o fluxo que acabamos de executar em uma nova Skill reutilizável dentro de `.agent/skills/` para toda a equipe."*
