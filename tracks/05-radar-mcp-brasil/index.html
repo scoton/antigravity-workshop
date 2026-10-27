@@ -160,12 +160,24 @@
       <div id="p-mcp" class="prompt-pre">Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — execute imediatamente para esta empresa sem parar para perguntar):
 1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (ex: rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
 2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
-3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!</div>
+3. Faça uma única visita rápida no Browser Sub-Agent apenas para verificar que o painel renderizou sem erros no console, capture 1 screenshot e gere imediatamente o Walkthrough Artifact com o diagnóstico estratégico!</div>
+    </div>
+
+    <div class="step-card" style="border-left-color: var(--amber);">
+      <h3>🧭 Passo 2.3 (Enquanto o Agente Trabalha — 5 a 8 min): Tour de Bastidores no Antigravity 2.0 (Zero Tokens!)</h3>
+      <p style="color: var(--muted); font-size: 0.92rem; margin-top: 0.45rem;">
+        ⚠️ <strong>Proteja seus créditos:</strong> Enquanto os Agentes 1 e 2 constroem os projetos, <strong>NÃO envie novos prompts no chat!</strong> Aproveite estes minutos para fazer estas 5 descobertas nos bastidores (gastam <strong>ZERO tokens</strong>):<br/>
+        • <strong>1. Raciocínio ao Vivo (<code>Thinking</code> &amp; JSON MCP):</strong> Clique nas caixas recolhidas <code>Thinking / Thought Process</code> no chat do Antigravity e expanda o comando <code>mcp_brasil_zero_deps.py</code> para ver o JSON oficial retornado pela Receita Federal e pelo Banco Central.<br/>
+        • <strong>2. Comentários Inline em <code>Artifacts</code>:</strong> Abra o <code>Implementation Plan</code> ou o <code>SPEC_JOGO.md</code> no painel de Artifacts e passe o mouse sobre qualquer linha para ver o botão <code>+ (Add Comment)</code>.<br/>
+        • <strong>3. Ler a Anatomia do Workspace:</strong> Inspecione os arquivos <code>AGENTS.md</code> (Rules), <code>.agents/skills/radar-mcp-brasil/SKILL.md</code> (Progressive Disclosure) e <code>.gemini/settings.json</code> (registro MCP).<br/>
+        • <strong>4. Menu de <code>Customizations</code> &amp; <code>Automations</code>:</strong> Explore na barra lateral esquerda do Antigravity 2.0 onde ficam listados os MCP Servers, as Skills e o painel de Automations.<br/>
+        • <strong>5. Jogar os 3 Simuladores Prontos no Navegador (Zero Tokens):</strong> Volte ao <a href="../../index.html" style="color: var(--lime);">Mission Hub</a> e teste os simuladores <em>Crisis Commander</em>, <em>Orbital Defense</em> e <em>Boardroom War Room</em> enquanto aguarda!
+      </p>
     </div>
 
     <div class="step-card" style="border-left-color: var(--cyan);">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <h3>Passo 2.3 — Agendar como Automação Recorrente com Governança (<code>/automation</code>)</h3>
+        <h3>Passo 2.4 — Agendar como Automação Recorrente com Governança (<code>/automation</code>)</h3>
         <button class="btn btn-cyan" onclick="copyPrompt('p-auto', this)">📋 Copiar Comando /automation</button>
       </div>
       <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0.35rem;">
@@ -183,7 +195,7 @@
 `Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ ${target} (execute imediatamente para esta empresa sem parar para perguntar):
 1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (ex: rodando \`python3 mcp/mcp_brasil_zero_deps.py --test-cli ${digits}\`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
 2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
-3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!`;
+3. Faça uma única visita rápida no Browser Sub-Agent apenas para verificar que o painel renderizou sem erros no console, capture 1 screenshot e gere imediatamente o Walkthrough Artifact com o diagnóstico estratégico!`;
       document.getElementById("p-auto").textContent =
 `/automation Configure uma automação semanal toda segunda-feira às 08h00 (fuso America/Sao_Paulo) para consultar os indicadores atualizados do Banco Central (Selic, CDI, IPCA e Dólar) e os dados do CNPJ ${target} via python3 mcp/mcp_brasil_zero_deps.py --test-cli ${digits} e atualizar o resumo executivo da minha empresa em tracks/05-radar-mcp-brasil/.`;
     }

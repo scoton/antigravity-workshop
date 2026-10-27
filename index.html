@@ -54,12 +54,12 @@
             </div>
             <h3>🐤 Flappy Executive Bird: Escapando da Burocracia</h3>
             <p>
-              A pasta <code>tracks/04-flappy-hero/</code> começa quase vazia! No <strong>Ato 1</strong>, peça ao Antigravity para gerar a especificação enxuta <code>SPEC_JOGO.md</code> e construir o jogo completo em background. Enquanto ele programa, você faz o <strong>Ato 2</strong> em paralelo e, no <strong>Ato 3</strong>, volta para encontrar o jogo testado e pronto para jogar desviando de <em>"Reunião que podia ser e-mail"</em> e <em>"Planilha V14_FINAL.xlsx"</em>!
+              A pasta <code>tracks/04-flappy-hero/</code> começa quase vazia! No <strong>Ato 1</strong>, peça ao Antigravity para gerar a especificação estruturada <code>SPEC_JOGO.md</code> e construir o jogo completo em background. Enquanto ele programa, você faz o <strong>Ato 2</strong> em paralelo e, no <strong>Ato 3</strong>, volta para encontrar o jogo testado e pronto para jogar desviando de <em>"Reunião que podia ser e-mail"</em> e <em>"Planilha V14_FINAL.xlsx"</em>!
             </p>
             <ul class="track-features">
-              <li>Especificação enxuta (<code>SPEC_JOGO.md</code>) gerada antes do código</li>
+              <li>Especificação completa de Produto e Arquitetura (<code>SPEC_JOGO.md</code>)</li>
               <li>Pássaro clássico estilo Flappy Bird + placas de obstáculos grandes e legíveis</li>
-              <li>Modo Piloto Automático IA validado pelo Browser Sub-Agent</li>
+              <li>Validação visual automatizada via Browser Sub-Agent e Walkthrough</li>
             </ul>
           </div>
           <div class="track-actions" style="flex-wrap: wrap;">
@@ -113,7 +113,7 @@
           <span class="mission-duration">⏱️ 7 Minutos</span>
         </div>
         <div class="executive-insight">
-          <strong>Paradigma Executivo (Spec-Driven Development):</strong> Primeiro peça ao Antigravity para criar a especificação enxuta do jogo (Passo 1.1). Assim que ele gerar o arquivo <code>SPEC_JOGO.md</code>, dispare o Passo 1.2 para ele programar e testar o jogo completo em background.<br/>
+          <strong>Paradigma Executivo (Spec-Driven Development):</strong> Primeiro peça ao Antigravity para criar a especificação estruturada do jogo (Passo 1.1). Assim que ele gerar o arquivo <code>SPEC_JOGO.md</code>, dispare o Passo 1.2 para ele programar e validar o jogo completo em background.<br/>
           <span style="color: var(--accent-lime);">👀 <strong>Dica para Iniciantes no Antigravity:</strong> Se aparecer um botão azul <strong><code>Proceed</code> / <code>Approve</code> / <code>Accept</code></strong> no chat pedindo confirmação do plano, clique nele para iniciar a construção e <strong>mude imediatamente para o Ato 2 enquanto ele trabalha!</strong></span>
         </div>
         <div class="prompt-selector-bar" style="flex-wrap: wrap;">
@@ -123,14 +123,13 @@
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m1" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m1-text', this)">Copiar Prompt</button>
-          <div id="prompt-m1-text">Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo chamado SPEC_JOGO.md contendo uma especificação direta e enxuta (máximo de 40 linhas) para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Bird: Escapando da Burocracia".
+          <div id="prompt-m1-text">Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo bem estruturado chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Bird: Escapando da Burocracia".
 
-A especificação deve detalhar:
-1. Mecânica e Física: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos e controle por Barra de Espaço / Clique.
-2. Obstáculos Bem-Humorados e Bem Legíveis: Os "canos" devem ser barreiras corporativas com rótulos divertidos, como "Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional". IMPORTANTE PARA LEGIBILIDADE: nunca esprema o texto verticalmente dentro do cano; desenhe placas horizontais largas de alto contraste (fundo escuro com borda destacada e fonte grande `bold 16px sans-serif` branca/amarela) na boca de cada obstáculo e exiba também no topo do Canvas um banner grande com o nome da próxima barreira ("⚠️ Próxima Burocracia: ...").
-3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o pássaro calcular o pulo ideal sozinho para desviar das barreiras (ótimo para demonstração e testes automatizados).
-4. Personagem Clássico (Pássaro do Flappy Bird): Desenhe diretamente no Canvas uma figura única e carismática de pássaro estilo Flappy Bird original (corpo amarelo-ouro arredondado, olho grande expressivo, bico laranja e asinha branca animada batendo a cada pulo).
-5. Efeitos Sonoros Sintetizados (Web Audio API) e placar com recorde.
+A especificação deve detalhar estes 4 pilares:
+1. Mecânica, Física e Estados do Jogo: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos, telas claras de Início, Em Voo e Game Over, e controle responsivo por Barra de Espaço ou Clique do Mouse (sem modo piloto automático).
+2. Obstáculos Bem-Humorados e de Alta Legibilidade: Os "canos" devem ser barreiras corporativas com rótulos divertidos ("Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional"). IMPORTANTE PARA LEGIBILIDADE: nunca esprema o texto verticalmente dentro do cano; desenhe placas horizontais largas de alto contraste (fundo escuro com borda neon e fonte grande `bold 16px sans-serif` branca/amarela) centralizadas na boca de cada obstáculo e exiba também no topo do Canvas um banner grande com o nome da próxima barreira ("⚠️ Próxima Burocracia: ...").
+3. Personagem Clássico (Pássaro do Flappy Bird): Desenhe diretamente no Canvas uma figura única e carismática do pássaro clássico estilo Flappy Bird original (corpo amarelo-ouro arredondado, olho grande expressivo, bico laranja e asinha branca animada batendo a cada pulo).
+4. Efeitos Sonoros e Progressão Executiva: Efeitos sonoros sintetizados via Web Audio API (pulo, ponto marcado e colisão) e placar com recorde salvo em `localStorage` e medalhas executivas (Estagiário, Gerente, Diretor e C-Level).
 
 Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.</div>
         </div>
@@ -139,8 +138,8 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
       <!-- Ato 2 -->
       <div id="content-m2" class="mission-content">
         <div class="mission-header-bar">
-          <h3>Ato 2: Consultar CNPJ + Banco Central ao Vivo via MCP Brasil (Em Paralelo)</h3>
-          <span class="mission-duration">⏱️ 18 Minutos</span>
+          <h3>Ato 2: Consultar CNPJ + Banco Central ao Vivo via MCP Brasil &amp; Tour de Bastidores</h3>
+          <span class="mission-duration">⏱️ 20 Minutos</span>
         </div>
         <div class="executive-insight">
           <strong>Paradigma Executivo (MCP + Skills + Automations com Governança):</strong> Enquanto o Agente 1 constrói o jogo na Conversa 1, clique em <strong><code>+ New Conversation</code></strong> na barra lateral esquerda do Antigravity 2.0 (ou pressione <code>Cmd/Ctrl + E</code>), inicie uma <strong>2ª conversa em paralelo</strong> e use a Skill <code>radar-mcp-brasil</code> para cruzar os dados reais do CNPJ da sua empresa com a Selic, IPCA e Dólar de hoje! Ao terminar, clique no botão <strong>⏰ Agendar com /automation</strong> para ver o <strong>Test Run de Governança</strong> e abrir o <strong>Automations Dashboard (<code>sidecar://dashboard</code>)</strong>!
@@ -156,26 +155,40 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
           <span style="margin-left: 0.25rem;">ou digite o seu:</span>
           <input id="custom-cnpj-input" class="custom-cnpj-input" type="text" placeholder="Ex: 00.000.000/0001-00" />
           <button class="btn btn-sm" onclick="applyCustomCnpj(this)">Usar Meu CNPJ</button>
-          <button class="btn btn-sm cnpj-btn" style="border-color: var(--accent-emerald); color: var(--accent-emerald);" onclick="setAutomationPrompt(this)">⏰ Agendar com /automation (1 min)</button>
+          <button class="btn btn-sm cnpj-btn" style="border-color: var(--accent-emerald); color: var(--accent-emerald);" onclick="setAutomationPrompt(this)">⏰ Passo 2.4: Agendar com /automation</button>
         </div>
         <div class="prompt-box">
           <button id="btn-copy-m2" class="btn btn-sm btn-primary copy-btn" onclick="copyText('prompt-m2-text', this)">Copiar Prompt</button>
           <div id="prompt-m2-text">Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/0001-11 (WEG S.A. — caso eu tenha mantido este CNPJ padrão, execute imediatamente para a WEG S.A. sem parar para perguntar):
 1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (ex: rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
 2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
-3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!</div>
+3. Faça uma única visita rápida no Browser Sub-Agent apenas para verificar que o painel renderizou sem erros no console, capture 1 screenshot e gere imediatamente o Walkthrough Artifact com o diagnóstico estratégico!</div>
+        </div>
+
+        <!-- Passo 2.3: Tour Guiado de Bastidores (Zero Tokens) -->
+        <div class="executive-insight" style="margin-top: 1.25rem; border-left: 4px solid var(--accent-lime); background: rgba(214, 253, 60, 0.05);">
+          <strong style="color: var(--accent-lime);">🧭 Passo 2.3 (Enquanto o Agente Trabalha — 5 a 8 min): Tour Guiado de Bastidores no Antigravity 2.0 (Zero Consumo de Tokens!)</strong><br/>
+          ⚠️ <strong>Proteja seus créditos:</strong> Enquanto os Agentes 1 e 2 constroem os projetos, <strong>NÃO envie novos prompts no chat!</strong> Aproveite estes minutos para fazer estas <strong>5 descobertas nos bastidores</strong> (gastam <strong>ZERO tokens</strong>):<br/>
+          • <strong>1. Caixa Preta do Raciocínio (<code>Thinking</code> &amp; JSON MCP):</strong> No chat do Antigravity, clique nas seções recolhidas <strong><code>Thinking / Thought Process</code></strong> para ler como o agente planeja a arquitetura, e expanda o comando <code>mcp_brasil_zero_deps.py</code> para ver o JSON oficial vindo da Receita Federal e do Banco Central.<br/>
+          • <strong>2. Comentários Inline em <code>Artifacts</code>:</strong> Clique no <code>Implementation Plan</code> ou no <code>SPEC_JOGO.md</code> no painel de Artifacts e passe o mouse sobre qualquer linha para ver o botão <strong><code>+</code> (Add Comment)</strong> — usado para auditar planos como no Google Docs.<br/>
+          • <strong>3. Inspecionar as 3 Camadas do Workspace:</strong> Clique para ler agora sem sair desta tela:
+          <button type="button" class="btn btn-sm" style="margin: 0.2rem; padding: 0.2rem 0.6rem;" onclick="openGuideModal('AGENTS.md', '🏛️ Camada 1 (Rules): AGENTS.md')">📄 Ler AGENTS.md (Rules)</button>
+          <button type="button" class="btn btn-sm" style="margin: 0.2rem; padding: 0.2rem 0.6rem;" onclick="openGuideModal('.agents/skills/radar-mcp-brasil/SKILL.md', '⚡ Camada 2 (Skill com Progressive Disclosure): radar-mcp-brasil/SKILL.md')">📄 Ler SKILL.md (Progressive Disclosure)</button>
+          <button type="button" class="btn btn-sm" style="margin: 0.2rem; padding: 0.2rem 0.6rem;" onclick="openGuideModal('mcp/GUIA_MCP_BRASIL.md', '🔌 Camada 3 (MCP): Guia MCP Brasil')">📄 Ler Guia MCP Brasil</button><br/>
+          • <strong>4. Menu de <code>Customizations</code> &amp; <code>Automations</code>:</strong> Explore na barra lateral esquerda do Antigravity 2.0 onde ficam listados os <strong>MCP Servers</strong> conectados, as <strong>Skills</strong> detectadas e o painel de <strong>Automations</strong>.<br/>
+          • <strong>5. Degustar os 3 Simuladores Prontos Abaixo (100% Local):</strong> Role até a seção <strong>3. Laboratório Extra</strong> logo abaixo e jogue o <em>Crisis Commander</em>, o <em>Orbital Defense</em> ou o <em>Boardroom War Room</em> direto no navegador (zero tokens) enquanto aguarda!
         </div>
       </div>
 
       <!-- Ato 3 -->
       <div id="content-m3" class="mission-content">
         <div class="mission-header-bar">
-          <h3>Ato 3: O Retorno à Conversa 1 — Inspeção do Walkthrough & Playtest do Flappy Bird!</h3>
+          <h3>Ato 3: O Retorno à Conversa 1 — Inspeção do Walkthrough &amp; Playtest do Flappy Bird!</h3>
           <span class="mission-duration">⏱️ 6 Minutos (Zero Consumo Extra de Tokens!)</span>
         </div>
         <div class="executive-insight">
           <strong>O Grande Final ("O Forno Assíncrono" Concluído):</strong> Clique de volta na sua <strong>1ª conversa</strong> na barra lateral esquerda do Antigravity 2.0 (a conversa da Trilha <code>04-flappy-hero</code>).<br/>
-          Enquanto você analisava o CNPJ e o Banco Central no Ato 2, o seu <strong>Agente 1</strong> construiu o jogo completo, testou no <em>Browser Sub-Agent</em> com o <strong>🤖 Piloto Automático IA</strong> e entregou o <strong>Walkthrough Artifact</strong> com screenshot! Clique no botão abaixo para abrir e jogar o seu <em>Flappy Executive Bird</em>:
+          Enquanto você analisava o CNPJ e o Banco Central no Ato 2, o seu <strong>Agente 1</strong> construiu o jogo completo, validou no <em>Browser Sub-Agent</em> e entregou o <strong>Walkthrough Artifact</strong> com screenshot! Clique no botão abaixo para abrir e jogar o seu <em>Flappy Executive Bird</em>:
         </div>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
           <a href="tracks/04-flappy-hero/index.html" class="btn btn-primary" style="font-size: 1rem; padding: 0.85rem 1.5rem;">🎮 Abrir e Jogar o Flappy Executive Bird Pronto →</a>
@@ -184,11 +197,11 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
       </div>
     </section>
 
-    <!-- 3 Simuladores Extras no Repositório -->
+    <!-- 4 Laboratórios Extras no Repositório -->
     <section aria-labelledby="tracks-heading">
       <div class="section-header">
-        <h2 id="tracks-heading">3. Laboratório Extra no Repositório (3 Simuladores Completos)</h2>
-        <span>Prontos para jogar e customizar durante o tempo extra ou com a sua equipe pós-evento</span>
+        <h2 id="tracks-heading">3. Laboratório Extra no Repositório (4 Laboratórios Autoguiados)</h2>
+        <span>Prontos para jogar no navegador (zero tokens!) durante a espera ou para customizar pós-evento</span>
       </div>
 
       <div class="tracks-grid">
@@ -199,14 +212,14 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
               <span class="track-tag tag-amber">LABORATÓRIO EXTRA 01</span>
               <span class="track-recommended">Estilo Reigns</span>
             </div>
-            <h3>Crisis Commander</h3>
+            <h3>🏛️ Crisis Commander</h3>
             <p>
-              Jogo executivo de tomada de decisão sob incerteza. Assuma o comando como CEO em 2026–2027 e atravesse choques regulatórios, cambiais e operacionais.
+              Simulador executivo de tomada de decisão sob incerteza ao longo de 8 trimestres (2026–2027), acompanhado de 4 missões práticas passo a passo (<code>/adaptar-setor</code>, <code>/modo-caos</code>, Comitê de IA e <code>/auditoria-executiva</code>).
             </p>
           </div>
           <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-launch-track-1" href="tracks/01-crisis-commander/index.html" class="btn" style="flex: 1;">Abrir Crisis Commander →</a>
-            <button type="button" onclick="openGuideModal('tracks/01-crisis-commander/README.md', '🏛️ Guia Passo a Passo — Trilha 01: Crisis Commander')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
+            <button type="button" onclick="openGuideModal('tracks/01-crisis-commander/README.md', '🏛️ Guia Passo a Passo — Laboratório Extra 01: Crisis Commander')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
           </div>
         </article>
 
@@ -217,14 +230,14 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
               <span class="track-tag tag-cyan">LABORATÓRIO EXTRA 02</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">60 FPS • HTML5 Canvas</span>
             </div>
-            <h3>Antigravity Orbital Defense</h3>
+            <h3>🛡️ Orbital Defense</h3>
             <p>
-              Mini-jogo arcade e tático em tempo real. Comande uma estação orbital interceptando ondas de ameaças, gerenciando escudos, pulso EMP e Piloto Automático de IA.
+              Jogo arcade tático em HTML5 Canvas (60 FPS) com escudos, Pulso EMP e Piloto Automático de IA, acompanhado de 4 missões práticas passo a passo (<em>Boss Fight</em> Cisne Negro, <em>Power-Ups</em> Executivos, Riscos do Setor e <em>Stress Test</em>).
             </p>
           </div>
           <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-launch-track-2" href="tracks/02-orbital-defense/index.html" class="btn" style="flex: 1;">Abrir Orbital Defense →</a>
-            <button type="button" onclick="openGuideModal('tracks/02-orbital-defense/README.md', '🛡️ Guia Passo a Passo — Trilha 02: Orbital Defense')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
+            <button type="button" onclick="openGuideModal('tracks/02-orbital-defense/README.md', '🛡️ Guia Passo a Passo — Laboratório Extra 02: Orbital Defense')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
           </div>
         </article>
 
@@ -235,14 +248,31 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
               <span class="track-tag tag-emerald">LABORATÓRIO EXTRA 03</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">War Room C-Level</span>
             </div>
-            <h3>Boardroom War Room</h3>
+            <h3>📊 Boardroom War Room</h3>
             <p>
-              Simulador de Conselho de Administração e estresse de cenários. Configure uma decisão estratégica e veja CFO, CTO e CRO debaterem riscos em uma matriz interativa.
+              Simulador C-Level de Conselho de Administração com Matriz Risco × Retorno e votos de CFO, CTO e CRO, acompanhado de 4 missões práticas passo a passo (4º Conselheiro CISO/LGPD, <em>Stress Test</em> Macroeconômico, Portfólio Real e Ata Executiva).
             </p>
           </div>
           <div class="track-actions" style="flex-wrap: wrap;">
             <a id="btn-launch-track-3" href="tracks/03-boardroom-simulator/index.html" class="btn" style="flex: 1;">Abrir Boardroom War Room →</a>
-            <button type="button" onclick="openGuideModal('tracks/03-boardroom-simulator/README.md', '📊 Guia Passo a Passo — Trilha 03: Boardroom War Room')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
+            <button type="button" onclick="openGuideModal('tracks/03-boardroom-simulator/README.md', '📊 Guia Passo a Passo — Laboratório Extra 03: Boardroom War Room')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
+          </div>
+        </article>
+
+        <!-- Trilha 4 Extra: Construtor de Workspace Executivo -->
+        <article class="track-card" id="card-track-extra-ws">
+          <div>
+            <div class="track-meta">
+              <span class="track-tag tag-amber">LABORATÓRIO EXTRA 04</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Arquitetura em 4 Camadas</span>
+            </div>
+            <h3>🏗️ Construtor de Workspace Executivo</h3>
+            <p>
+              Skill avançada (<code>/criar-workspace-executivo</code>) que gera automaticamente uma Sala de Guerra Digital (<code>workspaces-executivos/&lt;nome&gt;/</code>) estruturada nas 4 camadas do Antigravity (<em>Rules + Skills + MCP + Automação</em>).
+            </p>
+          </div>
+          <div class="track-actions" style="flex-wrap: wrap;">
+            <button type="button" onclick="openGuideModal('.agent/skills/criar-workspace-executivo/SKILL.md', '🏗️ Guia Passo a Passo — Laboratório Extra 04: Construtor de Workspace Executivo')" class="btn btn-sm" style="width: 100%;">📖 Abrir Guia Passo a Passo Interativo</button>
           </div>
         </article>
       </div>
@@ -267,8 +297,8 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
 
   <script>
     const ATO1_STEPS = {
-      1: `Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo conciso chamado SPEC_JOGO.md (máximo de 40 linhas, direto ao ponto para economizar tokens) especificando um jogo web enxuto (HTML5 Canvas + CSS + JS puro) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".\n\nA especificação deve cobrir apenas estes 5 pontos essenciais:\n1. Mecânica e Física: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos e controle por Barra de Espaço / Clique.\n2. Obstáculos Bem-Humorados com Rótulos Grandes e Muito Legíveis: Os "canos" são barreiras corporativas ("Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional"). IMPORTANTE PARA LEGIBILIDADE: nunca desenhe texto vertical ou pequeno; exiba cada rótulo dentro de uma placa/badge horizontal larga de alto contraste (fundo escuro com borda neon e fonte grande >= 16px bold sans-serif) centralizada na boca de cada cano, além de um letreiro grande no topo da tela mostrando o nome da burocracia atual.\n3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o pássaro calcular o pulo ideal sozinho para desviar das barreiras.\n4. Personagem Clássico Estilo Flappy Bird: Desenhe diretamente no Canvas uma figura única e carismática do clássico pássaro do Flappy Bird (corpo arredondado amarelo-ouro vibrante, olho expressivo, bico laranja e asinha branca que bate a cada pulo, sem upload de fotos ou avatares complexos).\n5. Efeitos Sonoros Sintetizados (Web Audio API) e placar com medalhas executivas.\n\nApenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.`,
-      2: `Excelente! Agora implemente o jogo completo de forma enxuta e direta dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js compactos) seguindo a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.\nQuando terminar de criar os arquivos:\n1. Abra o jogo no Browser Sub-Agent.\n2. Ative o botão de Piloto Automático IA (#btn-autopilot) por alguns segundos para verificar que o pássaro clássico desvia dos obstáculos corporativos (com as placas horizontais grandes e legíveis) e marca pontos sem erros no console.\n3. Gere um Walkthrough Artifact enxuto com screenshot do jogo funcionando!`
+      1: `Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo bem estruturado chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Bird: Escapando da Burocracia".\n\nA especificação deve detalhar estes 4 pilares:\n1. Mecânica, Física e Estados do Jogo: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos, telas claras de Início, Em Voo e Game Over, e controle responsivo por Barra de Espaço ou Clique do Mouse (sem modo piloto automático).\n2. Obstáculos Bem-Humorados e de Alta Legibilidade: Os "canos" devem ser barreiras corporativas com rótulos divertidos ("Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional"). IMPORTANTE PARA LEGIBILIDADE: nunca esprema o texto verticalmente dentro do cano; desenhe placas horizontais largas de alto contraste (fundo escuro com borda neon e fonte grande \`bold 16px sans-serif\` branca/amarela) centralizadas na boca de cada obstáculo e exiba também no topo do Canvas um banner grande com o nome da próxima barreira ("⚠️ Próxima Burocracia: ...").\n3. Personagem Clássico (Pássaro do Flappy Bird): Desenhe diretamente no Canvas uma figura única e carismática do pássaro clássico estilo Flappy Bird original (corpo amarelo-ouro arredondado, olho grande expressivo, bico laranja e asinha branca animada batendo a cada pulo).\n4. Efeitos Sonoros e Progressão Executiva: Efeitos sonoros sintetizados via Web Audio API (pulo, ponto marcado e colisão) e placar com recorde salvo em \`localStorage\` e medalhas executivas (Estagiário, Gerente, Diretor e C-Level).\n\nApenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.`,
+      2: `Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md, garantindo que o pássaro clássico do Flappy Bird fique bem desenhado e os rótulos das burocracias fiquem grandes e fáceis de ler nas placas horizontais e no banner superior. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.\nQuando terminar de criar os arquivos:\n1. Faça uma única visita rápida no Browser Sub-Agent abrindo o jogo e dando 1 clique inicial apenas para verificar que o Canvas, o pássaro clássico e o placar renderizaram sem erros no console (não fique jogando várias partidas no navegador).\n2. Capture 1 screenshot e gere imediatamente o Walkthrough Artifact!`
     };
 
     function setAto1Step(stepNum, btnEl) {
@@ -291,7 +321,7 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
 `Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ ${cnpjLabel} (execute imediatamente para esta empresa sem parar para perguntar):
 1. Utilize o servidor MCP Brasil em @mcp/mcp_brasil_zero_deps.py (ex: rodando \`python3 mcp/mcp_brasil_zero_deps.py --test-cli ${currentCnpjDigits}\`) para consultar em tempo real os dados oficiais deste CNPJ na Receita Federal/BrasilAPI (Razão Social, CNAE Principal, Capital Social, Porte, UF e Quadro Societário) e os indicadores atuais do Banco Central (Taxa Selic, CDI, IPCA e Dólar PTAX).
 2. Com base nos dados reais retornados, construa diretamente dentro de @tracks/05-radar-mcp-brasil/ um "Painel Executivo de Inteligência Macroeconômica e Setorial" (sobrescrevendo o index.html de blueprint e criando style.css e app.js) personalizado para esta empresa, com simulador interativo de impacto de Selic, Câmbio e IPCA no setor do CNAE dela.
-3. Abra o painel no Browser Sub-Agent para validar e gere um Walkthrough Artifact com o diagnóstico estratégico!`;
+3. Faça uma única visita rápida no Browser Sub-Agent apenas para verificar que o painel renderizou sem erros no console, capture 1 screenshot e gere imediatamente o Walkthrough Artifact com o diagnóstico estratégico!`;
     }
 
     function applyCustomCnpj(btnEl) {

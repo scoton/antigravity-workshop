@@ -71,20 +71,31 @@ Execute a skill @.agent/skills/radar-mcp-brasil/SKILL.md para o CNPJ 84.429.695/
    - Cards com as taxas oficiais de hoje do Banco Central (Selic, CDI, IPCA e Dólar);
    - Simulador Interativo de Sensibilidade (sliders de Selic, Câmbio e IPCA) que recalcula ao vivo o impacto no Custo de Capital, Margem Operacional e Demanda do setor (CNAE) da empresa;
    - Matriz de Recomendações Táticas (Curto, Médio e Longo Prazo) para a Diretoria.
-4. Abra o painel no Browser Sub-Agent para validar os simuladores interativos e gere um Walkthrough Artifact com screenshots e o diagnóstico estratégico!
+4. Faça uma única visita rápida no Browser Sub-Agent apenas para verificar que o painel renderizou sem erros no console, capture 1 screenshot e gere imediatamente o Walkthrough Artifact com o diagnóstico estratégico!
 ```
 
 ---
 
-### 🔹 Etapa 3: Comparativo Competitivo Multi-CNPJ (Bônus Prático)
+### 🔹 Etapa 3 (Enquanto o Agente Trabalha — 5 a 8 min): Tour Guiado de Bastidores no Antigravity 2.0 *(Zero Consumo de Tokens!)*
 
-Depois que o agente entregar o painel da sua empresa e mostrar o **Walkthrough**, que tal pedir para ele consultar um **segundo CNPJ** (por exemplo, um concorrente, cliente ou fornecedor estratégico) e adicionar uma aba de comparação lado a lado?
+> ⚠️ **Dica de Ouro (Proteja sua Cota de Tokens!):** O Agente 2 leva cerca de **5 a 10 minutos** para consultar as APIs oficiais da Receita Federal e do Banco Central, programar o dashboard personalizado da sua empresa e validá-lo no navegador. **Enquanto ele trabalha, NÃO envie novos prompts no chat!** Em vez disso, faça as **5 descobertas de bastidores** abaixo na interface do Antigravity 2.0 (elas consomem **ZERO tokens**):
 
-#### Copie e envie este prompt no mesmo chat:
-
-```text
-Excelente! Agora consulte também no servidor MCP Brasil (@mcp/mcp_brasil_zero_deps.py, ex: rodando `python3 mcp/mcp_brasil_zero_deps.py --test-cli 07689002000189`) este segundo CNPJ: 07.689.002/0001-89 (Embraer S.A. — caso eu tenha mantido este 2º CNPJ padrão, execute imediatamente sem parar para perguntar) e adicione no painel de @tracks/05-radar-mcp-brasil/ uma seção "Benchmarking & Comparativo Setorial" comparando lado a lado o Porte, Capital Social, CNAE, localização e exposição macroeconômica (sensibilidade a Juros vs. Câmbio) das duas empresas! Valide no Browser Sub-Agent.
-```
+1. **🧠 Descoberta 1 — Abrir a "Caixa Preta" do Raciocínio do Agente (*Thinking* & *Tool Calls*):**
+   - No chat da Conversa 2 (ou da Conversa 1), clique nas caixas recolhidas **`Thinking` / `Thought Process`** para ler em tempo real como o agente raciocina: veja como ele analisa o CNAE da sua empresa, planeja o cálculo financeiro de sensibilidade à Selic/Dólar e estrutura o layout antes de escrever o código.
+   - Expanda também o bloco **`Running command` (`mcp_brasil_zero_deps.py`)** no chat para inspecionar o **JSON oficial bruto** que acabou de retornar ao vivo da **Receita Federal** e do **Banco Central**!
+2. **📐 Descoberta 2 — Inspecionar *Artifacts*, *Implementation Plans* e Comentários Inline:**
+   - Clique no `Implementation Plan` ou no arquivo `SPEC_JOGO.md` gerado no chat para abri-lo no painel lateral de **Artifacts**.
+   - Passe o mouse sobre qualquer linha do documento: repare no botão **`+` (Add Comment)** que aparece ao lado do parágrafo. É assim que líderes e arquitetos governam agentes no Antigravity: comentando direto em um ponto específico do plano (como no Google Docs) antes de clicar em `Proceed`!
+3. **🏛️ Descoberta 3 — Ler os 3 Arquivos que Governam o Seu Workspace nos Bastidores:**
+   - Abra os arquivos abaixo (pelo explorador do projeto ou pelo navegador) para entender como o seu Workspace sabe o que fazer sem precisar de prompts gigantes:
+     - [`../../AGENTS.md`](../../AGENTS.md): Veja a **Camada 1 (Rules)** — o "Código de Conduta" injetado automaticamente no *System Prompt* de todas as conversas da equipe.
+     - [`../../.agents/skills/radar-mcp-brasil/SKILL.md`](../../.agents/skills/radar-mcp-brasil/SKILL.md): Veja na prática o conceito de **Progressive Disclosure** — o cabeçalho YAML (`name` e `description`) no topo gasta quase zero memória em repouso, e o manual completo abaixo só foi carregado agora quando você pediu o Radar!
+     - [`../../.gemini/settings.json`](../../.gemini/settings.json): Veja como apenas 8 linhas de JSON registram o servidor Python [`../../mcp/mcp_brasil_zero_deps.py`](../../mcp/mcp_brasil_zero_deps.py) via protocolo **MCP**.
+4. **⚙️ Descoberta 4 — Explorar os Menus de *Customizations*, *MCP* e *Automations* do Antigravity 2.0:**
+   - Na barra lateral esquerda do **Antigravity 2.0**, clique nos ícones de **Customizations / Settings** e **Automations**. Veja onde a interface lista visualmente todas as **Skills**, **Rules**, **Plugins** e **Servidores MCP** ativos no seu projeto, além da **Allowlist de Terminal**.
+5. **🎮 Descoberta 5 — Degustar no Navegador os 3 Simuladores Executivos Prontos (100% Local, Zero Tokens!):**
+   - Já explorou a interface e o agente ainda está finalizando a validação no navegador? Vá até a seção **3. Laboratório Extra** no Mission Hub (`index.html`) e clique nos botões **`Abrir Crisis Commander →`**, **`Abrir Orbital Defense →`** ou **`Abrir Boardroom War Room →`**!
+   - Esses 3 simuladores já vêm prontos de fábrica no repositório e rodam 100% no seu navegador local (sem acionar a IA e **sem gastar 1 único token**) para você testar enquanto aguarda!
 
 ---
 

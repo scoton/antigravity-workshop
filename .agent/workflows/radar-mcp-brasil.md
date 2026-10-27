@@ -23,5 +23,5 @@ Quando o usuário acionar este workflow (no Ato 2 do workshop):
      2. **Painel Banco Central (Dados de Hoje):** Cards mostrando a Selic atual, CDI, IPCA e Dólar PTAX.
      3. **Simulador de Estresse Macroeconômico Setorial:** Sliders interativos permitindo ao executivo simular variações na Selic ($\pm 3\%$), no Dólar ($\pm \text{R\$ } 1,00$) e na Inflação sobre o setor específico daquele CNAE, calculando impacto em Custo de Capital, Margem Operacional e Recomendações Estratégicas de IA Agêntica para o setor!
 
-4. **Validar no Browser Sub-Agent & Gerar Walkthrough:**
-   - Abra `tracks/05-radar-mcp-brasil/index.html` no **Browser Sub-Agent**, interaja com os sliders de simulação macroeconômica e gere um **Walkthrough Artifact** com o diagnóstico executivo da empresa e screenshots do painel funcionando!
+4. **Validação Rápida no Browser Sub-Agent & Walkthrough Enxuto:**
+   - Abra `tracks/05-radar-mcp-brasil/index.html` no **Browser Sub-Agent** em uma **única visita rápida**: verifique apenas que o painel carregou sem erros no console, capture **1 screenshot** e gere imediatamente o **Walkthrough Artifact** com o diagnóstico executivo da empresa (evite gastar tempo arrastando múltiplos sliders no navegador).
