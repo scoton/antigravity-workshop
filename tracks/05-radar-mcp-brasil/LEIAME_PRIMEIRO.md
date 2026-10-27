@@ -38,10 +38,10 @@ Mesmo que você esteja executando este repositório em casa após o evento, bast
 
 ---
 
-### 🔹 Etapa 1: Abrir uma Conversa no Agent Manager (`Cmd/Ctrl + E`)
+### 🔹 Etapa 1: Abrir uma Conversa em Paralelo no Antigravity 2.0
 
-1. No **Google Antigravity**, pressione **`Cmd + E`** (Mac) ou **`Ctrl + E`** (Windows/Linux) para abrir o **Agent Manager** (o Centro de Comando multi-agente).
-2. Clique em **New Conversation / Novo Agente** para iniciar uma conversa dedicada a esta trilha.
+1. Na barra lateral esquerda do **Google Antigravity 2.0**, clique no botão **`+` (`New Conversation`)** (ou pressione **`Cmd + E`** no Mac / **`Ctrl + E`** no Windows/Linux) para iniciar uma conversa dedicada a esta trilha.
+2. **⚡ Modelo Recomendado (`Gemini 3.8 Flash`):** Certifique-se de que o seletor de modelo na caixa de chat esteja em **`Gemini 3.8 Flash (High)`** ou **`Gemini 3.8 Flash (Medium)`** (caso disponível) — isso garante construção rápida e preserva seus créditos gratuitos durante o workshop.
 3. *(Opcional — Teste Rápido de Terminal)* Se você tiver curiosidade de ver o servidor MCP consultando a Receita Federal e o Banco Central diretamente no terminal antes de rodar o prompt, você pode testar:
    ```bash
    python3 mcp/mcp_brasil_zero_deps.py --test-cli 84429695000111

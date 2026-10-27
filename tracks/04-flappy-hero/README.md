@@ -36,7 +36,8 @@ Mesmo que você não tenha participado presencialmente do evento, basta seguir a
 ### 📋 Etapa 1: Gerar a Especificação do Produto (`SPEC_JOGO.md`)
 
 1. Vincule a pasta raiz deste repositório no **Google Antigravity 2.0** (clicando em **`Select Project`** na caixa de chat ou no ícone de pasta **`+`** na barra lateral esquerda → **`New Project`** ou **`Create Project → + Add Folder`**, ou usando **`Quick Start`**).
-2. No painel do Agente, copie e envie o prompt abaixo:
+2. **⚡ Modelo Recomendado (`Gemini 3.8 Flash`):** No seletor de modelo da caixa de chat, selecione **`Gemini 3.8 Flash (High)`** ou **`Gemini 3.8 Flash (Medium)`** (caso disponível) para máxima velocidade e para não esgotar sua cota gratuita (modelos como *Argon* ou *Claude* consomem até 3x mais créditos).
+3. No painel do Agente, copie e envie o prompt abaixo:
 
 ```text
 Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".

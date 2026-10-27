@@ -69,7 +69,8 @@ Neste workshop usamos a nova interface do **Google Antigravity 2.0 (Agent Manage
      ```text
      Inicie um servidor web local na porta 8080 nesta pasta em background e me informe o link para abrir o index.html no navegador.
      ```
-3. **💡 3 Dicas de Ouro para Iniciantes no Antigravity 2.0:**
+3. **💡 4 Dicas de Ouro para Iniciantes no Antigravity 2.0 (Importante para Cota & Velocidade!):**
+   - **⚡ Escolha o Modelo `Gemini 3.8 Flash` (Recomendado):** Na barra inferior da caixa de chat (ao lado do seletor de projeto), clique no **Seletor de Modelo** e escolha **`Gemini 3.8 Flash (High)`** ou **`Gemini 3.8 Flash (Medium)`** (ou `Gemini 3.8 Flash`, caso disponível). Modelos como *Gemini 4 Argon* ou de terceiros (*Claude*) consomem até **3x mais créditos** por requisição e podem esgotar rapidamente a franquia gratuita no meio do workshop. O **Gemini 3.8 Flash** é muito mais rápido para construir os jogos/dashboards e garante créditos de sobra para concluir todos os Atos e Laboratórios Extras!
    - **Onde colar os Prompts:** Todos os blocos cinzas de texto abaixo devem ser copiados e colados na **caixa de Chat do Agente** no Antigravity.
    - **Botões `Proceed` / `Accept` / `Allow`:** Sempre que o Antigravity criar um plano (*Implementation Plan*) ou pedir permissão para rodar um comando / abrir o navegador, aparecerá um botão azul **`Proceed` / `Accept` / `Run`** no chat. **Clique nele** para autorizar o agente a continuar!
    - **Como ter 2 Agentes trabalhando ao mesmo tempo:** Na barra lateral esquerda do **Antigravity 2.0**, basta clicar no botão **`+` (`New Conversation`)** (ou pressionar `Cmd/Ctrl + E`) para abrir uma **2ª conversa em paralelo** e alternar entre o **Agente 1 (Jogo Flappy Hero)** e o **Agente 2 (Radar CNPJ + Banco Central)**!
