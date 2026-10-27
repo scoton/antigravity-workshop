@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trilha 06 (Lab Extra 04) — Construtor de Workspace Executivo | AI Bootcamp 2026</title>
+  <style>
+    :root {
+      --bg: #070707;
+      --surface: #121212;
+      --elevated: #1A1A1A;
+      --text: #EBEBEB;
+      --muted: #A1A1AA;
+      --lime: #E0FD52;
+      --cyan: #00F5D4;
+      --amber: #FFB703;
+      --border: rgba(255,255,255,0.1);
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      color: var(--amber);
+      text-transform: uppercase;
+    }
+    h1 { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--elevated);
+      color: var(--text);
+      transition: 0.18s;
+    }
+    .btn:hover { border-color: var(--lime); }
+    .btn-lime { background: var(--lime); color: #070707; border-color: var(--lime); }
+    .btn-cyan { background: rgba(0,245,212,0.14); color: var(--cyan); border-color: var(--cyan); }
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(255,183,3,0.09), rgba(224,253,82,0.07));
+      border: 1px dashed var(--amber);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .status-pill {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 99px;
+      background: rgba(255,183,3,0.18);
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--lime);
+      border-radius: 10px;
+      padding: 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+    .prompt-pre {
+      background: #050505;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: var(--mono);
+      font-size: 0.84rem;
+      color: #EBEBEB;
+      white-space: pre-wrap;
+      margin-top: 0.75rem;
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">RESPONSABILIDADE || ESTRATÉGIA || TRANSFORMAÇÃO • LABORATÓRIO EXTRA 04</div>
+        <h1>🏗️ Construtor de Workspace Executivo — Arquitetura em 4 Camadas</h1>
+      </div>
+      <div style="display: flex; gap: 0.6rem;">
+        <a href="../../index.html" class="btn">← Voltar ao Hub</a>
+      </div>
+    </header>
+
+    <section class="hero-banner">
+      <span class="status-pill">LABORATÓRIO EXTRA 04 • SKILL /CRIAR-WORKSPACE-EXECUTIVO</span>
+      <h2 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Leve Sua Própria Sala de Guerra Digital para a Segunda-Feira!</h2>
+      <p style="color: var(--muted);">
+        Copie os prompts abaixo e envie no chat do <strong>Google Antigravity 2.0</strong> para gerar automaticamente uma pasta completa em <code>workspaces-executivos/comite-estrategico-2027/</code> com as <strong>4 camadas oficiais</strong>: <strong>1. Rules</strong> (<code>AGENTS.md</code>), <strong>2. Skills</strong> (<code>.agents/skills/</code> com <em>Progressive Disclosure</em>), <strong>3. MCP Server</strong> (<code>.gemini/settings.json</code>) e <strong>4. Automação Recorrente</strong> (<code>/automation</code> com <code>sidecar.json</code> auditado via <em>Test Run</em>), além de um Cockpit HTML interativo!
+      </p>
+    </section>
+
+    <div class="step-card" style="border-left-color: var(--lime);">
+      <div class="header-row">
+        <h3>Missão 1 — Gerar Sua Sala de Guerra Digital Completa (<code>/criar-workspace-executivo</code>)</h3>
+        <button class="btn btn-lime" onclick="copyPrompt('p-ws-1', this)">📋 Copiar Prompt da Missão 1</button>
+      </div>
+      <div id="p-ws-1" class="prompt-pre">Execute a skill @.agent/skills/criar-workspace-executivo/SKILL.md para criar o meu Workspace Executivo de segunda-feira chamado `comite-estrategico-2027` (focado em Planejamento Estratégico, Monitoramento Macroeconômico e Governança de IA para a WEG S.A. — caso eu tenha mantido estes parâmetros padrão, execute imediatamente sem parar para perguntar):
+1. Crie dentro de `workspaces-executivos/comite-estrategico-2027/` as 4 camadas completas:
+   - Camada 1 (Rules): `AGENTS.md` e `.agents/rules/governanca-setorial.md` com os guardrails de compliance, LGPD e padrão executivo C-Level;
+   - Camada 2 (Skills): `.agents/skills/ritual-semanal-diretoria/SKILL.md` com Progressive Disclosure para preparar a pauta de segunda-feira;
+   - Camada 3 (MCP): `.gemini/settings.json` conectado ao servidor MCP Brasil;
+   - Camada 4 (Automação): `AUTOMACAO_SEGUNDA_FEIRA.md` com o comando `/automation` e o modelo de `sidecar.json` com permissões estritas (`access_grants` calibrados via Test Run).
+2. Crie o Cockpit Visual da Sala de Guerra em `workspaces-executivos/comite-estrategico-2027/index.html`, garanta que o servidor local na porta 8080 esteja ativo, faça uma visita rápida no Browser Sub-Agent para validar e gere o Walkthrough Artifact com o link clicável `http://localhost:8080/workspaces-executivos/comite-estrategico-2027/index.html`!</div>
+    </div>
+
+    <div class="step-card" style="border-left-color: var(--cyan);">
+      <div class="header-row">
+        <h3>Missão 2 — Blindar as Regras de Compliance, Alçadas e LGPD (Camada 1: <em>Rules</em>)</h3>
+        <button class="btn btn-cyan" onclick="copyPrompt('p-ws-2', this)">📋 Copiar Prompt da Missão 2</button>
+      </div>
+      <div id="p-ws-2" class="prompt-pre">Evolua a Camada 1 de Governança do meu Workspace em `workspaces-executivos/comite-estrategico-2027/`:
+1. Atualize `workspaces-executivos/comite-estrategico-2027/AGENTS.md` e `.agents/rules/governanca-setorial.md` adicionando uma Matriz de Alçadas e Riscos de IA com 3 níveis (Risco Baixo: automação interna; Risco Médio: exige validação humana do diretor; Risco Alto / Dados Sensíveis LGPD: bloqueio automático e parecer obrigatório do CISO/Jurídico).
+2. Adicione no Cockpit Visual (`workspaces-executivos/comite-estrategico-2027/index.html`) uma seção interativa mostrando essa Matriz de Alçadas e Riscos de IA em tempo real.
+3. Valide a atualização no Browser Sub-Agent e atualize o Walkthrough Artifact!</div>
+    </div>
+
+    <div class="step-card" style="border-left-color: var(--amber);">
+      <div class="header-row">
+        <h3>Missão 3 — Criar uma Nova <em>Skill</em> de Benchmarking / M&amp;A com MCP Brasil (Camada 2: <em>Skills</em>)</h3>
+        <button class="btn" onclick="copyPrompt('p-ws-3', this)">📋 Copiar Prompt da Missão 3</button>
+      </div>
+      <div id="p-ws-3" class="prompt-pre">Crie uma segunda Skill sob demanda dentro do meu Workspace Executivo em `workspaces-executivos/comite-estrategico-2027/.agents/skills/radar-concorrencia-m-and-a/SKILL.md` (e espelho em `.agent/skills/`):
+1. Configure o cabeçalho YAML com `name: radar-concorrencia-m-and-a` e `description: >-` clara para Progressive Disclosure.
+2. Defina no protocolo da Skill um passo a passo onde o agente consulta o CNPJ de duas empresas via servidor MCP Brasil (`mcp_brasil_zero_deps.py`), compara Porte, Capital Social, CNAE e sensibilidade à Taxa Selic/Câmbio, e gera um Memorando Executivo de Comparação Competitiva (Benchmarking / M&A).
+3. Adicione um card para essa nova Skill no Cockpit `workspaces-executivos/comite-estrategico-2027/index.html` com o prompt pronto para copiar em 1 clique!</div>
+    </div>
+  </div>
+
+  <script>
+    function copyPrompt(id, btn) {
+      const txt = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(txt).then(() => {
+        const old = btn.textContent;
+        btn.textContent = "✅ Copiado! Cole no Antigravity";
+        setTimeout(() => { btn.textContent = old; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

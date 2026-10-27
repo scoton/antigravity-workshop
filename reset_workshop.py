@@ -40,6 +40,7 @@ BLUEPRINT_FILES = [
     "tracks/03-boardroom-simulator/app.js",
     "tracks/04-flappy-hero/index.html",
     "tracks/05-radar-mcp-brasil/index.html",
+    "tracks/06-workspace-executivo/index.html",
 ]
 
 
