@@ -118,10 +118,9 @@
     <header class="topbar">
       <div>
         <div class="eyebrow">RESPONSABILIDADE || ESTRATÉGIA || TRANSFORMAÇÃO • TRILHA 04</div>
-        <h1>🦸‍♂️ Flappy Executive Hero — Canteiro de Obras Agêntico</h1>
+        <h1>🐦 Flappy Executive Hero — Canteiro de Obras Agêntico</h1>
       </div>
       <div style="display: flex; gap: 0.6rem;">
-        <a href="selfie-studio.html" class="btn btn-cyan">📸 Abrir Selfie Studio</a>
         <a href="../../index.html" class="btn">← Voltar ao Hub</a>
       </div>
     </header>
@@ -130,22 +129,22 @@
       <span class="status-pill">AGUARDANDO CONSTRUÇÃO PELO SEU AGENTE (ATO 1)</span>
       <h2 style="font-size: 1.45rem; margin-bottom: 0.5rem;">Por que o jogo ainda não está na tela?</h2>
       <p style="color: var(--muted);">
-        Porque na <strong>Trilha 04</strong> você vai experimentar o <strong>Desenvolvimento Orientado por Especificação (<em>Spec-Driven Development</em>)</strong>! Assim que você enviar os dois comandos abaixo no <strong>Google Antigravity</strong>, o seu agente vai substituir automaticamente esta página pelo jogo <strong>Flappy Executive Hero</strong> completo!
+        Porque na <strong>Trilha 04</strong> você vai experimentar o <strong>Desenvolvimento Orientado por Especificação (<em>Spec-Driven Development</em>)</strong> com foco em <strong>Economia de Tokens</strong>! Assim que você enviar os dois comandos abaixo no <strong>Google Antigravity</strong>, o seu agente vai substituir automaticamente esta página pelo jogo <strong>Flappy Executive Hero</strong> completo (com o pássaro clássico do Flappy Bird e obstáculos corporativos com placas grandes de alta legibilidade)!
       </p>
     </section>
 
     <div class="step-card" style="border-left-color: var(--lime);">
       <div class="header-row">
-        <h3>Passo 1.1 — Gerar a Especificação do Produto (<code>SPEC_JOGO.md</code>)</h3>
+        <h3>Passo 1.1 — Gerar a Especificação Enxuta (<code>SPEC_JOGO.md</code>)</h3>
         <button class="btn btn-lime" onclick="copyPrompt('p1', this)">📋 Copiar Prompt 1.1</button>
       </div>
-      <div id="p1" class="prompt-pre">Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".
+      <div id="p1" class="prompt-pre">Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo conciso chamado SPEC_JOGO.md (máximo de 40 linhas, direto ao ponto para economizar tokens) especificando um jogo web enxuto (HTML5 Canvas + CSS + JS puro) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".
 
-A especificação deve detalhar:
+A especificação deve cobrir apenas estes 5 pontos essenciais:
 1. Mecânica e Física: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos e controle por Barra de Espaço / Clique.
-2. Obstáculos Bem-Humorados: Os "canos" devem ser barreiras corporativas com rótulos visíveis e divertidos, como "Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional".
-3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o herói calcular o pulo ideal sozinho para desviar das barreiras (ótimo para demonstração e testes automatizados).
-4. Sistema de Avatar Super-Herói: O personagem deve ser desenhado com uma capa de super-herói esvoaçante animada no Canvas e rastro de partículas, suportando carregar a imagem `hero-caricatura.png` / `minha-selfie.png` ou trocar de foto direto na tela (#btn-upload-hero).
+2. Obstáculos Bem-Humorados com Rótulos Grandes e Muito Legíveis: Os "canos" são barreiras corporativas ("Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional"). IMPORTANTE PARA LEGIBILIDADE: nunca desenhe texto vertical ou pequeno; exiba cada rótulo dentro de uma placa/badge horizontal larga de alto contraste (fundo escuro com borda neon e fonte grande >= 16px bold sans-serif) centralizada na boca de cada cano, além de um letreiro grande no topo da tela mostrando o nome da burocracia atual.
+3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o pássaro calcular o pulo ideal sozinho para desviar das barreiras.
+4. Personagem Clássico Estilo Flappy Bird: Desenhe diretamente no Canvas uma figura única e carismática do clássico pássaro do Flappy Bird (corpo arredondado amarelo-ouro vibrante, olho expressivo, bico laranja e asinha branca que bate a cada pulo, sem upload de fotos ou avatares complexos).
 5. Efeitos Sonoros Sintetizados (Web Audio API) e placar com medalhas executivas.
 
 Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.</div>
@@ -156,23 +155,20 @@ Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha 
         <h3>Passo 1.2 — Disparar a Construção Completa do Jogo (Sobrescreve esta página!)</h3>
         <button class="btn btn-cyan" onclick="copyPrompt('p2', this)">📋 Copiar Prompt 1.2</button>
       </div>
-      <div id="p2" class="prompt-pre">Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.
+      <div id="p2" class="prompt-pre">Excelente! Agora implemente o jogo completo de forma enxuta e direta dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js compactos) seguindo a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.
 Quando terminar de criar os arquivos:
 1. Abra o jogo no Browser Sub-Agent.
-2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.
-3. Gere um Walkthrough Artifact com screenshots do jogo funcionando!</div>
+2. Ative o botão de Piloto Automático IA (#btn-autopilot) por alguns segundos para verificar que o pássaro clássico desvia dos obstáculos corporativos (com as placas horizontais grandes e legíveis) e marca pontos sem erros no console.
+3. Gere um Walkthrough Artifact enxuto com screenshot do jogo funcionando!</div>
     </div>
 
     <div class="step-card" style="border-left-color: var(--amber);">
       <div class="header-row">
-        <h3>Ato 3 (Passo 3.2) — Transformar Sua Selfie em Super-Herói Caricatura</h3>
-        <button class="btn" style="border-color: var(--amber); color: var(--amber);" onclick="copyPrompt('p3', this)">📋 Copiar Prompt do Ato 3</button>
+        <h3>Ato 3 — Retorno à Conversa 1 &amp; Playtest (Zero Consumo Extra de Tokens!)</h3>
       </div>
-      <div id="p3" class="prompt-pre">Execute a skill @.agent/skills/gerar-super-heroi/SKILL.md:
-1. Localize a minha foto em `tracks/04-flappy-hero/minha-selfie.png` (caso ainda não esteja nessa pasta, busque automaticamente o arquivo mais recente `~/Downloads/minha-selfie*.png` e copie para `tracks/04-flappy-hero/minha-selfie.png`; se não houver nenhum arquivo, gere um Avatar Executivo de Super-Herói padrão).
-2. Analise meus traços marcantes na imagem e gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim (salva em `tracks/04-flappy-hero/hero-caricatura.png`).
-3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão/escudo, capa vermelha e dourada esvoaçante animada no Canvas e botão na tela para alternar entre a Caricatura IA e a minha Selfie original!).
-4. Abra o jogo no Browser Sub-Agent, faça um voo de teste com o meu Super-Herói desviando das burocracias e gere o Walkthrough com o print final!</div>
+      <p style="color: var(--muted); margin-top: 0.5rem;">
+        Enquanto o Agente 1 constrói o jogo acima, clique em <strong><code>+ New Conversation</code></strong> (ou <code>Cmd/Ctrl + E</code>) para fazer o <strong>Ato 2 (Radar MCP Brasil)</strong> em paralelo. Quando terminar o Ato 2, basta voltar para a <strong>Conversa 1</strong> na barra lateral esquerda, inspecionar o <strong>Walkthrough Artifact</strong> e recarregar esta página para jogar!
+      </p>
     </div>
   </div>
 

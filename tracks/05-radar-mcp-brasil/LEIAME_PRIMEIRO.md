@@ -105,26 +105,9 @@ Na vida real de um executivo, você não quer lembrar de abrir o chat toda seman
 
 ---
 
-### 🔹 Etapa 5 (Bônus de Segunda-Feira): Criar Seu Próprio Workspace Executivo (`/criar-workspace-executivo`)
-
-Quer sair do workshop com uma **"Sala de Guerra Digital" (Workspace Executivo)** pronta para um projeto real da sua diretoria na segunda-feira? Use a Skill `/criar-workspace-executivo` para gerar automaticamente uma pasta completa estruturada nas **4 camadas do Antigravity** (*Rules + Skills + MCP + Automação Agendada + Cockpit Visual*):
-
-```text
-Execute a skill @.agent/skills/criar-workspace-executivo/SKILL.md para criar o meu Workspace Executivo de segunda-feira chamado `comite-estrategico-2027` (focado em Planejamento Estratégico, Monitoramento Macroeconômico e Governança de IA — execute imediatamente com estes parâmetros sem parar para perguntar):
-1. Crie dentro de `workspaces-executivos/comite-estrategico-2027/` as 4 camadas completas:
-   - Camada 1 (Rules): `AGENTS.md` e `.agents/rules/governanca-setorial.md` com os guardrails de compliance, LGPD e padrão executivo C-Level;
-   - Camada 2 (Skills): `.agents/skills/ritual-semanal-diretoria/SKILL.md` com Progressive Disclosure para preparar a pauta de segunda-feira;
-   - Camada 3 (MCP): `.gemini/settings.json` conectado ao servidor MCP Brasil;
-   - Camada 4 (Automação): `AUTOMACAO_SEGUNDA_FEIRA.md` com o comando `/automation` e o modelo de `sidecar.json` com permissões estritas (`access_grants` calibrados via Test Run).
-2. Crie o Cockpit Visual da Sala de Guerra em `workspaces-executivos/comite-estrategico-2027/index.html`, valide no Browser Sub-Agent e gere o Walkthrough!
-```
-
----
-
 ## 🧠 Resumo do Aprendizado Executivo
 
-Nesta trilha você dominou os 4 conceitos mais avançados de um **Workspace Executivo** no Google Antigravity:
+Nesta trilha você dominou os 3 conceitos essenciais de inteligência em tempo real no Google Antigravity:
 1. **MCP (Model Context Protocol):** Como tirar os agentes do isolamento e conectá-los a APIs oficiais e dados vivos da sua empresa.
 2. **Skills Sob Demanda com *Progressive Disclosure* (`.agents/skills/`):** Como empacotar um protocolo complexo de análise em uma Skill reutilizável por toda a sua equipe sem poluir a memória do agente.
 3. **Automations com Test Run (`/automation`):** Como passar da interação manual por chat para rotinas executivas recorrentes e auditáveis com permissões estritas (`sidecar.json`).
-4. **Arquitetura de Workspaces (`/criar-workspace-executivo`):** Como estruturar Salas de Guerra dedicadas para cada comitê ou iniciativa estratégica da sua organização.

@@ -39,7 +39,6 @@ BLUEPRINT_FILES = [
     "tracks/03-boardroom-simulator/style.css",
     "tracks/03-boardroom-simulator/app.js",
     "tracks/04-flappy-hero/index.html",
-    "tracks/04-flappy-hero/selfie-studio.html",
     "tracks/05-radar-mcp-brasil/index.html",
 ]
 

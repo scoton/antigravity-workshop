@@ -1,19 +1,19 @@
-# 🦸‍♂️ Trilha 04 (Atos 1 e 3 do Workshop): Flappy Executive Hero — Do Zero ao Super-Herói IA
+# 🐦 Trilha 04 (Atos 1 e 3 do Workshop): Flappy Executive Hero — Escapando da Burocracia
 
-> **Tempo estimado:** 7 minutos (Ato 1) + 10 minutos (Ato 3) — **100% autoguiado no Google Antigravity**  
+> **Tempo estimado:** 7 minutos (Ato 1) + 5 minutos (Ato 3) — **100% autoguiado no Google Antigravity**  
 > **Nível:** Iniciante a Avançado (Zero necessidade de programar manualmente)  
-> **Conceitos do Google Antigravity praticados:** *Spec-Driven Development* (`SPEC_JOGO.md`), Construção Autônoma do Zero em Background, Multitarefa no *Agent Manager (`Cmd/Ctrl + E`)*, Multimodalidade (*Selfie → Caricatura de Super-Herói*), *Skills* (`/gerar-super-heroi`) e Auto-Verificação Visual via *Browser Sub-Agent*.
+> **Conceitos do Google Antigravity praticados:** *Spec-Driven Development* (`SPEC_JOGO.md` enxuto com economia de tokens), Construção Autônoma do Zero em Background, Multitarefa no *Agent Manager (`Cmd/Ctrl + E`)* e Auto-Verificação Visual via *Browser Sub-Agent*.
 
 ---
 
 ## 🎯 Por Que Esta Pasta Começa Quase Vazia?
 
-Diferente das Trilhas `01`, `02` e `03` (que já trazem simuladores prontos para você modificar), **esta trilha começa quase vazia de propósito!**
+Diferente das Trilhas Extras `01`, `02` e `03` (que já trazem simuladores prontos para você modificar), **esta trilha começa quase vazia de propósito!**
 
 Aqui você vai vivenciar o fluxo completo de um **Arquiteto de Produto na Era Agêntica**:
-1. **Especificar antes de construir (*Spec-Driven Development*):** Você pede ao agente para redigir primeiro o documento de arquitetura e regras do jogo (`SPEC_JOGO.md`).
-2. **Disparar o "Forno Assíncrono":** Com a especificação aprovada, o agente programa do zero os arquivos `index.html`, `style.css` e `game.js` e testa o jogo sozinho no navegador usando um **Piloto Automático de IA (`#btn-autopilot`)**. Enquanto ele trabalha por 3 a 4 minutos, você não fica esperando: você usa o **Agent Manager (`Cmd/Ctrl + E`)** para abrir uma segunda conversa e executar a [Trilha 05 — Radar MCP Brasil](../05-radar-mcp-brasil/README.md)!
-3. **Personalização Multimodal (Sua Selfie vira Super-Herói!):** Quando o jogo fica pronto, você usa o utilitário [`selfie-studio.html`](./selfie-studio.html) para tirar uma foto rápida na webcam (ou escolher uma foto sua) e aciona a Skill `/gerar-super-heroi` para o agente transformar você em uma **Caricatura de Super-Herói / Super-Heroína** voando com capa esvoaçante e desviando das burocracias corporativas!
+1. **Especificar antes de construir (*Spec-Driven Development*):** Você pede ao agente para redigir primeiro o documento conciso de arquitetura e regras do jogo (`SPEC_JOGO.md` com até 40 linhas para máxima economia de tokens).
+2. **Disparar o "Forno Assíncrono":** Com a especificação aprovada, o agente programa do zero os arquivos `index.html`, `style.css` e `game.js` (com o **pássaro clássico do Flappy Bird** e barreiras corporativas com **placas horizontais grandes de alta legibilidade**) e testa o jogo sozinho no navegador usando um **Piloto Automático de IA (`#btn-autopilot`)**. Enquanto ele trabalha por 2 a 3 minutos, você não fica esperando: você usa o **Agent Manager (`Cmd/Ctrl + E`)** para abrir uma segunda conversa e executar a [Trilha 05 — Radar MCP Brasil](../05-radar-mcp-brasil/README.md)!
+3. **Retorno e Playtest no Ato 3 (Zero Consumo Extra de Tokens):** Quando terminar o Ato 2, você simplesmente retorna à Conversa 1 no Agent Manager, inspeciona o **Walkthrough Artifact** com o print da auditoria automatizada e joga o resultado pronto!
 
 ---
 
@@ -22,89 +22,71 @@ Aqui você vai vivenciar o fluxo completo de um **Arquiteto de Produto na Era Ag
 | Arquivo | Função |
 | :--- | :--- |
 | `README.md` / [`LEIAME_PRIMEIRO.md`](./LEIAME_PRIMEIRO.md) | Este guia completo passo a passo para execução autônoma. |
-| [`selfie-studio.html`](./selfie-studio.html) | Estúdio web local (100% privado no seu navegador) para capturar uma selfie com a webcam, recortar em medalhão e baixar como `minha-selfie.png`. |
-| *(Serão criados pelo Agente)* | `SPEC_JOGO.md`, `index.html`, `style.css`, `game.js` e `hero-caricatura.png`. |
+| [`index.html`](./index.html) | Página inicial de Blueprint (será substituída automaticamente pelo jogo quando o agente concluir a Etapa 2). |
+| *(Serão criados pelo Agente)* | `SPEC_JOGO.md`, `index.html`, `style.css` e `game.js`. |
 
 ---
 
 ## 🛠️ Passo a Passo Completo (Autoguiado do Zero)
 
-Mesmo que você não tenha participado presencialmente do evento, basta seguir as **4 etapas abaixo** dentro do **Google Antigravity**:
+Mesmo que você não tenha participado presencialmente do evento, basta seguir as **3 etapas abaixo** dentro do **Google Antigravity**:
 
 ---
 
-### 📋 Etapa 1: Gerar a Especificação do Produto (`SPEC_JOGO.md`)
+### 📋 Etapa 1 (Ato 1): Gerar a Especificação Enxuta do Produto (`SPEC_JOGO.md`)
 
 1. Vincule a pasta raiz deste repositório no **Google Antigravity 2.0** (clicando em **`Select Project`** na caixa de chat ou no ícone de pasta **`+`** na barra lateral esquerda → **`New Project`** ou **`Create Project → + Add Folder`**, ou usando **`Quick Start`**).
 2. **⚡ Modelo Recomendado (`Gemini 3.8 Flash`):** No seletor de modelo da caixa de chat, selecione **`Gemini 3.8 Flash (High)`** ou **`Gemini 3.8 Flash (Medium)`** (caso disponível) para máxima velocidade e para não esgotar sua cota gratuita (modelos como *Argon* ou *Claude* consomem até 3x mais créditos).
 3. No painel do Agente, copie e envie o prompt abaixo:
 
 ```text
-Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo chamado SPEC_JOGO.md contendo a especificação completa para desenvolvermos do zero um jogo web (HTML5 Canvas + CSS + JS puro, zero dependências) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".
+Atue como um Arquiteto de Produto e Games. Crie dentro da pasta @tracks/04-flappy-hero/ um arquivo conciso chamado SPEC_JOGO.md (máximo de 40 linhas, direto ao ponto para economizar tokens) especificando um jogo web enxuto (HTML5 Canvas + CSS + JS puro) estilo Flappy Bird chamado "Flappy Executive Hero: Escapando da Burocracia".
 
-A especificação deve detalhar:
+A especificação deve cobrir apenas estes 5 pontos essenciais:
 1. Mecânica e Física: Gravidade suave e fluida (60fps), espaçamento generoso entre obstáculos e controle por Barra de Espaço / Clique.
-2. Obstáculos Bem-Humorados: Os "canos" devem ser barreiras corporativas com rótulos visíveis e divertidos, como "Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional".
-3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o herói calcular o pulo ideal sozinho para desviar das barreiras (ótimo para demonstração e testes automatizados).
-4. Sistema de Avatar Super-Herói: O personagem deve ser desenhado com uma capa de super-herói esvoaçante animada no Canvas e rastro de partículas, suportando carregar a imagem `hero-caricatura.png` / `minha-selfie.png` ou trocar de foto direto na tela (#btn-upload-hero).
+2. Obstáculos Bem-Humorados com Rótulos Grandes e Muito Legíveis: Os "canos" são barreiras corporativas ("Reunião que podia ser e-mail", "Planilha V14_FINAL.xlsx", "Sistema Legado", "Orçamento Congelado", "Aprovação em 7 Níveis" e "Silo Organizacional"). IMPORTANTE PARA LEGIBILIDADE: nunca desenhe texto vertical ou pequeno; exiba cada rótulo dentro de uma placa/badge horizontal larga de alto contraste (fundo escuro com borda neon e fonte grande >= 16px bold sans-serif) centralizada na boca de cada cano, além de um letreiro grande no topo da tela mostrando o nome da burocracia atual.
+3. Modo Piloto Automático IA (#btn-autopilot): Um botão na tela que, quando ativado, faz o pássaro calcular o pulo ideal sozinho para desviar das barreiras.
+4. Personagem Clássico Estilo Flappy Bird: Desenhe diretamente no Canvas uma figura única e carismática do clássico pássaro do Flappy Bird (corpo arredondado amarelo-ouro vibrante, olho expressivo, bico laranja e asinha branca que bate a cada pulo, sem upload de fotos ou avatares complexos).
 5. Efeitos Sonoros Sintetizados (Web Audio API) e placar com medalhas executivas.
 
 Apenas crie o documento @tracks/04-flappy-hero/SPEC_JOGO.md primeiro para minha revisão.
 ```
 
-3. **Dica Executiva:** Abra o arquivo `tracks/04-flappy-hero/SPEC_JOGO.md` gerado pelo agente. Se quiser deixar o jogo com a cara da sua empresa, adicione na lista de obstáculos algum jargão ou burocracia famosa do seu dia a dia!
+4. **Dica Executiva:** Abra o arquivo `tracks/04-flappy-hero/SPEC_JOGO.md` gerado pelo agente. Se quiser deixar o jogo com a cara da sua empresa, adicione na lista de obstáculos algum jargão ou burocracia famosa do seu dia a dia!
 
 ---
 
-### ⚙️ Etapa 2: Disparar a Construção Completa no "Forno Assíncrono"
+### ⚙️ Etapa 2 (Ato 1): Disparar a Construção Completa no "Forno Assíncrono"
 
 Agora que o documento `SPEC_JOGO.md` está pronto, vamos ordenar que o agente implemente todo o jogo e faça o teste automatizado no navegador:
 
 1. No mesmo chat do **Google Antigravity**, copie e envie:
 
 ```text
-Excelente! Agora implemente o jogo completo dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js) seguindo 100% a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.
+Excelente! Agora implemente o jogo completo de forma enxuta e direta dentro de @tracks/04-flappy-hero/ (sobrescrevendo o index.html de blueprint e criando style.css e game.js compactos) seguindo a especificação em @tracks/04-flappy-hero/SPEC_JOGO.md. Execute todas as etapas diretamente de ponta a ponta sem pausar para confirmações intermediárias.
 Quando terminar de criar os arquivos:
 1. Abra o jogo no Browser Sub-Agent.
-2. Ative o botão de Piloto Automático IA (#btn-autopilot) para jogar automaticamente por alguns segundos, verificando que o herói desvia dos obstáculos corporativos e marca pontos sem erros no console.
-3. Gere um Walkthrough Artifact com screenshots do jogo funcionando!
+2. Ative o botão de Piloto Automático IA (#btn-autopilot) por alguns segundos para verificar que o pássaro clássico desvia dos obstáculos corporativos (com as placas horizontais grandes e legíveis) e marca pontos sem erros no console.
+3. Gere um Walkthrough Artifact enxuto com screenshot do jogo funcionando!
 ```
 
 2. ⚡ **Experimente a Orquestração Paralela (`Cmd/Ctrl + E`):**
    - **Dica para Iniciantes:** Se aparecer um botão azul **`Proceed` / `Approve` / `Accept`** no chat do Antigravity pedindo confirmação do plano, **clique nele primeiro** para iniciar a criação dos arquivos!
-   - Enquanto este agente programa os arquivos e abre o navegador (o que leva cerca de 3 minutos), pressione **`Cmd + E`** (Mac) ou **`Ctrl + E`** (Windows/Linux) — ou clique no botão **`+` (New Conversation)** — para abrir o **Agent Manager**.
+   - Enquanto este agente programa os arquivos e abre o navegador (o que leva cerca de 2 a 3 minutos), pressione **`Cmd + E`** (Mac) ou **`Ctrl + E`** (Windows/Linux) — ou clique no botão **`+` (New Conversation)** — para abrir o **Agent Manager**.
    - Clique em **New Conversation** e siga o passo a passo da **[Trilha 05 — Radar Executivo MCP Brasil](../05-radar-mcp-brasil/README.md)** em paralelo!
-   - Quando terminar (ou quando o Agent Manager notificar que a conversa da Trilha 04 concluiu), volte para esta conversa e veja o jogo pronto e testado no **Walkthrough Artifact**!
 
 ---
 
-### 📸 Etapa 3: Capturar Sua Selfie Rápida ou Escolher um Avatar em 1 Clique (1 Minuto)
+### 🏆 Etapa 3 (Ato 3): Retorno à Conversa 1, Auditoria do Walkthrough e Playtest!
 
-Agora vamos transformar **você** no protagonista do jogo!
-
-1. Abra o arquivo [`tracks/04-flappy-hero/selfie-studio.html`](./selfie-studio.html) no seu navegador (ou clique em **📸 Abrir Selfie Studio** no Mission Hub `index.html`).
-2. Clique em **🎥 Ligar Webcam** → faça uma pose de líder ou super-herói → clique em **📸 Capturar Selfie** *(ou, se estiver sem webcam, clique em um dos **4 Avatares Executivos de Super-Herói** prontos na tela!)*.
-3. Clique em **⬇️ Baixar `minha-selfie.png`**.
-   *(Nota: se o seu navegador salvar automaticamente na pasta `~/Downloads/minha-selfie.png`, não precisa mover o arquivo manualmente — a Skill abaixo encontra e copia da pasta `Downloads` sozinha para você!).*
+1. Após concluir o painel da sua empresa no Ato 2, clique novamente na **Conversa 1** (na barra lateral esquerda do Antigravity).
+2. Inspecione o **Walkthrough Artifact** entregue pelo Agente 1 — veja a captura de tela do **Browser Sub-Agent** comprovando que o pássaro clássico voou com o **Piloto Automático IA (`#btn-autopilot`)** e desviou das burocracias corporativas!
+3. Abra [`tracks/04-flappy-hero/index.html`](./index.html) no seu navegador, teste tanto no controle manual (`Barra de Espaço` ou `Clique`) quanto ligando o botão **`🤖 Piloto Automático IA`** e veja até qual medalha executiva você chega!
 
 ---
 
-### 🎨 Etapa 4: Transformar Sua Selfie em uma Caricatura de Super-Herói (`/gerar-super-heroi`)
+### 🚀 Etapa Bônus (Opcional — Laboratório Extra): Evoluindo Seu Jogo
 
-Volte para a conversa desta trilha no **Google Antigravity** e envie o prompt abaixo:
-
-```text
-Execute a skill @.agent/skills/gerar-super-heroi/SKILL.md:
-1. Localize a minha foto em `tracks/04-flappy-hero/minha-selfie.png` (caso ainda não esteja nessa pasta, busque automaticamente o arquivo mais recente `~/Downloads/minha-selfie*.png` e copie para `tracks/04-flappy-hero/minha-selfie.png`; se não houver nenhum arquivo, gere um Avatar Executivo de Super-Herói padrão).
-2. Analise meus traços marcantes na imagem e gere uma versão em estilo Caricatura divertida de Super-Herói / Super-Heroína baseada em mim e salve em `tracks/04-flappy-hero/hero-caricatura.png`.
-3. Atualize o jogo em @tracks/04-flappy-hero/ para que o protagonista voando seja o meu Super-Herói Caricatura (com recorte em medalhão dourado, capa vermelha esvoaçante animada no Canvas e um botão na tela para alternar ao vivo entre a Caricatura IA e a minha Selfie original!).
-4. Abra o jogo no Browser Sub-Agent, ative o Piloto IA para fazer um voo de teste com o meu Super-Herói desviando das burocracias e gere o Walkthrough com o print final!
-```
-
----
-
-### 🚀 Etapa Bônus (Opcional): Evoluindo Seu Jogo
-
-Se quiser continuar explorando o poder do Antigravity nesta trilha, experimente pedir:
-- **Modo Café Expresso (Invencibilidade Temporária):** *"Adicione xícaras de café expresso flutuando entre os obstáculos. Quando o herói pegar um café, ative o 'Modo Hiper-Produtividade' por 5 segundos, voando em dobro da velocidade e destruindo qualquer burocracia pelo caminho com explosão de partículas!"*
+Se quiser continuar explorando o poder do Antigravity nesta trilha após o workshop, experimente pedir:
+- **Modo Café Expresso (Invencibilidade Temporária):** *"Adicione xícaras de café expresso flutuando entre os obstáculos. Quando o pássaro pegar um café, ative o 'Modo Hiper-Produtividade' por 5 segundos, voando em dobro da velocidade e destruindo qualquer burocracia pelo caminho com explosão de partículas!"*
 - **Placar de Recordes Persistente:** *"Adicione um Hall da Fama em `localStorage` que salva os 5 maiores placares com o nome do executivo e a medalha conquistada (Estagiário, Diretor, C-Level, Lenda Agêntica)."*
