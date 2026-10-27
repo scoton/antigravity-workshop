@@ -1,6 +1,12 @@
 ---
 name: criar-workspace-executivo
-description: Cria do zero um Workspace Executivo ("Sala de Guerra Digital" / War Room) completo e pronto para a segunda-feira dentro de workspaces-executivos/<nome>/, estruturado nas 4 camadas do Google Antigravity: Rules (AGENTS.md e .agents/rules/), Skills sob demanda com Progressive Disclosure (.agents/skills/), Servidor MCP (.gemini/settings.json) e Guia/Template de Automação Agendada (/automation com sidecar.json e Test Run de governança), além de um Cockpit HTML interativo.
+description: >-
+  Cria do zero um Workspace Executivo ("Sala de Guerra Digital" / War Room)
+  completo e pronto para a segunda-feira dentro de workspaces-executivos/<nome>/,
+  estruturado nas 4 camadas do Google Antigravity: Rules (AGENTS.md e .agents/rules/),
+  Skills sob demanda com Progressive Disclosure (.agents/skills/), Servidor MCP
+  (.gemini/settings.json) e Guia/Template de Automação Agendada (/automation com
+  sidecar.json e Test Run de governança), além de um Cockpit HTML interativo.
 ---
 
 # 🏗️ Laboratório Extra 04 — Construtor de Workspace Executivo (`/criar-workspace-executivo`)
