@@ -35,7 +35,7 @@ Mesmo que você não tenha participado presencialmente do evento, basta seguir a
 
 ### 📋 Etapa 1: Gerar a Especificação do Produto (`SPEC_JOGO.md`)
 
-1. Abra a pasta raiz deste repositório no **Google Antigravity**.
+1. Vincule a pasta raiz deste repositório no **Google Antigravity 2.0** (clicando em **`Select Project`** na caixa de chat ou no ícone de pasta **`+`** na barra lateral esquerda → **`New Project`** ou **`Create Project → + Add Folder`**, ou usando **`Quick Start`**).
 2. No painel do Agente, copie e envie o prompt abaixo:
 
 ```text

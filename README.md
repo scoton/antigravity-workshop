@@ -44,26 +44,35 @@ Observe como este próprio repositório está organizado nas **4 camadas executi
 
 ## ⏱️ Roteiro Self-Paced em 3 Atos (33 Minutos)
 
-### 🏁 Preparação Rápida (2 minutos — Zero Conhecimento Técnico Necessário!)
+### 🏁 Preparação Rápida no Antigravity 2.0 (2 minutos — Sem IDE e Zero Conhecimento Técnico!)
 
-Nunca usou o **Google Antigravity**, Git ou Terminal antes? Não se preocupe — você **não precisa saber programar nem usar linha de comando**:
+Neste workshop usamos a nova interface do **Google Antigravity 2.0 (Agent Manager / Hub, sem a IDE de código)**. Você **não precisa saber programar nem usar linha de comando** — escolha abaixo a forma mais fácil para começar:
 
-1. **Baixe e abra esta pasta no Google Antigravity:**
-   - **Opção A (Sem Terminal — Mais Fácil):** No topo desta página do GitHub, clique no botão verde **`<> Code` → `Download ZIP`**, extraia o arquivo `.zip` no seu computador e, dentro do **Google Antigravity**, clique no menu superior **`File` → `Open Folder...` (Abrir Pasta)** selecionando a pasta `antigravity-workshop`.
-   - **Opção B (Via Terminal/Git):**
+1. **Abra o Workshop no Google Antigravity 2.0:**
+   - **Opção A — 100% pelo Agente via `Quick Start` (Mais Rápida, Sem Baixar ZIP Manualmente!):**
+     No **Antigravity 2.0**, clique em **`Quick Start`** (no seletor de projeto ou na barra lateral esquerda) e cole esta única frase no chat para o próprio Agente baixar o workshop e abrir o portal para você:
+     ```text
+     Baixe o repositório https://github.com/scoton/antigravity-workshop (via git clone ou baixando e extraindo o ZIP caso não tenha git), inicie um servidor web local na porta 8080 dentro da pasta do workshop em background e abra o index.html no navegador para começarmos!
+     ```
+   - **Opção B — Baixando o `.zip` e Vinculando a Pasta no Antigravity 2.0 (Sem IDE):**
+     1. No topo desta página do GitHub, clique no botão verde **`<> Code` → `Download ZIP`** e extraia o arquivo `.zip` no seu computador (criando a pasta `antigravity-workshop`).
+     2. Na interface do **Antigravity 2.0**, clique no seletor **`Select Project`** (na barra inferior da caixa de chat) **ou** no ícone de pasta com **`+`** no topo da barra lateral esquerda:
+        - Se aparecer **`New Project`** *(Select a folder)*: clique nele e escolha a pasta `antigravity-workshop` que você extraiu!
+        - Se aparecer **`Create Project`** *(ou pelo menu superior `File` → `Create Project`)*: clique em **`+ Add Folder`**, selecione a pasta `antigravity-workshop`, clique em **`Next`**, dê um nome ao projeto e clique em **`Create`**.
+   - **Opção C — Via Terminal/Git (Opcional):**
      ```bash
      git clone https://github.com/scoton/antigravity-workshop.git
      cd antigravity-workshop
      ```
 2. **Abra o Portal Interativo do Workshop (`index.html`):**
-   - Você pode simplesmente dar **dois cliques** no arquivo `index.html` dentro da pasta para abri-lo no seu navegador, **ou** colar esta frase na caixa de chat do Agente no Antigravity para que ele mesmo inicie o servidor para você:
+   - Se você usou a **Opção B**, dê **dois cliques** no arquivo `index.html` dentro da pasta para abri-lo no navegador, **ou** cole no chat do Agente:
      ```text
      Inicie um servidor web local na porta 8080 nesta pasta em background e me informe o link para abrir o index.html no navegador.
      ```
-3. **💡 3 Dicas de Ouro para Iniciantes no Antigravity:**
-   - **Onde colar os Prompts:** Todos os blocos cinzas de texto abaixo devem ser copiados e colados na **caixa de Chat do Agente** (painel do Antigravity).
+3. **💡 3 Dicas de Ouro para Iniciantes no Antigravity 2.0:**
+   - **Onde colar os Prompts:** Todos os blocos cinzas de texto abaixo devem ser copiados e colados na **caixa de Chat do Agente** no Antigravity.
    - **Botões `Proceed` / `Accept` / `Allow`:** Sempre que o Antigravity criar um plano (*Implementation Plan*) ou pedir permissão para rodar um comando / abrir o navegador, aparecerá um botão azul **`Proceed` / `Accept` / `Run`** no chat. **Clique nele** para autorizar o agente a continuar!
-   - **Como ter 2 Agentes trabalhando ao mesmo tempo (*Agent Manager*):** Pressione **`Cmd + E`** (no Mac) ou **`Ctrl + E`** (no Windows/Linux) — ou clique no ícone **`+` (New Conversation)** no painel de conversas — para alternar entre o **Agente 1 (Jogo Flappy Hero)** e o **Agente 2 (Radar CNPJ + Banco Central)**!
+   - **Como ter 2 Agentes trabalhando ao mesmo tempo:** Na barra lateral esquerda do **Antigravity 2.0**, basta clicar no botão **`+` (`New Conversation`)** (ou pressionar `Cmd/Ctrl + E`) para abrir uma **2ª conversa em paralelo** e alternar entre o **Agente 1 (Jogo Flappy Hero)** e o **Agente 2 (Radar CNPJ + Banco Central)**!
 
 ---
 
@@ -105,13 +114,13 @@ Quando terminar de criar os arquivos:
 
 ---
 
-### 🇧🇷 ATO 2: Conexão com o Mundo Real — *Agent Manager & Servidor MCP Brasil* (14 minutos)
+### 🇧🇷 ATO 2: Conexão com o Mundo Real — *2º Agente em Paralelo & Servidor MCP Brasil* (14 minutos)
 
-**💡 O Conceito Executivo:** Enquanto seu "Engenheiro Autônomo #1" constrói e testa o *Flappy Executive Hero* em background, você vai abrir o **Agent Manager (`Cmd/Ctrl + E`)**, iniciar uma **segunda conversa em paralelo** e conectar um agente a **dados oficiais do Brasil em tempo real via MCP (Model Context Protocol)**!
+**💡 O Conceito Executivo:** Enquanto seu "Engenheiro Autônomo #1" constrói e testa o *Flappy Executive Hero* em background, você vai usar a barra lateral do **Antigravity 2.0 (Agent Manager)** para iniciar uma **segunda conversa em paralelo** e conectar um agente a **dados oficiais do Brasil em tempo real via MCP (Model Context Protocol)**!
 
-#### Passo 2.1 — Abrir uma Nova Conversa no Agent Manager
-1. Pressione `Cmd + E` (Mac) ou `Ctrl + E` (Windows/Linux) — ou clique no botão **`+` (New Conversation)** no topo/lateral do painel do Agente — para abrir o **Agent Manager**.
-2. Clique em **New Conversation / Novo Agente** para iniciar um segundo agente trabalhando em paralelo (sem fechar a Conversa 1!).
+#### Passo 2.1 — Abrir uma Nova Conversa em Paralelo no Antigravity 2.0
+1. Na barra lateral esquerda do **Antigravity 2.0**, clique no botão **`+` (`New Conversation`)** ao lado do projeto — ou pressione `Cmd + E` (Mac) / `Ctrl + E` (Windows/Linux).
+2. Isso inicia um **segundo agente trabalhando em paralelo** na mesma pasta, sem interromper nem fechar a Conversa 1!
 
 #### Passo 2.2 — Consultar o CNPJ da Sua Empresa + Banco Central via MCP Brasil
 Copie e envie o prompt abaixo! *(Ele já vem configurado com o CNPJ da **WEG S.A. `84.429.695/0001-11`** para funcionar em 1 clique mesmo que você não edite nada; se quiser analisar a sua empresa, basta trocar o número do CNPJ na primeira linha ou digitar no campo do Mission Hub `index.html`)*:

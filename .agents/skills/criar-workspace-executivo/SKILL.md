@@ -40,4 +40,4 @@ Use esta skill sempre que o participante pedir para **criar um Workspace Executi
      - Simulador rápido do **"Briefing Automático de Segunda-Feira às 08h00"** para a empresa/setor escolhido.
 
 4. **Validação no Browser Sub-Agent e Walkthrough:**
-   - Abra o novo Cockpit (`workspaces-executivos/<slug-da-iniciativa>/index.html`) no *Browser Sub-Agent*, capture um screenshot e apresente o **Walkthrough Artifact** explicando como o participante pode abrir essa pasta diretamente no Antigravity (`File -> Open Folder`) na segunda-feira!
+   - Abra o novo Cockpit (`workspaces-executivos/<slug-da-iniciativa>/index.html`) no *Browser Sub-Agent*, capture um screenshot e apresente o **Walkthrough Artifact** explicando como o participante pode abrir essa pasta diretamente no **Antigravity 2.0** (clicando em `Select Project` ou no ícone de pasta `+` na barra lateral esquerda → `New Project` ou `Create Project → + Add Folder`) na segunda-feira!
