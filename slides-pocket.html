@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Bootcamp 2026 | Deck Rápido (2 Slides) — Google Antigravity</title>
+  <style>
+    :root {
+      --bg-base: #070707;
+      --bg-slide: #0E0E0E;
+      --bg-card: #151515;
+      --text-primary: #FFFFFF;
+      --text-secondary: #EBEBEB;
+      --text-muted: #A1A1AA;
+      --lime: #D6FD3C;
+      --cyan: #0CE6E6;
+      --amber: #FFB635;
+      --magenta: #F550D7;
+      --border-subtle: rgba(255, 255, 255, 0.12);
+      --border-strong: rgba(214, 253, 60, 0.45);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    .deck-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      background: #000000;
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 20;
+    }
+
+    .deck-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .deck-brand a {
+      color: var(--lime);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .deck-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .btn-ctrl {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn-ctrl:hover { border-color: var(--lime); }
+    .btn-lime { background: var(--lime); color: #000000; border-color: var(--lime); }
+
+    .slide-counter {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--lime);
+      min-width: 68px;
+      text-align: center;
+    }
+
+    .deck-stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.75rem 2rem;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1220px;
+      min-height: 650px;
+      background: var(--bg-slide);
+      border: 1px solid var(--border-subtle);
+      border-top: 4px solid var(--lime);
+      border-radius: 16px;
+      padding: 2.5rem 3rem 2rem;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.7);
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .slide.active { display: flex; }
+
+    .slide-eyebrow {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--lime);
+      background: rgba(214, 253, 60, 0.12);
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+      border: 1px solid rgba(214, 253, 60, 0.3);
+    }
+
+    .slide h1 {
+      font-size: clamp(2rem, 3.3vw, 2.85rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .slide p.lead {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      max-width: 980px;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 1.25rem 1.4rem;
+    }
+
+    .card-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.55rem;
+      color: #000;
+    }
+
+    .card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-primary);
+    }
+
+    .card p {
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .roadmap-row {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 1.15rem;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-left: 5px solid var(--lime);
+      border-radius: 10px;
+      padding: 0.95rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .roadmap-pill {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-align: center;
+      padding: 0.55rem 0.5rem;
+      border-radius: 6px;
+      color: #000000;
+      background: var(--lime);
+      line-height: 1.25;
+    }
+
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2, .roadmap-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="deck-topbar">
+    <div class="deck-brand">
+      <a href="index.html">← Voltar ao Mission Hub</a>
+      <span><strong>AI Bootcamp 2026</strong> • Deck Pocket (2 Slides)</span>
+      <a href="slides.html" style="color: var(--cyan); margin-left: 0.5rem;">Ver Deck Completo (14 Slides) →</a>
+    </div>
+    <div class="deck-controls">
+      <button class="btn-ctrl" onclick="changeSlide(-1)">← Slide 1</button>
+      <span id="slide-indicator" class="slide-counter">01 / 02</span>
+      <button class="btn-ctrl btn-lime" onclick="changeSlide(1)">Slide 2 →</button>
+      <button class="btn-ctrl" onclick="toggleFullScreen()">Tela Cheia (F)</button>
+    </div>
+  </header>
+
+  <main class="deck-stage">
+    <!-- SLIDE 1: O QUE É O GOOGLE ANTIGRAVITY -->
+    <section class="slide active">
+      <div>
+        <span class="slide-eyebrow">RESPONSABILIDADE || ESTRATÉGIA || TRANSFORMAÇÃO • DO COPILOTO AO CENTRO DE COMANDO</span>
+        <h1>O Que é o <span style="color: var(--lime);">Google Antigravity?</span></h1>
+        <p class="lead">
+          Uma plataforma de <strong>orquestração agêntica</strong> onde você atua como <strong>Arquiteto de Produto e Estrategista</strong> enquanto múltiplos agentes autônomos planejam, constroem, consultam dados oficiais em tempo real e testam soluções em paralelo.
+        </p>
+
+        <div class="grid-2">
+          <div class="card" style="border-top: 3px solid var(--lime);">
+            <span class="card-badge" style="background: var(--lime);">1. GOVERNANÇA ANTES DA AÇÃO</span>
+            <h3>Spec &amp; Implementation Plan (Artifacts)</h3>
+            <p>Antes de programar, o agente investiga o contexto e apresenta um plano estruturado (<code>SPEC_JOGO.md</code> / <em>Implementation Plan</em>) para sua revisão, comentários e aprovação.</p>
+          </div>
+
+          <div class="card" style="border-top: 3px solid var(--cyan);">
+            <span class="card-badge" style="background: var(--cyan);">2. MULTITAREFA ASSÍNCRONA</span>
+            <h3>Agent Manager (<code>+ New Conversation</code>)</h3>
+            <p>Coordene múltiplos agentes trabalhando em frentes distintas em background sem precisar ficar esperando cada resposta terminar.</p>
+          </div>
+
+          <div class="card" style="border-top: 3px solid var(--amber);">
+            <span class="card-badge" style="background: var(--amber);">3. DADOS REAIS &amp; MEMÓRIA</span>
+            <h3>Skills, Servidores MCP &amp; Rules</h3>
+            <p>Conecte seus agentes a APIs oficiais ao vivo (Receita Federal e Banco Central via <strong>MCP Brasil</strong>) e padronize as regras de governança da sua empresa (<code>AGENTS.md</code>).</p>
+          </div>
+
+          <div class="card" style="border-top: 3px solid var(--magenta);">
+            <span class="card-badge" style="background: var(--magenta);">4. AUDITORIA BASEADA EM EVIDÊNCIA</span>
+            <h3>Browser Sub-Agent &amp; Walkthrough</h3>
+            <p>O próprio agente abre o navegador, testa a aplicação visualmente e entrega um <strong>Walkthrough Artifact</strong> com screenshots auditáveis.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>AI BOOTCAMP || 28 e 29. OUT – SP || SINGULARITY BR</span>
+        <span style="color: var(--lime);">WORKSHOP GOOGLE ANTIGRAVITY || SLIDE 01 / 02</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: ROTEIRO PRÁTICO DO WORKSHOP -->
+    <section class="slide">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <span class="slide-eyebrow">ROTEIRO HANDS-ON (33 MINUTOS) • PASSO A PASSO</span>
+            <h1 style="margin-bottom: 0.25rem;">Roteiro Prático: <span style="color: var(--lime);">Setup &amp; Os 3 Atos</span></h1>
+            <p style="color: var(--text-secondary); font-size: 1rem;">
+              ⚡ <strong>Dica importante:</strong> No seletor de modelo do chat, escolha <strong style="color: var(--cyan);"><code>Gemini 3.8 Flash (High/Medium)</code></strong> para máxima velocidade e economia de créditos!
+            </p>
+          </div>
+          <div style="background: #000; border: 2px solid var(--lime); border-radius: 10px; padding: 0.7rem 1.15rem; text-align: center;">
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--lime); font-weight: 700;">ACESSE O REPOSITÓRIO NO GITHUB</div>
+            <div style="font-family: var(--font-mono); font-size: 1.05rem; color: #FFF; font-weight: 800; margin-top: 0.15rem;">github.com/scoton/antigravity-workshop</div>
+          </div>
+        </div>
+
+        <div class="roadmap-row" style="border-left-color: var(--cyan);">
+          <div class="roadmap-pill" style="background: var(--cyan);">SETUP RÁPIDO<br/>(2 MIN)</div>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--cyan); font-weight: 700; margin-bottom: 0.2rem;">PREPARAÇÃO • LOGIN GOOGLE + OPÇÃO A (DOWNLOAD DO REPOSITÓRIO — ZERO TOKENS)</div>
+            <p style="font-size: 0.94rem; color: var(--text-secondary);">
+              <strong>1.</strong> Entre no <strong>Google Antigravity 2.0</strong> com seu usuário Google e selecione o modelo <strong><code>Gemini 3.8 Flash</code></strong>.<br/>
+              <strong>2.</strong> Acesse <code>github.com/scoton/antigravity-workshop</code> e siga a <strong>Opção A</strong>: clique em <strong><code>&lt;&gt; Code → Download ZIP</code></strong>, extraia a pasta e crie o projeto em <strong><code>Select Project</code> (ou ícone <code>+</code>) → <code>New Project</code> / <code>Create New Project</code></strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="roadmap-row" style="border-left-color: var(--lime);">
+          <div class="roadmap-pill" style="background: var(--lime);">ATO 1<br/>(7 MIN)</div>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--lime); font-weight: 700; margin-bottom: 0.2rem;">CONVERSA 1 • SPEC-DRIVEN DEVELOPMENT (FLAPPY EXECUTIVE BIRD)</div>
+            <p style="font-size: 0.94rem; color: var(--text-secondary);">
+              Atue como Arquiteto de Produto na <strong>Trilha 04</strong>: envie o <strong>Prompt 1.1</strong> para gerar a especificação estruturada (<code>SPEC_JOGO.md</code>) e, em seguida, o <strong>Prompt 1.2</strong> para o Agente 1 programar e testar o jogo completo em background!
+            </p>
+          </div>
+        </div>
+
+        <div class="roadmap-row" style="border-left-color: var(--amber);">
+          <div class="roadmap-pill" style="background: var(--amber);">ATO 2<br/>(18 MIN)</div>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--amber); font-weight: 700; margin-bottom: 0.2rem;">CONVERSA 2 EM PARALELO • USO DE SERVIDORES MCP (CNPJ + BANCO CENTRAL AO VIVO)</div>
+            <p style="font-size: 0.94rem; color: var(--text-secondary);">
+              Enquanto o jogo é construído, abra <strong><code>+ New Conversation</code></strong> na barra lateral e execute a <strong>Trilha 05</strong>: o Agente 2 usará o <strong>Servidor MCP Brasil</strong> para consultar o CNPJ da sua empresa na Receita Federal + Selic, CDI, IPCA e Dólar no Banco Central e criar seu painel!
+            </p>
+          </div>
+        </div>
+
+        <div class="roadmap-row" style="border-left-color: var(--magenta); margin-bottom: 0;">
+          <div class="roadmap-pill" style="background: var(--magenta);">ATO 3<br/>(6 MIN)</div>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--magenta); font-weight: 700; margin-bottom: 0.2rem;">RETORNO À CONVERSA 1 • PLAYTEST &amp; HAVE FUN!</div>
+            <p style="font-size: 0.94rem; color: var(--text-secondary);">
+              Volte à 1ª conversa do Antigravity (zero consumo extra de tokens!), inspecione o <strong>Walkthrough Artifact</strong> com o screenshot validado pelo <em>Browser Sub-Agent</em>, abra o jogo e divirta-se desviando das burocracias corporativas!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>AI BOOTCAMP || 28 e 29. OUT – SP || SINGULARITY BR</span>
+        <span style="color: var(--lime);">WORKSHOP GOOGLE ANTIGRAVITY || SLIDE 02 / 02</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    const indicator = document.getElementById('slide-indicator');
+
+    function showSlide(idx) {
+      current = (idx + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle('active', i === current));
+      indicator.textContent = `0${current + 1} / 0${slides.length}`;
+    }
+
+    function changeSlide(delta) {
+      showSlide(current + delta);
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') changeSlide(1);
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') changeSlide(-1);
+      if (e.key.toLowerCase() === 'f') toggleFullScreen();
+    });
+  </script>
+</body>
+</html>

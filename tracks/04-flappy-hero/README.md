@@ -35,7 +35,7 @@ Mesmo que você não tenha participado presencialmente do evento, basta seguir a
 
 ### 📋 Etapa 1 (Ato 1): Gerar a Especificação Completa do Produto (`SPEC_JOGO.md`)
 
-1. Vincule a pasta raiz deste repositório no **Google Antigravity 2.0** (clicando em **`Select Project`** na caixa de chat ou no ícone de pasta **`+`** na barra lateral esquerda → **`New Project`** ou **`Create Project → + Add Folder`**, ou usando **`Quick Start`**).
+1. Vincule a pasta raiz deste repositório no **Google Antigravity 2.0** pela **Opção A (Zero Tokens)**: clique no botão **`Select Project`** na caixa de chat ou no ícone de pasta **`+`** na barra lateral esquerda → **`New Project`** ou **`Create New Project → + Add Folder`** *(ou pela Opção B: clique em `Create New Project` → selecione `Quick Start`)*.
 2. **⚡ Modelo Recomendado (`Gemini 3.8 Flash`):** No seletor de modelo da caixa de chat, selecione **`Gemini 3.8 Flash (High)`** ou **`Gemini 3.8 Flash (Medium)`** (caso disponível) para máxima velocidade e para não esgotar sua cota gratuita (modelos como *Argon* ou *Claude* consomem até 3x mais créditos).
 3. No painel do Agente, copie e envie o prompt abaixo:
 

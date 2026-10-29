@@ -50,26 +50,24 @@ Observe como este próprio repositório está organizado nas **4 camadas executi
 Neste workshop usamos a nova interface do **Google Antigravity 2.0 (Agent Manager / Hub, sem a IDE de código)**. Você **não precisa saber programar nem usar linha de comando** — escolha abaixo a forma mais fácil para começar:
 
 1. **Abra o Workshop no Google Antigravity 2.0:**
-   - **Opção A — 100% pelo Agente via `Quick Start` (Mais Rápida, Sem Baixar ZIP Manualmente!):**
-     No **Antigravity 2.0**, clique em **`Quick Start`** (no seletor de projeto ou na barra lateral esquerda) e cole esta única frase no chat para o próprio Agente baixar o workshop e abrir o portal para você:
-     ```text
-     Baixe o repositório https://github.com/scoton/antigravity-workshop (via git clone ou baixando e extraindo o ZIP caso não tenha git), inicie um servidor web local na porta 8080 dentro da pasta do workshop em background e abra o index.html no navegador para começarmos!
-     ```
-   - **Opção B — Baixando o `.zip` e Vinculando a Pasta no Antigravity 2.0 (Sem IDE):**
+   - **Opção A (Recomendada — Zero Consumo de Tokens!) — Baixando o `.zip` e Vinculando a Pasta no Antigravity 2.0 (Sem IDE):**
      1. No topo desta página do GitHub, clique no botão verde **`<> Code` → `Download ZIP`** e extraia o arquivo `.zip` no seu computador (criando a pasta `antigravity-workshop`).
      2. Na interface do **Antigravity 2.0**, clique no seletor **`Select Project`** (na barra inferior da caixa de chat) **ou** no ícone de pasta com **`+`** no topo da barra lateral esquerda:
         - Se aparecer **`New Project`** *(Select a folder)*: clique nele e escolha a pasta `antigravity-workshop` que você extraiu!
-        - Se aparecer **`Create Project`** *(ou pelo menu superior `File` → `Create Project`)*: clique em **`+ Add Folder`**, selecione a pasta `antigravity-workshop`, clique em **`Next`**, dê um nome ao projeto e clique em **`Create`**.
+        - Se aparecer **`Create Project` / `Create New Project`** *(ou pelo menu superior `File` → `Create Project`)*: clique em **`+ Add Folder`**, selecione a pasta `antigravity-workshop`, clique em **`Next`**, dê um nome ao projeto e clique em **`Create`**.
+   - **Opção B — Pelo Agente via `Quick Start` (Alternativa — Consome Tokens da Sua Cota):**
+     1. Na interface do **Antigravity 2.0**, clique em **`Create New Project`** (no seletor de projeto ou no ícone de pasta **`+`** da barra lateral esquerda) e, na janela que abrir, selecione **`Quick Start`**.
+     2. Em seguida, cole esta frase no chat para o próprio Agente baixar o workshop e abrir o portal para você:
+        ```text
+        Baixe o repositório https://github.com/scoton/antigravity-workshop (via git clone ou baixando e extraindo o ZIP caso não tenha git), inicie um servidor web local na porta 8080 dentro da pasta do workshop em background e abra o index.html no navegador para começarmos!
+        ```
    - **Opção C — Via Terminal/Git (Opcional):**
      ```bash
      git clone https://github.com/scoton/antigravity-workshop.git
      cd antigravity-workshop
      ```
 2. **Abra o Portal Interativo do Workshop (`index.html`):**
-   - Se você usou a **Opção B**, dê **dois cliques** no arquivo `index.html` dentro da pasta para abri-lo no navegador, **ou** cole no chat do Agente:
-     ```text
-     Inicie um servidor web local na porta 8080 nesta pasta em background e me informe o link para abrir o index.html no navegador.
-     ```
+   - Se você usou a **Opção A** (ou **C**), dê **dois cliques** no arquivo `index.html` dentro da pasta para abri-lo no navegador (ou acompanhe os prompts diretamente por este `README.md` no GitHub — o próprio Agente iniciará o servidor na porta `8080` durante os Atos 1 e 2!).
 3. **💡 4 Dicas de Ouro para Iniciantes no Antigravity 2.0 (Importante para Cota & Velocidade!):**
    - **⚡ Escolha o Modelo `Gemini 3.8 Flash` (Recomendado):** Na barra inferior da caixa de chat (ao lado do seletor de projeto), clique no **Seletor de Modelo** e escolha **`Gemini 3.8 Flash (High)`** ou **`Gemini 3.8 Flash (Medium)`** (ou `Gemini 3.8 Flash`, caso disponível). Modelos como *Gemini 4 Argon* ou de terceiros (*Claude*) consomem até **3x mais créditos** por requisição e podem esgotar rapidamente a franquia gratuita no meio do workshop. O **Gemini 3.8 Flash** é muito mais rápido para construir os jogos/dashboards e garante créditos de sobra para concluir todos os Atos e Laboratórios Extras!
    - **Onde colar os Prompts:** Todos os blocos cinzas de texto abaixo devem ser copiados e colados na **caixa de Chat do Agente** no Antigravity.
